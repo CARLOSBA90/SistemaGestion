@@ -41,9 +41,9 @@ public class DbManager {
 */
         Class.forName("com.mysql.jdbc.Driver"); 
         DriverManager.setLoginTimeout(LoginTimeout);  
-        //  Connection connection = DriverManager.getConnection("jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_69bd0ed0a4febcb", "b20bc5dd91893d", "31dc0f46"); 
+          Connection connection = DriverManager.getConnection("jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_a449933febac428", "b622585b18b608", "79f764f4"); 
         
-       Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/empresa_calzado", "root", ""); 
+     //  Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/empresa_calzado", "root", ""); 
 
 
         return connection;  
