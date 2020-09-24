@@ -250,28 +250,30 @@
 
 							<%-- Formulario para envio de nueva noticia en tablero--%>
 
-							<form name="form1" method="get" action="ControladorInicio">
-
-								<div class="card shadow mb-4">
-									<div class="card-header py-3">
+								<div class="card shadow">
+									<div class="card-header">
 										<h6 class="m-0 font-weight-bold text-primary">
-											Titulo <input type="text" name="titulo" id="titulo" required
-												width="100%">
+											Nueva nota
 										</h6>
 									</div>
-									<div class="card-body">
-									<form name="form1" method="get" action="../ControladorInicio">
-									<input type="hidden" name="instruccion" value="nuevaNota">
-										<textarea rows="5" cols="60" name="texto" id="texto"
-											style="resize: none;" onfocus="this.value=''" required>Escribir nota aqui..</textarea>
-										<input type="reset" name="reset" id="reset" value="Borrar"><input
-											type="submit" name="submit" id="submit" value="Enviar"
-											onclick="resetear()">
-									</form>
-									</div>
-								</div>
 
-							</form>
+										<div class="card-body">
+											<form name="form1" method="get" action="../ControladorInicio">
+													<input type="hidden" name="instruccion" value="nuevaNota">
+				               	  <div class="form-group">
+					                 <input class="form-control" name="titulo" id="titulo" placeholder="Titulo de nota" required>
+					                </div>
+
+					               <div class="form-group">
+					                  <textarea class="form-control" name="texto" id="texto" rows="3" placeholder="Escribir nota aqui.." required></textarea>
+					               </div>
+
+				                	 <button type="submit" class="btn btn-primary" onclick="resetear()">Enviar</button>
+				             	</form>
+										</div>
+									</div>
+
+
 
 						</div>
 
