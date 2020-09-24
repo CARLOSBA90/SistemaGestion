@@ -41,8 +41,7 @@
 			id="accordionSidebar">
 
 			<!-- Sidebar - Brand -->
-			<a
-				class="sidebar-brand d-flex align-items-center justify-content-center"
+			<a class="sidebar-brand d-flex align-items-center justify-content-center"
 				href="ControladorInicio?instruccion=noticia">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-shoe-prints"></i>
@@ -162,11 +161,13 @@
 			<div id="content">
 
 				<!-- Topbar -->
-
-
-
 				<nav
 					class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+					<!-- Sidebar Toggle (Topbar) ------------>
+					<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+						<i class="fa fa-bars"></i>
+					</button>
 
 
 					<!-- Topbar Navbar -->
@@ -261,7 +262,7 @@
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span> Footer </span>
+						<span> Desarrollado por Carlos PeÃ±a </span>
 					</div>
 				</div>
 			</footer>
@@ -288,7 +289,7 @@
 						salir?</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">
-						<span aria-hidden="true">A—</span>
+						<span aria-hidden="true">Aï¿½</span>
 					</button>
 				</div>
 				<div class="modal-body">Selecciona "Salir" si estas listo para
