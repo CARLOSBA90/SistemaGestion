@@ -56,7 +56,7 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Inicio -->
-			<li class="nav-item active"><a class="nav-link" href="ControladorInicio?instruccion=noticia"> 
+			<li class="nav-item active"><a class="nav-link" href="ControladorInicio?instruccion=noticia">
 				<i class="far fa-newspaper"></i> <span>Inicio</span></a></li>
 
 			<li class="nav-item active"><a class="nav-link" href="ControladorInicio?instruccion=tablero">
@@ -78,8 +78,8 @@
 					aria-labelledby="cabeceraCliente" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Opciones</h6>
-						<a class="collapse-item" href="clientes/agregar.jsp">Nuevo cliente</a> 
-						<a class="collapse-item" href="ControladorCliente?instruccion=listar">Ver listado</a> 
+						<a class="collapse-item" href="clientes/agregar.jsp">Nuevo cliente</a>
+						<a class="collapse-item" href="ControladorCliente?instruccion=listar">Ver listado</a>
 						<a class="collapse-item" href="ControladorCliente?instruccion=modificar">Modificar</a>
 					</div>
 				</div></li>
@@ -94,7 +94,7 @@
 					aria-labelledby="cabeceraPedido" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Opciones</h6>
-						<a class="collapse-item" href="ControladorPedido?instruccion=nuevo">Nuevo pedido</a> 
+						<a class="collapse-item" href="ControladorPedido?instruccion=nuevo">Nuevo pedido</a>
 						<a class="collapse-item" href="ControladorPedido?instruccion=listar">Ver listado</a>
 					</div>
 				</div></li>
@@ -110,7 +110,7 @@
 					aria-labelledby="cabeceraProducto" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Opciones</h6>
-						<a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a> 
+						<a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a>
 						<a class="collapse-item" href="ControladorProducto?instruccion=listar">Ver listado</a>
 						<a class="collapse-item" href="ControladorProducto?instruccion=modificar">Modificar</a>
 					</div>
@@ -155,12 +155,12 @@
 			<div id="content">
 
 				<!-- Topbar -->
+				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-
-
-				<nav
-					class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+					<!-- Sidebar Toggle (Topbar) ------------>
+					<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+						<i class="fa fa-bars"></i>
+					</button>
 
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
@@ -264,7 +264,7 @@
 																	aria-label="Stock: activate to sort column descending"
 																	aria-sort="ascending">Stock</th>
 															</tr>
-											
+
 														</thead>
 														<tbody>
 															<c:forEach var="tempProducto" items="${LISTAPRODUCTOS}">
@@ -305,7 +305,7 @@
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span> Footer </span>
+						<span> Desarrollado por Carlos Pena </span>
 					</div>
 				</div>
 			</footer>
@@ -332,7 +332,7 @@
 						salir?</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">
-						<span aria-hidden="true">A—</span>
+						<span aria-hidden="true">Aï¿½</span>
 					</button>
 				</div>
 				<div class="modal-body">Selecciona "Salir" si estas listo para

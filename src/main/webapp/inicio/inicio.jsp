@@ -239,7 +239,7 @@
 							<c:forEach var="i" begin="1" end="${tamano}" step="1">
 								<c:set var="Noticias" value="${NOTICIAS[tamano-i]}" />
 								<div class="card shadow mb-2">
-									<div class="card-header py-3">
+									<div class="card-header">
 										<h6 class="m-0 font-weight-bold text-primary">${Noticias.titulo}
 											${Noticias.fecha}</h6>
 									</div>
@@ -262,7 +262,7 @@
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span> Desarrollado por Carlos Peña </span>
+						<span> Desarrollado por Carlos Pena </span>
 					</div>
 				</div>
 			</footer>

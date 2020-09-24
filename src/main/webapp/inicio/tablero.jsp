@@ -115,7 +115,7 @@
 					aria-labelledby="cabeceraProducto" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Opciones</h6>
-						<a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a> 
+						<a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a>
 						<a class="collapse-item" href="ControladorProducto?instruccion=listar">Ver listado</a>
 						<a class="collapse-item" href="ControladorProducto?instruccion=modificar">Modificar</a>
 					</div>
@@ -161,15 +161,16 @@
 
 				<!-- Topbar -->
 
-
-
 				<nav
 					class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+					<!-- Sidebar Toggle (Topbar) ------------>
+					<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+						<i class="fa fa-bars"></i>
+					</button>
 
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
-
 
 						<div class="topbar-divider d-none d-sm-block"></div>
 
@@ -236,7 +237,7 @@
 							<c:forEach var="i" begin="1" end="${tamano}" step="1">
 								<c:set var="Noticias" value="${TABLERO[tamano-i]}" />
 								<div class="card shadow mb-2">
-									<div class="card-header py-3">
+									<div class="card-header">
 										<h6 class="m-0 font-weight-bold text-primary">${Noticias.titulo}
 											${Noticias.fecha}</h6>
 									</div>
@@ -259,11 +260,14 @@
 										</h6>
 									</div>
 									<div class="card-body">
+									<form name="form1" method="get" action="../ControladorInicio">
+									<input type="hidden" name="instruccion" value="nuevaNota">
 										<textarea rows="5" cols="60" name="texto" id="texto"
 											style="resize: none;" onfocus="this.value=''" required>Escribir nota aqui..</textarea>
 										<input type="reset" name="reset" id="reset" value="Borrar"><input
 											type="submit" name="submit" id="submit" value="Enviar"
 											onclick="resetear()">
+									</form>
 									</div>
 								</div>
 
@@ -283,7 +287,7 @@
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span> Footer </span>
+						<span> Desarrollado por Carlos Pena </span>
 					</div>
 				</div>
 			</footer>
@@ -310,7 +314,7 @@
 						salir?</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">
-						<span aria-hidden="true">A—</span>
+						<span aria-hidden="true">Aï¿½</span>
 					</button>
 				</div>
 				<div class="modal-body">Selecciona "Salir" si estas listo para

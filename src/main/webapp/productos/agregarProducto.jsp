@@ -48,7 +48,7 @@
                   <i class="far fa-newspaper"></i>
                   <span>Inicio</span></a>
               </li>
-              
+
                <li class="nav-item active">
                 <a class="nav-link" href="../ControladorInicio?instruccion=tablero">
                   <i class="far fa-edit"></i>
@@ -152,15 +152,17 @@
               <div id="content">
 
                 <!-- Topbar -->
-                
-                
-                
+
        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+         <!-- Sidebar Toggle (Topbar) ------------>
+         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+           <i class="fa fa-bars"></i>
+         </button>
 
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">       
-             
+          <ul class="navbar-nav ml-auto">
+
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -216,12 +218,12 @@
                   <div class="row">
 
                      <div class="col-md-auto">
-                     
-                   
-                  <%-- Formulario para envio de un nuevo Cliente--%> 
-                     
-               
-                  
+
+
+                  <%-- Formulario para envio de un nuevo Cliente--%>
+
+
+
                       <div class="card shadow mb-4">
                         <div class="card-header py-3">
                           <h6 class="m-0 font-weight-bold text-primary">Datos</h6>
@@ -272,11 +274,11 @@
 										</table>
 									</form>
 								</div>
-                        
+
                       </div>
 
-                  
-                    
+
+
                     </div>
 
                   </div>
@@ -291,7 +293,7 @@
               <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                   <div class="copyright text-center my-auto">
-                    <span> Footer </span>
+                    <span> Desarrollado por Carlos Pena </span>
                   </div>
                 </div>
               </footer>
@@ -315,7 +317,7 @@
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Listo para salir?</h5>
                   <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">A—</span>
+                    <span aria-hidden="true">Aï¿½</span>
                   </button>
                 </div>
                 <div class="modal-body">Selecciona "Salir" si estas listo para cerrar la sesion actual.</div>

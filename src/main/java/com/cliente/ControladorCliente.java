@@ -46,35 +46,11 @@ public class ControladorCliente extends HttpServlet {
 			modificar(request,response);
 			break;
 			
-		case "actualizar":
-			try {
-				actualizar(request,response);
-			} catch (SQLException e) {
-		
-				e.printStackTrace();
-			}
-			break;
-			
-			
 			default:
 				obtenerClientes(request,response);
 		        break;
 		}
 		
-		
-	}
-    
-	
-	private void eliminar(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		
-		int codigo=Integer.parseInt(request.getParameter("Codigo"));
-		
-		  modeloCliente.eliminar(codigo);
-		  
-		  obtenerClientes(request,response);
-		  
-		 
 		
 	}
 
@@ -94,6 +70,15 @@ public class ControladorCliente extends HttpServlet {
 				e1.printStackTrace();
 			}
 			break;
+			
+		case "actualizar":
+			try {
+				actualizar(request,response);
+			} catch (SQLException e) {
+		
+				e.printStackTrace();
+			}
+			break;
 		
 			default:
 				obtenerClientes(request,response);
@@ -103,6 +88,16 @@ public class ControladorCliente extends HttpServlet {
 		
 	}
 
+	private void eliminar(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+		int codigo=Integer.parseInt(request.getParameter("Codigo"));
+		
+		  modeloCliente.eliminar(codigo);
+		  
+		  obtenerClientes(request,response);
+		  
+	}
 
 
 
