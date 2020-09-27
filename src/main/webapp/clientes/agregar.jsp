@@ -224,12 +224,11 @@
 
                       <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                          <h6 class="m-0 font-weight-bold text-primary">Datos</h6>
+                          <h6 class="m-0 font-weight-bold text-primary">DATOS</h6>
                         </div>
                         <div class="card-body">
 									<form name="form1" method="post" action="../ControladorCliente">
 										<input type="hidden" name="instruccion" value="insertarBBDD">
-                     ------------------
 
                      <div class="form-group row">
                        <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
@@ -260,9 +259,9 @@
                      </div>
 
                      <div class="form-group row">
-                       <label for="direccion" class="col-sm-2 col-form-label">Dirección</label>
+                       <label for="direccion" class="col-sm-2 col-form-label">Direccion</label>
                        <div class="col-sm-10">
-                       <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección" required>
+                       <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
                        </div>
                      </div>
 
