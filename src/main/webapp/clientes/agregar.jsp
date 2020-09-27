@@ -218,7 +218,7 @@
                   <!-- Content Row -->
                   <div class="row">
 
-                     <div class="col-md-auto">
+                     
 
                   <%-- Formulario para envio de un nuevo Cliente--%>
 
@@ -288,7 +288,7 @@
 
 
 
-                    </div>
+
 
                   </div>
 
