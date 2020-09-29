@@ -248,56 +248,67 @@
 
 										<form name="Modificacion" method="post" action="../ControladorCliente">
 											<input type="hidden" name="instruccion" value="actualizar">
-											<table>
-												<tbody>
-													<tr>
-														<td width="25%">Codigo Cliente</td>
-														<td width="90%"><input type="text"
-															name="codigoCliente" id="codigoCliente"
-															" value="<%=datos[0]%>" readonly></td>
-													</tr>
 
-													<tr>
-														<td width="25%">Nombre</td>
-														<td width="90%"><input type="text" name="nombre"
-															id="nombre" value="<%=datos[1]%>" required></td>
-													</tr>
-													<tr>
-														<td>Apellido</td>
-														<td><input type="text" name="apellido" id="apellido"
-															value="<%=datos[2]%>" required></td>
-													</tr>
-													<tr>
-														<td>DNI</td>
-														<td><input type="text" name="dni" id="dni"
-															value="<%=datos[3]%>" required></td>
-													</tr>
-													<tr>
-														<td>Telefono</td>
-														<td><input type="text" name="telefono" id="telefono"
-															value="<%=datos[4]%>" required></td>
-													</tr>
-													<tr>
-														<td>Direccion</td>
-														<td><input type="text" name="direccion"
-															id="direccion" value="<%=datos[5]%>"
-															required></td>
-													</tr>
-													<tr>
-														<td>Correo</td>
-														<td><input type="text" name="correo" id="correo"
-															value="<%=datos[6]%>" required></td>
-													</tr>
-													<tr>
-														<td><a
-															href="../ControladorCliente?instruccion=eliminar&Codigo=<%=datos[0]%>"><input
-																type="button" name="Eliminar" id="Eliminar"
-																value="Eliminar"></a></td>
-														<td><input type="submit" name="submit" id="submit"
-															value="actualizar"></td>
-													</tr>
-												</tbody>
-											</table>
+
+                        <div class="form-group row">
+                          <label for="codigoCliente" class="col-sm-4 col-form-label">Codigo Cliente</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control"  name="codigoCliente" id="codigoCliente" value="<%=datos[0]%>" readonly>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control" id="nombre" name="nombre" value="<%=datos[1]%>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="apellido" class="col-sm-4 col-form-label">Apellido</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control" id="apellido" name="apellido" value="<%=datos[2]%>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="dni" class="col-sm-4 col-form-label">DNI</label>
+                          <div class="col-sm-8">
+                          <input type="tel" class="form-control" id="dni" name="dni" pattern="[0-9]{8}" value="<%=datos[3]%>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="telefono" class="col-sm-4 col-form-label">Telefono</label>
+                          <div class="col-sm-8">
+                          <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9]{11}" value="<%=datos[4]%>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="direccion" class="col-sm-4 col-form-label">Direccion</label>
+                          <div class="col-sm-10">
+                          <input type="text" class="form-control" id="direccion" name="direccion" value="<%=datos[5]%>"  required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="correo" class="col-sm-4 col-form-label">Email</label>
+                          <div class="col-sm-10">
+                          <input type="email" class="form-control" id="correo" name="correo" value="<%=datos[6]%>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                         <div class="col-sm-4">
+                          <button type="submit" class="btn btn-primary">Enviar</button>
+                         </div>
+                         <div class="col-sm-4">
+                          <button type="button" onclick="location.href='../ControladorCliente?instruccion=eliminar&Codigo=<%=datos[0]%>'" class="btn btn-secondary">Eliminar</button>
+                         </div>
+                        </div>
+
 										</form>
 
 

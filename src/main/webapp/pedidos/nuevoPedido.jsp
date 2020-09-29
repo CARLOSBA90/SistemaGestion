@@ -228,45 +228,77 @@
                       <div class="card shadow mb-4">
                         <div class="card-header py-3">
 								<form id="form1" method="get" action="ControladorPedido">
-									<p>		<input type="hidden" name="instruccion" value="insertarBBDD">
-										<label for="select">CLIENTE</label> <select name="cliente"
-											id="cliente" style="width: 175px;">
-											<option>-SELECCIONE CLIENTE-</option>
-											<c:forEach var="tempC" items="${LISTACLIENTES}">
-												<option value="${tempC.cod_cliente}"
-													name="${tempC.cod_cliente}">${tempC.nombre}
-													${tempC.apellido}</option>
-											</c:forEach>
-										</select>&nbsp; &nbsp; <label for="select">FORMA DE PAGO</label> <select
-											name="forma" id="forma">
-											<option value="contado">CONTADO</option>
-											<option value="credito">CREDITO</option>
-										</select> &nbsp; &nbsp; &nbsp; <input type="hidden" id="SALIDA"
-											name="salida" value=""> <input type="submit"
-											name="submit" value="Realizar Pedido">
+										<input type="hidden" name="instruccion" value="insertarBBDD">
 
-                                    </p>
+
+                    <!-- Recibe un arraylist del lado del servidor con los datos del clientes: codigo, nombre, apellido -->
+
+										<div class="form-row">
+										    <div class="form-group col-md-6">
+										      <label for="cliente">CLIENTES</label>
+													<select id="cliente" name="cliente" class="form-control">
+			                    <option selected>SELECCIONE CLIENTE</option>
+													<c:forEach var="tempC" items="${LISTACLIENTES}">
+														<option value="${tempC.cod_cliente}" name="${tempC.cod_cliente}">${tempC.nombre} ${tempC.apellido}</option>
+													</c:forEach>
+		                      </select>
+										    </div>
+
+                         <!-- Dos formas de pago en select: contado, credito -->
+
+										    <div class="form-group col-md-6">
+										      <label for="forma">FORMA DE PAGO</label>
+													<select id="forma" name="forma" class="form-control">
+		 											<option value="contado">CONTADO</option>
+		 											<option value="credito">CREDITO</option>
+		 										</select>
+										    </div>
+
+										<!-- Valores ocultos para procesamiento de datos, se guarda de forma rudimentaria y continua en el INPUT una cadena de datos de los pedidos que realizan en este sitio -->
+
+                    <!-- El valor del input se procesa mediante javascript puro, codigo en la parte inferior de la pagina -->
+
+										 <input type="hidden" id="SALIDA"	name="salida" value="">
+
+                      <div class="form-group col-md-4">
+										    <input type="submit" name="submit" class="btn btn-primary" value="Realizar Pedido">
+                      </div>
+                  </div>
 									</form>
-                                    <p>
-									<label for="select">PRODUCTO</label> <select name="prod"
-										id="prod" onchange="insertarStock();">
-										<option>-SELECCIONE PRODUCTO-</option>
-										<c:forEach var="tempP" items="${LISTAPRODUCTOS}">
-											<option
-												value="${tempP.cod_calzado},${tempP.stock},${tempP.tipo},${tempP.nombre}"
-												id="${tempP.tipo}${tempP.nombre}">${tempP.tipo}:
-												${tempP.nombre}</option>
-										</c:forEach>
-									</select>&nbsp; &nbsp; <label for="select">CANTIDAD</label> <select
-										name="cantidad" id="cantidad">
-										<option>--</option>
-									</select> &nbsp; &nbsp;
-									<button onclick="Agregar()">Agregar</button>
-									&nbsp; &nbsp;
-									<button
-										onclick="location.href='ControladorPedido?instruccion=nuevo'">Borrar
-										Todo</button></p>
+
+
+									<!-- En esta area se recibe toda informacion disponible del inventario: codigo producto, stock, tipo, nombre -->
+									<!-- Se realiza un evento al hacer click sobre un determinado producto para desplegar su stock disponible en el SELECT de stock -->
+									<!-- Todo este procesamiento se realiza con javascript puro por ende el codigo se encuentra en el inferior de la pagina -->
+
+
+									<div class="form-row">
+											<div class="form-group col-md-4">
+												<label for="prod">PRODUCTOS</label>
+												<select name="prod" id="prod" class="form-control" onchange="insertarStock();">
+                            <option selected>SELECCIONE PRODUCTO</option>
+											    <c:forEach var="tempP" items="${LISTAPRODUCTOS}">
+												    <option value="${tempP.cod_calzado},${tempP.stock},${tempP.tipo},${tempP.nombre}"	id="${tempP.tipo}${tempP.nombre}">${tempP.tipo}:	${tempP.nombre}</option>
+											   </c:forEach>
+                       </select>
+										 </div>
+
+										 <div class="form-group col-md-4">
+											 <label for="cantidad">CANTIDAD</label>
+											 <select name="cantidad" id="cantidad" class="form-control">
+												   <option> </option>
+											</select>
+										</div>
+
+                   <div class="form-group col-md-4">
+									<button onclick="Agregar()" class="btn btn-secondary">Agregar</button>
+									<button onclick="location.href='ControladorPedido?instruccion=nuevo'" class="btn btn-secondary">Borrar Todo</button>
 								</div>
+								</div>
+
+
+
+
                         <div class="card-body">
 									<div class="table-responsive">
 										<div id="dataTable_wrapper"

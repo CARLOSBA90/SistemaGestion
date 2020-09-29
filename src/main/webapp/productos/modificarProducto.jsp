@@ -240,39 +240,65 @@
 									</form>
 								</div>
                         <div class="card-body">
-                          <table>
-										<tbody>
-											<tr>
-												<td width="25%">Codigo Producto</td>
-												<td width="90%"><input type="text" name="codigoProducto" id="codigoProducto"></td>
-											</tr>
-											<tr>
-												<td width="25%">Tipo</td>
-												<td width="90%"><input type="text" name="tipo" id="tipo"></td>
-											</tr>
-											<tr>
-												<td>Nombre</td>
-												<td><input type="text" name="nombre" id="nombre"></td>
-											</tr>
-											<tr>
-												<td>Precio</td>
-												<td><input type="text" name="precio" id="precio"></td>
-											</tr>
-											<tr>
-												<td>Fabricante</td>
-												<td><input type="text" name="fabricante" id="fabricante"></td>
-											</tr>
-											<tr>
-												<td>Talla</td>
-												<td><input type="text" name="talla" id="talla"></td>
-											</tr>
-											<tr>
-												<td>Stock</td>
-												<td><input type="text" name="stock" id="stock"></td>
-											</tr>
-										</tbody>
 
-									</table>
+													<div class="form-group row">
+ 													 <label for="codigoProducto" class="col-sm-4 col-form-label">Codigo Producto</label>
+ 													 <div class="col-sm-8">
+ 													 <input type="text" class="form-control" input type="text" name="codigoProducto" id="codigoProducto" placeholder="Codigo Producto" readonly>
+ 													 </div>
+ 												 </div>
+
+												 <div class="form-group row">
+													 <label for="tipo" class="col-sm-4 col-form-label">Tipo</label>
+													 <div class="col-sm-8">
+													 <input type="text" class="form-control" input type="text" name="tipo" id="tipo" placeholder="Tipo" required>
+													 </div>
+												 </div>
+
+	                        <div class="form-group row">
+	                          <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
+	                          <div class="col-sm-8">
+	                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+	                          </div>
+	                        </div>
+
+	                        <div class="form-group row">
+	                          <label for="precio" class="col-sm-4 col-form-label">Precio</label>
+	                          <div class="col-sm-8">
+	                          <input type="tel" class="form-control" id="precio" name="precio" placeholder="Precio" pattern="[0-9]{8}" required>
+	                          </div>
+	                        </div>
+
+	                        <div class="form-group row">
+	                          <label for="talla" class="col-sm-4 col-form-label">Talla</label>
+	                          <div class="col-sm-8">
+	                          <input type="tel" class="form-control" id="talla" name="talla" placeholder="Talla" pattern="[0-9]{2}" required>
+	                          </div>
+	                        </div>
+
+	                        <div class="form-group row">
+	                          <label for="fabricante" class="col-sm-4 col-form-label">Fabricante</label>
+	                          <div class="col-sm-10">
+	                          <input type="text" class="form-control" id="fabricante" name="fabricante" placeholder="Fabricante" required>
+	                          </div>
+	                        </div>
+
+	                        <div class="form-group row">
+	                          <label for="stock" class="col-sm-4 col-form-label">Stock</label>
+	                          <div class="col-sm-10">
+	                          <input type="tel" class="form-control" id="stock" name="stock" placeholder="Stock" pattern="[0-9]{4}" required>
+	                          </div>
+	                        </div>
+
+	                        <div class="form-group row">
+	                         <div class="col-sm-4">
+	                          <button type="submit" class="btn btn-primary">Enviar</button>
+	                         </div>
+	                         <div class="col-sm-4">
+	                          <button type="reset" class="btn btn-secondary">Restablecer</button>
+	                         </div>
+	                        </div>
+
 
                         </div>
 

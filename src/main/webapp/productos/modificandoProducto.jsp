@@ -243,53 +243,66 @@
 
 										<form name="Modificacion" method="post" action="../ControladorProducto">
 											<input type="hidden" name="instruccion" value="actualizar">
-											<table>
-											<tbody>
-												<tr>
-													<td width="25%">Codigo Producto</td>
-													<td width="90%"><input type="text"
-														name="codigoProducto" id="codigoProducto"
-														" value="<%=datos[0]%>" readonly></td>
-												</tr>
-												<tr>
-													<td width="25%">Tipo</td>
-													<td width="90%"><input type="text" name="tipo"
-														id="tipo" value="<%=datos[1]%>" required></td>
-												</tr>
-												<tr>
-													<td>Nombre</td>
-													<td><input type="text" name="nombre" id="nombre"
-														value="<%=datos[2]%>" required></td>
-												</tr>
-												<tr>
-													<td>Precio</td>
-													<td><input type="text" name="precio" id="precio"
-														value="<%=datos[3]%>" required></td>
-												</tr>
-												<tr>
-													<td>Fabricante</td>
-													<td><input type="text" name="fabricante"
-														id="fabricante" value="<%=datos[4]%>" required></td>
-												</tr>
-												<tr>
-													<td>Talla</td>
-													<td><input type="text" name="talla" id="talla"
-														value="<%=datos[5]%>" required></td>
-												</tr>
-												<tr>
-													<td>Stock</td>
-													<td><input type="text" name="stock" id="stock"
-														value="<%=datos[6]%>" required></td>
-												</tr>
-												<tr>
-													<td><a href="../ControladorProducto?instruccion=eliminar&Codigo=<%=datos[0]%>"><input
-															type="button" name="Eliminar" id="Eliminar"
-															value="Eliminar"></a></td>
-													<td><input type="submit" name="submit" id="submit"
-														value="Actualizar"></td>
-												</tr>
-											</tbody>
-										</table>
+
+                        <div class="form-group row">
+                         <label for="codigoProducto" class="col-sm-4 col-form-label">Codigo Producto</label>
+                         <div class="col-sm-8">
+                         <input type="text" class="form-control" input type="text" name="codigoProducto" id="codigoProducto" value="<%=datos[0]%>" readonly>
+                         </div>
+                       </div>
+
+                       <div class="form-group row">
+                         <label for="tipo" class="col-sm-4 col-form-label">Tipo</label>
+                         <div class="col-sm-8">
+                         <input type="text" class="form-control" input type="text" name="tipo" id="tipo" value="<%=datos[1]%>" required>
+                         </div>
+                       </div>
+
+
+                        <div class="form-group row">
+                          <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control" id="nombre" name="nombre" value="<%=datos[2]%>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="precio" class="col-sm-4 col-form-label">Precio</label>
+                          <div class="col-sm-8">
+                          <input type="tel" class="form-control" id="precio" name="precio" value="<%=datos[3]%>" pattern="[0-9]{8}" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="talla" class="col-sm-4 col-form-label">Talla</label>
+                          <div class="col-sm-8">
+                          <input type="tel" class="form-control" id="talla" name="talla" value="<%=datos[4]%>" pattern="[0-9]{2}" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="fabricante" class="col-sm-4 col-form-label">Fabricante</label>
+                          <div class="col-sm-10">
+                          <input type="text" class="form-control" id="fabricante" name="fabricante" value="<%=datos[5]%>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="stock" class="col-sm-4 col-form-label">Stock</label>
+                          <div class="col-sm-10">
+                          <input type="tel" class="form-control" id="stock" name="stock" value="<%=datos[6]%>" pattern="[0-9]{4}" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                         <div class="col-sm-4">
+                          <button type="submit" class="btn btn-primary">Enviar</button>
+                         </div>
+                         <div class="col-sm-4">
+                          <button type="button" onclick="location.href='../ControladorProducto?instruccion=eliminar&Codigo=<%=datos[0]%>'" class="btn btn-secondary">Eliminar</button>
+                         </div>
+                        </div>
+
 										</form>
 
 

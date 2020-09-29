@@ -226,52 +226,65 @@
 
                       <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                          <h6 class="m-0 font-weight-bold text-primary">Datos</h6>
+                          <h6 class="m-0 font-weight-bold text-primary">DATOS</h6>
                         </div>
                         <div class="card-body">
 									<form name="NuevoProducto" method="post"
 										action="../ControladorProducto">
 										<input type="hidden" name="instruccion" value="insertarBBDD">
-										<table>
-											<tbody>
-												<tr>
-													<td width="25%">Tipo</td>
-													<td width="90%"><input type="text" name="tipo"
-														id="tipo" required></td>
-												</tr>
-												<tr>
-													<td>Nombre</td>
-													<td><input type="text" name="nombre" id="nombre"
-														required></td>
-												</tr>
-												<tr>
-													<td>Precio</td>
-													<td><input type="text" name="precio" id="precio"
-														required></td>
-												</tr>
-												<tr>
-													<td>Fabricante</td>
-													<td><input type="text" name="fabricante"
-														id="fabricante" required></td>
-												</tr>
-												<tr>
-													<td>Talla</td>
-													<td><input type="text" name="talla" id="talla"
-														required></td>
-												</tr>
-												<tr>
-													<td>Stock</td>
-													<td><input type="text" name="stock" id="stock"
-														required></td>
-												</tr>
-												<tr>
-													<td><input type="reset" name="reset" id="reset"
-														value="Restablecer"></td>
-													<td><input type="submit" name="submit" id="submit"
-														value="Enviar"></td>
-												</tr>
-											</tbody>
-										</table>
+
+
+                      <div class="form-group row">
+                        <label for="tipo" class="col-sm-4 col-form-label">Tipo</label>
+                        <div class="col-sm-8">
+                        <input type="text" class="form-control" input type="text" name="tipo" id="tipo" placeholder="Tipo" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
+                        <div class="col-sm-8">
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="precio" class="col-sm-4 col-form-label">Precio</label>
+                        <div class="col-sm-8">
+                        <input type="tel" class="form-control" id="precio" name="precio" placeholder="Precio" pattern="[0-9]{8}" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="talla" class="col-sm-4 col-form-label">Talla</label>
+                        <div class="col-sm-8">
+                        <input type="tel" class="form-control" id="talla" name="talla" placeholder="Talla" pattern="[0-9]{2}" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="fabricante" class="col-sm-4 col-form-label">Fabricante</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fabricante" name="fabricante" placeholder="Fabricante" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="stock" class="col-sm-4 col-form-label">Stock</label>
+                        <div class="col-sm-10">
+                        <input type="tel" class="form-control" id="stock" name="stock" placeholder="Stock" pattern="[0-9]{4}" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                       <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                       </div>
+                       <div class="col-sm-4">
+                        <button type="reset" class="btn btn-secondary">Restablecer</button>
+                       </div>
+                      </div>
+
 									</form>
 								</div>
 

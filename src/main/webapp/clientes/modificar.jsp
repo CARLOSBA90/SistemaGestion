@@ -240,40 +240,56 @@
 										</form>
 									</div>
                         <div class="card-body">
-                          <table>
-											<tbody>
-												<tr>
-													<td width="25%">Codigo Cliente</td>
-													<td width="90%"><input type="text" name="codigoCliente" id="codigoCliente"></td>
-												</tr>
 
-												<tr>
-													<td width="25%">Nombre</td>
-													<td width="90%"><input type="text" name="nombre" id="nombre"></td>
-												</tr>
-												<tr>
-													<td>Apellido</td>
-													<td><input type="text" name="apellido" id="apellido"></td>
-												</tr>
-												<tr>
-													<td>DNI</td>
-													<td><input type="text" name="dni" id="dni"></td>
-												</tr>
-												<tr>
-													<td>Telefono</td>
-													<td><input type="text" name="telefono" id="telefono"></td>
-												</tr>
-												<tr>
-													<td>Direccion</td>
-													<td><input type="text" name="direccion" id="direccion"></td>
-												</tr>
-												<tr>
-													<td>Correo</td>
-													<td><input type="text" name="correo" id="correo"></td>
-												</tr>
-											</tbody>
+													<div class="form-group row">
+		                        <label for="codigoCliente" class="col-sm-4 col-form-label">Codigo Cliente</label>
+		                        <div class="col-sm-8">
+		                        <input type="text" class="form-control" id="codigoCliente" name="codigoCliente" placeholder="codigoCliente" readonly>
+		                        </div>
+		                      </div>
 
-										</table>
+
+													<div class="form-group row">
+		                        <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
+		                        <div class="col-sm-8">
+		                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+		                        </div>
+		                      </div>
+
+		                      <div class="form-group row">
+		                        <label for="apellido" class="col-sm-4 col-form-label">Apellido</label>
+		                        <div class="col-sm-8">
+		                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
+		                        </div>
+		                      </div>
+
+		                      <div class="form-group row">
+		                        <label for="dni" class="col-sm-4 col-form-label">DNI</label>
+		                        <div class="col-sm-8">
+		                        <input type="tel" class="form-control" id="dni" name="dni" placeholder="DNI" pattern="[0-9]{8}" required>
+		                        </div>
+		                      </div>
+
+		                      <div class="form-group row">
+		                        <label for="telefono" class="col-sm-4 col-form-label">Telefono</label>
+		                        <div class="col-sm-8">
+		                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="0" pattern="[0-9]{11}" required>
+		                        </div>
+		                      </div>
+
+		                      <div class="form-group row">
+		                        <label for="direccion" class="col-sm-4 col-form-label">Direccion</label>
+		                        <div class="col-sm-10">
+		                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
+		                        </div>
+		                      </div>
+
+		                      <div class="form-group row">
+		                        <label for="correo" class="col-sm-4 col-form-label">Email</label>
+		                        <div class="col-sm-10">
+		                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Email" required>
+		                        </div>
+		                      </div>
 
                         </div>
 
