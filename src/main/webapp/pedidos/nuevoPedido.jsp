@@ -219,7 +219,7 @@
 					<!-- Content Row -->
 					<div class="row">
 
-                     <div class="col-md-auto">
+                     <div class="col">
 
 
                   <%-- Formulario para agregar nuevo pedido--%>
@@ -234,7 +234,7 @@
                     <!-- Recibe un arraylist del lado del servidor con los datos del clientes: codigo, nombre, apellido -->
 
 										<div class="form-row">
-										    <div class="form-group col-md-6">
+										    <div class="form-group col-md-4">
 										      <label for="cliente">CLIENTES</label>
 													<select id="cliente" name="cliente" class="form-control">
 			                    <option selected>SELECCIONE CLIENTE</option>
@@ -246,7 +246,7 @@
 
                          <!-- Dos formas de pago en select: contado, credito -->
 
-										    <div class="form-group col-md-6">
+										    <div class="form-group col-md-4">
 										      <label for="forma">FORMA DE PAGO</label>
 													<select id="forma" name="forma" class="form-control">
 		 											<option value="contado">CONTADO</option>
@@ -260,8 +260,8 @@
 
 										 <input type="hidden" id="SALIDA"	name="salida" value="">
 
-                      <div class="form-group col-md-4">
-										    <input type="submit" name="submit" class="btn btn-primary" value="Realizar Pedido">
+                      <div class="form-group col-md-4 center-block">
+										    <input type="submit" name="submit" class="btn btn-primary center-block" value="Realizar Pedido">
                       </div>
                   </div>
 									</form>
@@ -273,7 +273,7 @@
 
 
 									<div class="form-row">
-											<div class="form-group col-md-4">
+											<div class="form-group col-md-6">
 												<label for="prod">PRODUCTOS</label>
 												<select name="prod" id="prod" class="form-control" onchange="insertarStock();">
                             <option selected>SELECCIONE PRODUCTO</option>
@@ -283,16 +283,16 @@
                        </select>
 										 </div>
 
-										 <div class="form-group col-md-4">
+										 <div class="form-group col-md-2">
 											 <label for="cantidad">CANTIDAD</label>
 											 <select name="cantidad" id="cantidad" class="form-control">
 												   <option> </option>
 											</select>
 										</div>
 
-                   <div class="form-group col-md-4">
-									<button onclick="Agregar()" class="btn btn-secondary">Agregar</button>
-									<button onclick="location.href='ControladorPedido?instruccion=nuevo'" class="btn btn-secondary">Borrar Todo</button>
+                   <div class="form-group col-md-4 center-block">
+									<button onclick="Agregar()" class="btn btn-secondary center-block">Agregar</button>
+									<button onclick="location.href='ControladorPedido?instruccion=nuevo'" class="btn btn-secondary center-block">Borrar Todo</button>
 								</div>
 								</div>
 
@@ -307,25 +307,25 @@
 												<div class="col-sm-12">
 													<table class="table table-bordered dataTable"
 														id="dataTable" role="grid"
-														aria-describedby="dataTable_info" style="width: 900px;">
+														aria-describedby="dataTable_info" style="width: 700px;">
 														<thead>
 															<tr role="row">
 																<th class="sorting_asc" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 159px;"
+																	style="width: 150px;"
 																	aria-label="Codigo Articulo: activate to sort column descending"
 																	aria-sort="ascending">Codigo Articulo</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 246px;"
+																	style="width: 200px;"
 																	aria-label="Tipo: activate to sort column ascending">Tipo</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 116px;"
+																	style="width: 200px;"
 																	aria-label="Nombre: activate to sort column ascending">Nombre</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 51px;"
+																	style="width: 150px;"
 																	aria-label="Cantidad: activate to sort column ascending">Cantidad</th>
 															</tr>
 
