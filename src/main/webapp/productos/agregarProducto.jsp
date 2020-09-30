@@ -217,7 +217,7 @@
                   <!-- Content Row -->
                   <div class="row">
 
-                     <div class="col-8">
+                     <div class="col-10">
 
 
                   <%-- Formulario para envio de un nuevo Cliente--%>

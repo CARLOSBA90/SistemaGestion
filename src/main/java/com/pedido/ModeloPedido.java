@@ -46,7 +46,7 @@ public class ModeloPedido {
 			miConexion = conectar.createConnection();
 
 			String sql="SELECT pedido.cod_pedido, pedido.cod_cliente, cliente.nombre, cliente.apellido, "
-					+ "pedido.cantidad_calzados, pedido.precio_total, pedido.forma_pago, pedido.enviado, pedido.fecha_pedido " + 
+					+ "pedido.cantidad_calzados, pedido.precio_total, pedido.forma_pago, pedido.enviado, pedido.fecha_pedido " +
 					"FROM cliente INNER JOIN pedido ON cliente.cod_cliente=pedido.cod_cliente";
 
 			miStatement= miConexion.createStatement();
@@ -222,7 +222,7 @@ public class ModeloPedido {
 		double precio=0;
 
 		int numeroCalzados=0;
-		
+
 		int cantidad = 0;
 
 
@@ -238,8 +238,12 @@ public class ModeloPedido {
 
 			ResultSet rs_AU = null;
 
-			String sqlAU="SELECT AUTO_INCREMENT FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'empresa_calzado' " + 
-					"AND   TABLE_NAME   = 'pedido'";
+		/*	String sqlAU="SELECT AUTO_INCREMENT FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'empresa_calzado' " +
+					"AND   TABLE_NAME   = 'pedido'";*/
+
+					String sqlAU="SELECT AUTO_INCREMENT FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'heroku_a449933febac428' " +
+		  					"AND   TABLE_NAME   = 'pedido'";
+
 
 			statementAU = miConexion.createStatement();
 
@@ -309,7 +313,7 @@ public class ModeloPedido {
 
 					/// SI EL STOCK PASA DE 0 A VALOR MENOR LANZA EXCEPCION Y SE DESHACE EL PEDIDO
 
-					if(stock<0) throw new Exception("STOCK NO PUEDE SER MENOR A 0");  
+					if(stock<0) throw new Exception("STOCK NO PUEDE SER MENOR A 0");
 
 					precio = miResulset.getDouble(2);
 
@@ -317,15 +321,15 @@ public class ModeloPedido {
 
 					cantidad+=(int)list2.get(i); } else throw new Exception();
 
-				String actualiza="UPDATE producto_calzado set stock=? WHERE cod_calzado=?"; 
+				String actualiza="UPDATE producto_calzado set stock=? WHERE cod_calzado=?";
 
 				PreparedStatement miStatement2 = miConexion.prepareStatement(actualiza);
 
 				miStatement2.setInt(1,stock);
 
-				miStatement2.setInt(2,(int) list.get(i)); 
+				miStatement2.setInt(2,(int) list.get(i));
 
-				miStatement2.execute(); 
+				miStatement2.execute();
 
 				miStatement2.close();
 
@@ -343,7 +347,7 @@ public class ModeloPedido {
 				StatementPED_PROD.setInt(3,(int) list2.get(i));
 				StatementPED_PROD.setDouble(4,precio);
 				StatementPED_PROD.setDouble(5,precio*(int)list2.get(i));
-				StatementPED_PROD.execute();		
+				StatementPED_PROD.execute();
 				StatementPED_PROD.close();
 
 				miStatement.close();

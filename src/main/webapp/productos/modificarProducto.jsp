@@ -219,7 +219,7 @@
 					<!-- Content Row -->
 					<div class="row">
 
-                     <div class="col-8">
+                     <div class="col-10">
 
 
                   <%-- Formulario para modificar un nuevo Cliente--%>
@@ -227,17 +227,19 @@
 
                       <div class="card shadow mb-4">
                         <div class="card-header py-3">
+													<div class="form-group row">
                           <h6 class="m-0 font-weight-bold text-primary">Lista de productos</h6>
 									<form name="modificacion" method="post" action="productos/modificandoProducto.jsp">
-										<select name="listaProducto" id="listaProducto">
+										<select name="listaProducto" id="listaProducto" class="form-control">
 											<option selected="selected" disabled selected>-SELECCIONE
 												PRODUCTO-</option>
 											<c:forEach var="tempProducto" items="${LISTAPRODUCTOS}">
 												<option
 													value="${tempProducto.cod_calzado}/${tempProducto.tipo}/${tempProducto.nombre}/${tempProducto.precio}/${tempProducto.fabricante}/${tempProducto.talla}/${tempProducto.stock}">${tempProducto.nombre}</option>
 											</c:forEach>
-										</select> <input type="submit" name="submit" id="submit" value="Modificar">
+										</select> <input type="submit" name="submit" id="submit" value="Modificar" class="btn btn-primary">
 									</form>
+								</div>
 								</div>
                         <div class="card-body">
 

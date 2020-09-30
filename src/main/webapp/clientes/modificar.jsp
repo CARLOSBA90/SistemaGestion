@@ -219,7 +219,7 @@
 					<!-- Content Row -->
 					<div class="row">
 
-                     <div class="col-8">
+                     <div class="col-10">
 
 
                   <%-- Formulario para modificar un nuevo Cliente--%>
