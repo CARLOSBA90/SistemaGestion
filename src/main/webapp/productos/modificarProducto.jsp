@@ -115,7 +115,7 @@
 					aria-labelledby="cabeceraProducto" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Opciones</h6>
-						<a class="collapse-item" href="productos/agregarProducto.jsp">nuevo Producto</a>
+						<a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a>
 						<a class="collapse-item" href="ControladorProducto?instruccion=listar">Ver listado</a>
 						<a class="collapse-item" href="ControladorProducto?instruccion=modificar">Modificar</a>
 					</div>
@@ -219,7 +219,7 @@
 					<!-- Content Row -->
 					<div class="row">
 
-                     <div class="col-md-auto">
+                     <div class="col-8">
 
 
                   <%-- Formulario para modificar un nuevo Cliente--%>
@@ -251,54 +251,49 @@
 												 <div class="form-group row">
 													 <label for="tipo" class="col-sm-4 col-form-label">Tipo</label>
 													 <div class="col-sm-8">
-													 <input type="text" class="form-control" input type="text" name="tipo" id="tipo" placeholder="Tipo" required>
+													 <input type="text" class="form-control" input type="text" name="tipo" id="tipo" placeholder="Tipo" readonly>
 													 </div>
 												 </div>
 
 	                        <div class="form-group row">
 	                          <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
 	                          <div class="col-sm-8">
-	                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+	                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" readonly>
 	                          </div>
 	                        </div>
+
+													<div class="form-group row">
+														<label for="fabricante" class="col-sm-4 col-form-label">Fabricante</label>
+														<div class="col-sm-8">
+														<input type="text" class="form-control" id="fabricante" name="fabricante" placeholder="Fabricante" readonly>
+														</div>
+													</div>
+
 
 	                        <div class="form-group row">
 	                          <label for="precio" class="col-sm-4 col-form-label">Precio</label>
 	                          <div class="col-sm-8">
-	                          <input type="tel" class="form-control" id="precio" name="precio" placeholder="Precio" pattern="[0-9]{8}" required>
+	                          <input type="number" min="0" max="99999" class="form-control" id="precio" name="precio" placeholder="Precio" readonly>
 	                          </div>
 	                        </div>
+
+
 
 	                        <div class="form-group row">
 	                          <label for="talla" class="col-sm-4 col-form-label">Talla</label>
 	                          <div class="col-sm-8">
-	                          <input type="tel" class="form-control" id="talla" name="talla" placeholder="Talla" pattern="[0-9]{2}" required>
+	                          <input type="number" min="0" max="60" class="form-control" id="talla" name="talla" placeholder="Talla"  readonly>
 	                          </div>
 	                        </div>
 
-	                        <div class="form-group row">
-	                          <label for="fabricante" class="col-sm-4 col-form-label">Fabricante</label>
-	                          <div class="col-sm-10">
-	                          <input type="text" class="form-control" id="fabricante" name="fabricante" placeholder="Fabricante" required>
-	                          </div>
-	                        </div>
+
 
 	                        <div class="form-group row">
 	                          <label for="stock" class="col-sm-4 col-form-label">Stock</label>
-	                          <div class="col-sm-10">
-	                          <input type="tel" class="form-control" id="stock" name="stock" placeholder="Stock" pattern="[0-9]{4}" required>
+	                          <div class="col-sm-8">
+	                          <input type="number" min="0" max="99999" class="form-control" id="stock" name="stock" placeholder="Stock" readonly>
 	                          </div>
 	                        </div>
-
-	                        <div class="form-group row">
-	                         <div class="col-sm-4">
-	                          <button type="submit" class="btn btn-primary">Enviar</button>
-	                         </div>
-	                         <div class="col-sm-4">
-	                          <button type="reset" class="btn btn-secondary">Restablecer</button>
-	                         </div>
-	                        </div>
-
 
                         </div>
 

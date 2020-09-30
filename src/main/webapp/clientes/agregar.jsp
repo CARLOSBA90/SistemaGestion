@@ -104,8 +104,8 @@
                 <div id="MenuProducto" class="collapse" aria-labelledby="cabeceraProducto" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Opciones</h6>
-                    <a class="collapse-item" href="../productos/agregarProducto.jsp">Ver listado</a>
-                    <a class="collapse-item" href="../ControladorProducto?instruccion=listar">Nuevo producto</a>
+                    <a class="collapse-item" href="../productos/agregarProducto.jsp">Nuevo producto</a>
+                    <a class="collapse-item" href="../ControladorProducto?instruccion=listar">Ver listado</a>
                     <a class="collapse-item" href="../ControladorProducto?instruccion=modificar">Modificar</a>
                   </div>
                 </div>
@@ -218,7 +218,7 @@
                   <!-- Content Row -->
                   <div class="row">
 
-                  <div class="col-md-auto">
+                  <div class="col-8">
 
                   <%-- Formulario para envio de un nuevo Cliente--%>
 
@@ -254,20 +254,20 @@
                      <div class="form-group row">
                        <label for="telefono" class="col-sm-4 col-form-label">Telefono</label>
                        <div class="col-sm-8">
-                       <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="01112345678" pattern="[0-9]{11}" required>
+                       <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="1112345678" pattern="[0-9]{10}" required>
                        </div>
                      </div>
 
                      <div class="form-group row">
                        <label for="direccion" class="col-sm-4 col-form-label">Direccion</label>
-                       <div class="col-sm-10">
+                       <div class="col-sm-8">
                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
                        </div>
                      </div>
 
                      <div class="form-group row">
                        <label for="correo" class="col-sm-4 col-form-label">Email</label>
-                       <div class="col-sm-10">
+                       <div class="col-sm-8">
                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Email" required>
                        </div>
                      </div>

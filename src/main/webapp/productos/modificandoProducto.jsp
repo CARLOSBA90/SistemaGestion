@@ -210,7 +210,7 @@
                   <!-- Content Row -->
                   <div class="row">
 
-                     <div class="col-md-auto">
+                     <div class="col-8">
 
 
                   <%-- Formulario para modificar un Producto--%>
@@ -267,30 +267,31 @@
                         </div>
 
                         <div class="form-group row">
+                          <label for="fabricante" class="col-sm-4 col-form-label">Fabricante</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control" id="fabricante" name="fabricante" value="<%=datos[4]%>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
                           <label for="precio" class="col-sm-4 col-form-label">Precio</label>
                           <div class="col-sm-8">
-                          <input type="tel" class="form-control" id="precio" name="precio" value="<%=datos[3]%>" pattern="[0-9]{8}" required>
+                          <input type="number" min="0" max="99999" class="form-control" id="precio" name="precio" value="<%=datos[3]%>"  required>
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label for="talla" class="col-sm-4 col-form-label">Talla</label>
                           <div class="col-sm-8">
-                          <input type="tel" class="form-control" id="talla" name="talla" value="<%=datos[4]%>" pattern="[0-9]{2}" required>
+                          <input type="number" min="0" max="60" class="form-control" id="talla" name="talla" value="<%=datos[5]%>" required>
                           </div>
                         </div>
 
-                        <div class="form-group row">
-                          <label for="fabricante" class="col-sm-4 col-form-label">Fabricante</label>
-                          <div class="col-sm-10">
-                          <input type="text" class="form-control" id="fabricante" name="fabricante" value="<%=datos[5]%>" required>
-                          </div>
-                        </div>
 
                         <div class="form-group row">
                           <label for="stock" class="col-sm-4 col-form-label">Stock</label>
-                          <div class="col-sm-10">
-                          <input type="tel" class="form-control" id="stock" name="stock" value="<%=datos[6]%>" pattern="[0-9]{4}" required>
+                          <div class="col-sm-8">
+                          <input type="number" min="0" max="99999" class="form-control" id="stock" name="stock" value="<%=datos[6]%>" required>
                           </div>
                         </div>
 

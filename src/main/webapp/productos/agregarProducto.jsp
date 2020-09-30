@@ -211,13 +211,13 @@
 
                   <!-- Page Heading -->
                   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Agregar nuevo Producto</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Agregar nuevo producto</h1>
                   </div>
 
                   <!-- Content Row -->
                   <div class="row">
 
-                     <div class="col">
+                     <div class="col-8">
 
 
                   <%-- Formulario para envio de un nuevo Cliente--%>
@@ -249,32 +249,37 @@
                       </div>
 
                       <div class="form-group row">
-                        <label for="precio" class="col-sm-4 col-form-label">Precio</label>
-                        <div class="col-sm-8">
-                        <input type="tel" class="form-control" id="precio" name="precio" placeholder="Precio" pattern="[0-9]{8}" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group row">
-                        <label for="talla" class="col-sm-4 col-form-label">Talla</label>
-                        <div class="col-sm-8">
-                        <input type="tel" class="form-control" id="talla" name="talla" placeholder="Talla" pattern="[0-9]{2}" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group row">
                         <label for="fabricante" class="col-sm-4 col-form-label">Fabricante</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-8">
                         <input type="text" class="form-control" id="fabricante" name="fabricante" placeholder="Fabricante" required>
                         </div>
                       </div>
 
                       <div class="form-group row">
-                        <label for="stock" class="col-sm-4 col-form-label">Stock</label>
-                        <div class="col-sm-10">
-                        <input type="tel" class="form-control" id="stock" name="stock" placeholder="Stock" pattern="[0-9]{4}" required>
+                        <label for="precio" class="col-sm-4 col-form-label">Precio</label>
+                        <div class="col-sm-8">
+                        <input type="number" min="0" max="99999" class="form-control" id="precio" name="precio" placeholder="Precio" required>
                         </div>
                       </div>
+
+
+                      <div class="form-group row">
+                        <label for="talla" class="col-sm-4 col-form-label">Talla</label>
+                        <div class="col-sm-8">
+                        <input type="number" min="0" max="60" class="form-control" id="talla" name="talla" placeholder="Talla" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="stock" class="col-sm-4 col-form-label">Stock</label>
+                        <div class="col-sm-8">
+                        <input type="number" min="0" max="99999" class="form-control" id="stock" name="stock" placeholder="Stock (99999 Maximo)" required>
+                        </div>
+                      </div>
+
+
+
+
 
                       <div class="form-group row">
                        <div class="col-sm-4">
