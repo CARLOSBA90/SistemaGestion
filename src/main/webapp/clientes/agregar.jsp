@@ -218,7 +218,7 @@
                   <!-- Content Row -->
                   <div class="row">
 
-                  <div class="col-10">
+                  <div class="col-8">
 
                   <%-- Formulario para envio de un nuevo Cliente--%>
 
@@ -232,42 +232,42 @@
 
                      <div class="form-group row">
                        <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
-                       <div class="col-sm-8">
+                       <div class="col">
                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
                        </div>
                      </div>
 
                      <div class="form-group row">
                        <label for="apellido" class="col-sm-4 col-form-label">Apellido</label>
-                       <div class="col-sm-8">
+                       <div class="col">
                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
                        </div>
                      </div>
 
                      <div class="form-group row">
                        <label for="dni" class="col-sm-4 col-form-label">DNI</label>
-                       <div class="col-sm-8">
+                       <div class="col">
                        <input type="tel" class="form-control" id="dni" name="dni" placeholder="DNI" pattern="[0-9]{8}" required>
                        </div>
                      </div>
 
                      <div class="form-group row">
                        <label for="telefono" class="col-sm-4 col-form-label">Telefono</label>
-                       <div class="col-sm-8">
+                       <div class="col">
                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="1112345678" pattern="[0-9]{10}" required>
                        </div>
                      </div>
 
                      <div class="form-group row">
                        <label for="direccion" class="col-sm-4 col-form-label">Direccion</label>
-                       <div class="col-sm-8">
+                       <div class="col">
                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
                        </div>
                      </div>
 
                      <div class="form-group row">
                        <label for="correo" class="col-sm-4 col-form-label">Email</label>
-                       <div class="col-sm-8">
+                       <div class="col">
                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Email" required>
                        </div>
                      </div>
