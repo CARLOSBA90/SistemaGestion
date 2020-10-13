@@ -145,9 +145,10 @@ public class ModeloInicio {
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {
+			miStatement.close();
+			miConexion.close();
 		}
-		miStatement.close();
-		miConexion.close();
+		
 	}
 
 
