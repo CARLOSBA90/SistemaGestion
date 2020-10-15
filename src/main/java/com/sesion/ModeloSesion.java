@@ -28,7 +28,7 @@ public class ModeloSesion {
 		
 		int nivel = 0;
 		
-		String sql = "select nivel from usuarios where usuario=? and contrasena=?";
+		String sql = "select nivel from heroku_a449933febac428.usuarios where usuario=? and contrasena=?";
 		
 		try {
 		

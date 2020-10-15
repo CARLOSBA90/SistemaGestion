@@ -44,10 +44,10 @@
                       <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Coloque usuario aqui...">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="contrasena" name="contrasena" placeholder="Contraseña">
+                      <input type="password" class="form-control form-control-user" id="contrasena" name="contrasena" placeholder="Contrasena">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                       
                     
                     <hr>
