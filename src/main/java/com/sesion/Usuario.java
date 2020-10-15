@@ -10,11 +10,12 @@ public class Usuario {
 	}
 	
 	
-	public Usuario(String usuario, String contrasena, String email, Date fecha) {
+	public Usuario(String usuario, String contrasena, String email, Date fecha,int nivel) {
 		this.usuario = usuario;
 		this.contrasena = contrasena;
 		this.email = email;
 		this.fecha = fecha;
+		this.nivel = nivel;
 	}
 
 
@@ -43,16 +44,30 @@ public class Usuario {
 		this.fecha = fecha;
 	}
 	
+	public int getNivel() {
+		return nivel;
+	}
+
+
+	public void setNivel(int nivel) {
+		this.nivel = nivel;
+	}
+	
 	
 	@Override
 	public String toString() {
 		return "Usuario [usuario=" + usuario + ", contrasena=" + contrasena + ", email=" + email + ", fecha=" + fecha
-				+ "]";
+				+ ", nivel=" + nivel + "]";
 	}
+
+
+
+
 
 
 	private String usuario;
 	private String contrasena;
 	private String email;
 	private Date   fecha;
+	private int nivel;
 }

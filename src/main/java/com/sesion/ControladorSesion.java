@@ -10,11 +10,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ControladorInicio
  */
-@WebServlet("/ControladorInicio")
+@WebServlet("/ControladorSesion")
 public class ControladorSesion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -38,11 +39,16 @@ public class ControladorSesion extends HttpServlet {
 		switch(comando) {
 		
 		case "nulo": 
-			request.getRequestDispatcher("sesion/login.jsp").forward(request, response); 
+			request.getRequestDispatcher("/sesion/login.jsp").forward(request, response); 
 			break;
 		
 		case "login":
-			loguear(request,response);
+			try {
+				loguear(request,response);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			
 		default:
@@ -56,9 +62,39 @@ public class ControladorSesion extends HttpServlet {
 
 
 
-	private void loguear(HttpServletRequest request, HttpServletResponse response) {
+	private void loguear(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
 		// TODO Auto-generated method stub
 		
+		Usuario usuario = new Usuario(request.getParameter("usuario"),request.getParameter("contrasena"));
+		
+		int nivel = modelo.autenticacion(usuario);
+		
+		switch(nivel) {
+		 
+		case 0: 
+			
+			request.setAttribute("mensaje", true);
+			
+            RequestDispatcher miDispatcher=request.getRequestDispatcher("/sesion/login.jsp");
+			
+			miDispatcher.forward(request,response);
+			
+			break;
+		
+		default:
+			
+			
+			HttpSession sesion = request.getSession();
+			
+			sesion.setAttribute("usuario", usuario.getUsuario());
+			
+			sesion.setAttribute("nivel", nivel);
+			
+			response.sendRedirect("/ControladorInicio");
+			
+		
+		
+		}
 	}
 
 

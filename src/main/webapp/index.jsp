@@ -4,7 +4,7 @@
    <body>   
       <%
          // Redireccion
-         String site = new String("/ControladorInicio");
+         String site = new String("/sesion/login.jsp");
          response.setStatus(response.SC_MOVED_TEMPORARILY);
          response.setHeader("Location", site); 
       %>

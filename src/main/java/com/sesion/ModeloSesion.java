@@ -3,6 +3,7 @@ package com.sesion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import com.conexion.DbManager;
 
@@ -18,10 +19,10 @@ public class ModeloSesion {
 		
 	}
 
-	public int autenticacion(Usuario usuario) {
+	public int autenticacion(Usuario usuario) throws SQLException {
 		// TODO Auto-generated method stub
 		
-		PreparedStatement miStatement;
+		PreparedStatement miStatement=null;
 		
 		ResultSet rs;
 		
@@ -30,7 +31,6 @@ public class ModeloSesion {
 		String sql = "select nivel from usuarios where usuario=? and contrasena=?";
 		
 		try {
-			 miStatement=null;
 		
 			miConexion = conectar.createConnection();
 			
