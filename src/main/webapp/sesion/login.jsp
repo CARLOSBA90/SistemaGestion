@@ -38,7 +38,8 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
                   </div>
-                  <form class="user">
+                  <form class="user"  name="form1" method="post" action="../ControladorSesion">
+										<input type="hidden" name="instruccion" value="login">
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Coloque usuario aqui...">
                     </div>
@@ -46,17 +47,17 @@
                       <input type="password" class="form-control form-control-user" id="contrasena" name="contrasena" placeholder="Contraseña">
                     </div>
 
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </a>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                      
+                    
                     <hr>
-                    <a href="index.html" class="btn btn-secondary btn-user btn-block">
+                    <a href="#" class="btn btn-secondary btn-user btn-block">
                        Entrar como Invitado
                     </a>
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="register.html">Crear cuenta</a>
+                    <a class="small" href="#">Crear cuenta</a>
                   </div>
                 </div>
               </div>
