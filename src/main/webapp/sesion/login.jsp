@@ -38,7 +38,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
                   </div>
-                  <form class="user"  name="form1" method="post" action="../ControladorSesion">
+                  <form class="user" name="form1" method="post" action="../ControladorSesion">
 										<input type="hidden" name="instruccion" value="login">
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Coloque usuario aqui...">
@@ -48,12 +48,14 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
-                      
+                     </form>
                     
                     <hr>
-                    <a href="#" class="btn btn-secondary btn-user btn-block">
-                       Entrar como Invitado
-                    </a>
+                    <form name="form2" method="post" action="../ControladorSesion">
+                        <input type="hidden" name="instruccion" value="login">
+                        <input type="hidden" name="usuario" value="invitado">
+                        <input type="hidden" name="contrasena" value="1234">
+                    <button type="submit" class="btn btn-primary btn-user btn-block">Entrar como Invitado</button>
                   </form>
                   <hr>
                   <div class="text-center">
