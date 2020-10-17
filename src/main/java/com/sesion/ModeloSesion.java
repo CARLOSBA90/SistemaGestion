@@ -45,7 +45,7 @@ public class ModeloSesion {
 			while(rs.next()) {
 				
 				nivel = rs.getInt(1);
-				System.out.println(nivel);
+	
 			}
 			
 		}catch(Exception e){
@@ -55,7 +55,7 @@ public class ModeloSesion {
 				miConexion.close();
 			}
 
-		return 0;
+		return nivel;
 	}
 
 }
