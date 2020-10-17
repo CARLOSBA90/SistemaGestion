@@ -45,6 +45,7 @@ public class ModeloSesion {
 			while(rs.next()) {
 				
 				nivel = rs.getInt(1);
+				System.out.println(nivel);
 			}
 			
 		}catch(Exception e){
