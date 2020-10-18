@@ -51,7 +51,7 @@
                      </form>
                     
                     <hr>
-                    <form name="form2" method="post" action="../ControladorSesion">
+                    <form class="user" name="form2" method="post" action="../ControladorSesion">
                         <input type="hidden" name="instruccion" value="login">
                         <input type="hidden" name="usuario" value="invitado">
                         <input type="hidden" name="contrasena" value="1234">

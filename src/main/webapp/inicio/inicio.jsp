@@ -4,6 +4,26 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
+<%
+        HttpSession sesion = request.getSession();
+        String usuario;
+        String nivel;
+        
+        if(sesion.getAttribute("usuario")!=null && sesion.getAttribute("nivel")!=null){
+        	
+        	usuario = sesion.getAttribute("usuario").toString();
+        	
+        	nivel = sesion.getAttribute("nivel").toString();
+        	
+        }else{
+        	out.print("<script>location.replace('/sesion/login.jsp');</script>");
+        }
+
+
+%>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
