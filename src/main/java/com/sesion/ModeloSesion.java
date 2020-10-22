@@ -80,6 +80,8 @@ public class ModeloSesion {
 	         while(rs.next()) {
 				
 			 verificacion = rs.getInt(1);
+			 
+			 System.out.println("llego");
 	
 			}
 	         
