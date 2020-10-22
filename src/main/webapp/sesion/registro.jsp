@@ -36,30 +36,36 @@
               <div class="col">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Registro de Usuario</h1>
                   </div>
                   <form class="user" name="form1" method="post" action="../ControladorSesion">
-										<input type="hidden" name="instruccion" value="login">
+										<input type="hidden" name="instruccion" value="registrar">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Coloque usuario aqui...">
+                      <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Nuevo Usuario">
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="contrasena" name="contrasena" placeholder="Contrasena">
                     </div>
-
-                    <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
-                     </form>
+                      <div class="form-group">
+                      <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Correo">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Correo">
+                    </div>
                     
-                    <hr>
-                    <form class="user" name="form2" method="post" action="../ControladorSesion">
-                        <input type="hidden" name="instruccion" value="login">
-                        <input type="hidden" name="usuario" value="invitado">
-                        <input type="hidden" name="contrasena" value="1234">
-                    <button type="submit" class="btn btn-primary btn-user btn-block">Entrar como Invitado</button>
-                  </form>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="/sesion/registro.jsp">Crear cuenta</a>
+                     <div class="form-group">
+                       <label for="nivel">Nivel</label>
+                        <select class="form-control" id="nivel">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                     </div>
+
+                    <button type="submit" class="btn btn-primary btn-user btn-block">Crear usuario</button>
+                     </form>
+                   
                   </div>
                 </div>
               </div>
@@ -69,7 +75,7 @@
         
         <c:if test="${mensaje}">
             <div class="alert alert-danger" role="alert">
-              Acceso no valido!
+              Usuario existente, intente con usuario diferente!
              </div>
         </c:if>  
       </div>

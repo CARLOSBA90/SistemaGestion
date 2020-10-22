@@ -49,7 +49,13 @@ public class ControladorSesion extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
+			break;
+		case "registrar":
+			
+			registro(request,response);
+			
+			
+			break;
 			
 		default:
 
@@ -57,6 +63,13 @@ public class ControladorSesion extends HttpServlet {
 		
 		
 		
+		
+	}
+
+
+
+	private void registro(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
 		
 	}
 
