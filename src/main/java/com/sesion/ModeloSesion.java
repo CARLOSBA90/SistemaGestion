@@ -81,11 +81,10 @@ public class ModeloSesion {
 				
 			 verificacion = rs.getInt(1);
 			 
-			 System.out.println("llego");
 	
 			}
 	         
-	         if(verificacion!=0) {
+	         if(verificacion!=1) {
 	        	
 	        	 String sqlAgregar="INSERT INTO heroku_a449933febac428.usuarios(usuario,correo,contrasena,fecha_alta,nivel) VALUES(?,?,?,?,?)";
 	        	 
@@ -116,7 +115,7 @@ public class ModeloSesion {
 		}
 
 		
-		if(verificacion!=0) return true; else
+		if(verificacion!=1) return true; else
 		return false;
 	}
 
