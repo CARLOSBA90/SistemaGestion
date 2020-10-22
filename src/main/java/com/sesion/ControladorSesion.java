@@ -90,6 +90,7 @@ public class ControladorSesion extends HttpServlet {
 		case "cerrar":
 			
 			sesion.invalidate();
+			request.getRequestDispatcher("/sesion/login.jsp").forward(request, response); 
 		
 			break;
 		

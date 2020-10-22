@@ -1,5 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
+
+<%
+        HttpSession sesion = request.getSession();
+        String usuario=null;
+        String nivel=null;
+        
+        if(sesion.getAttribute("usuario")!=null && sesion.getAttribute("nivel")!=null){
+        	
+        	usuario = sesion.getAttribute("usuario").toString();
+        	
+        	nivel = sesion.getAttribute("nivel").toString();
+        	
+        }else{
+        	out.print("<script>location.replace('/sesion/login.jsp');</script>");
+        }
+
+
+%>
   <!DOCTYPE html>
   <html>
     <head>
@@ -167,7 +185,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=usuario%></span>
                 <img class="img-profile rounded-circle" src="../img/usuario.png">
               </a>
               <!-- Dropdown - User Information -->
@@ -351,13 +369,12 @@
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Listo para salir?</h5>
                   <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">A�</span>
                   </button>
                 </div>
                 <div class="modal-body">Selecciona "Salir" si estas listo para cerrar la sesion actual.</div>
                 <div class="modal-footer">
                   <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                  <a class="btn btn-primary" href="../login.html">Salir</a>
+                  <a class="btn btn-primary" href="ControladorSesion?instruccion=cerrar">Salir</a>
                 </div>
               </div>
             </div>
