@@ -6,8 +6,8 @@
 
 <%
         HttpSession sesion = request.getSession();
-        String usuario;
-        String nivel;
+        String usuario=null;
+        String nivel=null;
         
         if(sesion.getAttribute("usuario")!=null && sesion.getAttribute("nivel")!=null){
         	
@@ -201,7 +201,7 @@
 							class="nav-link dropdown-toggle" href="#" id="userDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <span
-								class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
+								class="mr-2 d-none d-lg-inline text-gray-600 small"><%=usuario%></span>
 								<img class="img-profile rounded-circle" src="img/usuario.png">
 						</a> <!-- Dropdown - User Information -->
 							<div
@@ -217,7 +217,7 @@
 									Registro Actividad
 								</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#" data-toggle="modal"
+						,		<a class="dropdown-item" href="#" data-toggle="modal"
 									data-target="#logoutModal"> <i
 									class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 									Salir
@@ -309,7 +309,6 @@
 						salir?</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">
-						<span aria-hidden="true">A�</span>
 					</button>
 				</div>
 				<div class="modal-body">Selecciona "Salir" si estas listo para
@@ -317,7 +316,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancelar</button>
-					<a class="btn btn-primary" href="login.html">Salir</a>
+					<a class="btn btn-primary" href="ControladorSesion?instruccion=cerrar">Salir</a>
 				</div>
 			</div>
 		</div>

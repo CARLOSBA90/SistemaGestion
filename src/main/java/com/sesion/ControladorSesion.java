@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.Calendar;
-import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,9 +21,12 @@ public class ControladorSesion extends HttpServlet {
 
 	private ModeloSesion modelo;
 	
+	private HttpSession sesion =null;
+	
 	public ControladorSesion() {
 		
 		modelo = new ModeloSesion();
+		
 		
 	}
 	
@@ -68,6 +69,33 @@ public class ControladorSesion extends HttpServlet {
 
 		}
 		
+		
+		
+		
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		String comando = request.getParameter("instruccion");
+		
+		if(comando==null) comando="nulo";
+		
+		switch(comando) {
+		
+		case "nulo": 
+			request.getRequestDispatcher("/sesion/login.jsp").forward(request, response); 
+			break;
+			
+		case "cerrar":
+			
+			sesion.invalidate();
+		
+			break;
+		
+		default:
+			
+		}
 		
 		
 		
@@ -125,14 +153,14 @@ public class ControladorSesion extends HttpServlet {
 		
 		default:
 			
-			
-			HttpSession sesion = request.getSession();
+			sesion = request.getSession();
 			
 			sesion.setAttribute("usuario", usuario.getUsuario());
 			
 			sesion.setAttribute("nivel", nivel);
 			
 			response.sendRedirect("/ControladorInicio");
+			
 			
 		
 		

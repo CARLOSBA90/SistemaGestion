@@ -41,13 +41,13 @@
                   <form class="user" name="form1" method="post" action="../ControladorSesion">
 										<input type="hidden" name="instruccion" value="registrar">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Nuevo Usuario">
+                      <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Nuevo Usuario" required>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="contrasena" name="contrasena" placeholder="Contrasena">
+                      <input type="password" class="form-control form-control-user" id="contrasena" name="contrasena" placeholder="Contrasena" required>
                     </div>
                       <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Correo">
+                      <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Correo" required>
                     </div>
                     
                      <div class="form-group">
