@@ -58,4 +58,64 @@ public class ModeloSesion {
 		return nivel;
 	}
 
+	public boolean registrar(Usuario usuario) throws SQLException {
+		// TODO Auto-generated method stub
+		int verificacion=0;
+		
+        PreparedStatement miStatement=null;
+		
+		ResultSet rs;
+		
+		String sql = "select exists (select usuario from heroku_a449933febac428.usuarios where usuario=?)";
+		
+		try {
+			miConexion = conectar.createConnection();
+			
+			miStatement = miConexion.prepareStatement(sql);
+			
+			miStatement.setString(1, usuario.getUsuario());
+			
+			rs = miStatement.executeQuery();
+			
+	         while(rs.next()) {
+				
+			 verificacion = rs.getInt(1);
+	
+			}
+	         
+	         if(verificacion!=0) {
+	        	
+	        	 String sqlAgregar="INSERT INTO heroku_a449933febac428.usuarios(usuario,correo,contrasena,fecha_alta,nivel) VALUES(?,?,?,?,?)";
+	        	 
+	        	 
+	        	 PreparedStatement miStatementAgregar=miConexion.prepareStatement(sqlAgregar);
+	        	 
+	        	 miStatementAgregar.setString(1,usuario.getUsuario());
+	        	 
+	        	 miStatementAgregar.setString(2,usuario.getEmail());
+	        	 
+	        	 miStatementAgregar.setString(3,usuario.getContrasena());
+	        	 
+	        	 miStatementAgregar.setDate(4,usuario.getFecha());
+	        	 
+	        	 miStatementAgregar.setInt(5,usuario.getNivel());
+	        	 
+	        	 miStatementAgregar.execute();
+	        	 
+	         }
+	         
+			
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			miStatement.close();
+			miConexion.close();
+		}
+
+		
+		if(verificacion!=0) return true; else
+		return false;
+	}
+
 }

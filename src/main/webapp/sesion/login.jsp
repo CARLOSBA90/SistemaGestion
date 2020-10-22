@@ -72,6 +72,20 @@
               Acceso no valido!
              </div>
         </c:if>  
+        
+        <c:if test="${registrado}">
+            <div class="alert alert-success" role="alert">
+             Usuario registrado con exito!
+             </div>
+        </c:if> 
+        
+         <c:if test="${fallo}">
+            <div class="alert alert-danger" role="alert">
+              Error al registrar!
+             </div>
+        </c:if> 
+        
+        
       </div>
 
     </div>

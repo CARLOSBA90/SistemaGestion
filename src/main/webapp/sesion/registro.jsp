@@ -49,13 +49,10 @@
                       <div class="form-group">
                       <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Correo">
                     </div>
-                    <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Correo">
-                    </div>
                     
                      <div class="form-group">
                        <label for="nivel">Nivel</label>
-                        <select class="form-control" id="nivel">
+                        <select class="form-control" id="nivel" name="nivel">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>

@@ -1,7 +1,9 @@
 package com.sesion;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -52,7 +54,12 @@ public class ControladorSesion extends HttpServlet {
 			break;
 		case "registrar":
 			
-			registro(request,response);
+			try {
+				registro(request,response);
+			} catch (SQLException | ServletException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			
 			break;
@@ -68,9 +75,31 @@ public class ControladorSesion extends HttpServlet {
 
 
 
-	private void registro(HttpServletRequest request, HttpServletResponse response) {
+	private void registro(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		Usuario usuario = new Usuario(request.getParameter("usuario"),request.getParameter("contrasena"), request.getParameter("email"),new Date(Calendar.getInstance().getTime().getTime()),Integer.parseInt(request.getParameter("nivel")));
+		
+		boolean registro = modelo.registrar(usuario);
+
+		
+		if(registro) {
+			
+			request.setAttribute("registrado", true);
+			
+            RequestDispatcher miDispatcher=request.getRequestDispatcher("/sesion/login.jsp");
+			
+			miDispatcher.forward(request,response);
+			
+		}else {
+			
+			request.setAttribute("fallo", true);
+			
+            RequestDispatcher miDispatcher=request.getRequestDispatcher("/sesion/login.jsp");
+			
+			miDispatcher.forward(request,response);
+			
+		}
 	}
 
 
