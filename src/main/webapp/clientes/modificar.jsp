@@ -257,6 +257,10 @@
 												</c:forEach>
 												
 											</select>
+											
+											 </div>
+											 
+											 <div class="form-group">
 										
 											 <input type="submit" name="submit" id="submit" value="Modificar">
 											 
