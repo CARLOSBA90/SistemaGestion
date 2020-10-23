@@ -106,8 +106,8 @@
                 <div id="MenuPedido" class="collapse" aria-labelledby="cabeceraPedido" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Opciones</h6>
-                    <a class="collapse-item" href="../ControladorPedido?instruccion=nuevo">Nuevo pedido</a>
-                    <a class="collapse-item" href="../ControladorPedido?instruccion=listar">Ver listado</a>
+                    <a class="collapse-item" href="../ControladorPedido?instruccion=nuevo">Ver listado</a>
+                    <a class="collapse-item" href="../ControladorPedido?instruccion=listar">Nuevo pedido</a>
                   </div>
                 </div>
               </li>
@@ -171,15 +171,13 @@
 
                 <!-- Topbar -->
 
-
-
        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
 
          <!-- Sidebar Toggle (Topbar) ------------>
          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
            <i class="fa fa-bars"></i>
          </button>
+
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -195,7 +193,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                   <a class="dropdown-item" href="/sesion/perfil.jsp">
+                <a class="dropdown-item" href="/sesion/perfil.jsp">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
@@ -230,113 +228,62 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+                  <!-- Page Heading -->
+                  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Agregar nuevo cliente</h1>
+                  </div>
+
                   <!-- Content Row -->
                   <div class="row">
 
-                     <div class="col-10">
+                  <div class="col-8">
 
+                  <%-- Formulario para envio de un nuevo Cliente--%>
 
-                  <%-- Formulario para modificar un Cliente--%>
-
-							<%
-								String[] datos = new String[7];
-								String parametro = request.getParameter("listaCliente");
-								int c = 0;
-								if (parametro != null && parametro != "") {
-									for (int i = 0; i < parametro.length(); i++) {
-
-								if (parametro.charAt(i) != '/') {
-
-									if (datos[c] == null)
-										datos[c] = "";
-									datos[c] += parametro.charAt(i);
-								} else
-									c++;
-
-									}
-								}
-							%>
-
-
-							<div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                          <h6 class="m-0 font-weight-bold text-primary">Modificacion del Registro Actual</h6>
+                      <div class="card shadow mb-4">
+                        <div class="card-header">
+                          <h6 class="m-0 font-weight-bold text-primary">PERFIL</h6>
                         </div>
                         <div class="card-body">
+					
+                     <div class="form-group row">
+                       <label for="usuario" class="col-sm-4 col-form-label">Usuario</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="usuario" name="usuario" value="<%=usuario%>" readonly>
+                       </div>
+                     </div>
 
-										<form name="Modificacion" method="post" action="../ControladorCliente">
-											<input type="hidden" name="instruccion" value="actualizar">
-
-
-                        <div class="form-group row">
-                          <label for="codigoCliente" class="col-sm-4 col-form-label">Codigo Cliente</label>
-                          <div class="col-sm-8">
-                          <input type="text" class="form-control"  name="codigoCliente" id="codigoCliente" value="<%=datos[0]%>" readonly>
-                          </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                          <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
-                          <div class="col-sm-8">
-                          <input type="text" class="form-control" id="nombre" name="nombre" value="<%=datos[1]%>" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                          <label for="apellido" class="col-sm-4 col-form-label">Apellido</label>
-                          <div class="col-sm-8">
-                          <input type="text" class="form-control" id="apellido" name="apellido" value="<%=datos[2]%>" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                          <label for="dni" class="col-sm-4 col-form-label">DNI</label>
-                          <div class="col-sm-8">
-                          <input type="tel" class="form-control" id="dni" name="dni" pattern="[0-9]{8}" value="<%=datos[3]%>" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                          <label for="telefono" class="col-sm-4 col-form-label">Telefono</label>
-                          <div class="col-sm-8">
-                          <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9]{10}" value="<%=datos[4]%>" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                          <label for="direccion" class="col-sm-4 col-form-label">Direccion</label>
-                          <div class="col-sm-8">
-                          <input type="text" class="form-control" id="direccion" name="direccion" value="<%=datos[5]%>"  required>
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                          <label for="correo" class="col-sm-4 col-form-label">Email</label>
-                          <div class="col-sm-8">
-                          <input type="email" class="form-control" id="correo" name="correo" value="<%=datos[6]%>" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                         <div class="col-sm-4">
-                          <button type="submit" class="btn btn-primary">Enviar</button>
-                         </div>
-                         <div class="col-sm-4">
-                          <button type="button" onclick="location.href='../ControladorCliente?instruccion=eliminar&Codigo=<%=datos[0]%>'" class="btn btn-secondary">Eliminar</button>
-                         </div>
-                        </div>
-
-										</form>
+                   
+                     <div class="form-group row">
+                       <label for="contrasena" class="col-sm-4 col-form-label">Telefono</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="telefono" name="telefono" placeholder="XXX" readonly>
+                       </div>
+                     </div>
 
 
-									</div>
+                     <div class="form-group row">
+                       <label for="correo" class="col-sm-4 col-form-label">Email</label>
+                       <div class="col">
+                       <input type="email" class="form-control" id="correo" name="correo" placeholder="Email" readonly>
+                       </div>
+                     </div>
+                     
+                     <div class="form-group row">
+                       <label for="nivel" class="col-sm-4 col-form-label">Nivel</label>
+                       <div class="col">
+                       <input type="nivel" class="form-control" id="nivel" name="nivel" value="<%=nivel%>" readonly>
+                       </div>
+                     </div>
+
+             
+								</div>
 
                       </div>
+                </div>
 
 
 
-                    </div>
 
                   </div>
 
@@ -379,7 +326,7 @@
                 <div class="modal-body">Selecciona "Salir" si estas listo para cerrar la sesion actual.</div>
                 <div class="modal-footer">
                   <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                 <a class="btn btn-primary" href="ControladorSesion?instruccion=cerrar">Salir</a>
+                  <a class="btn btn-primary" href="ControladorSesion?instruccion=cerrar">Salir</a>
                 </div>
               </div>
             </div>

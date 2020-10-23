@@ -88,14 +88,14 @@ public class ControladorCliente extends HttpServlet {
 		
 	}
 
-	private void eliminar(HttpServletRequest request, HttpServletResponse response) {
+	private void eliminar(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// TODO Auto-generated method stub
 		
 		int codigo=Integer.parseInt(request.getParameter("Codigo"));
 		
 		  modeloCliente.eliminar(codigo);
 		  
-		  obtenerClientes(request,response);
+		  response.sendRedirect("/ControladorCliente?instruccion=listar");
 		  
 	}
 

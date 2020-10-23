@@ -202,7 +202,7 @@
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
 								aria-labelledby="userDropdown">
-								<a class="dropdown-item" href="#"> <i
+								   <a class="dropdown-item" href="/sesion/perfil.jsp"> <i
 									class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
 								</a> <a class="dropdown-item" href="#"> <i
 									class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -247,14 +247,21 @@
                         <div class="card-header py-3">
                           <h6 class="m-0 font-weight-bold text-primary">Lista de clientes</h6>
 										<form name="modificacion" method="post" action="clientes/modificando.jsp">
-											<select name="listaCliente" id="listaCliente">
+										 <div class="form-group">
+											<select name="listaCliente" id="listaCliente" class="form-control">
 												<option selected="selected" disabled selected>-SELECCIONE CLIENTE-</option>
 												<c:forEach var="tempCliente" items="${LISTACLIENTES}">
 													<option
 														value="${tempCliente.cod_cliente}/${tempCliente.nombre}/${tempCliente.apellido}/${tempCliente.dni}/${tempCliente.telefono}/${tempCliente.direccion}/${tempCliente.correo}">${tempCliente.nombre}
 														${tempCliente.apellido}</option>
 												</c:forEach>
-											</select> <input type="submit" name="submit" id="submit" value="Modificar">
+												
+											</select>
+										
+											 <input type="submit" name="submit" id="submit" value="Modificar">
+											 
+											 </div>
+											
 										</form>
 									</div>
                         <div class="card-body">
