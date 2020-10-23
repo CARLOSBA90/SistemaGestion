@@ -255,7 +255,7 @@
 
                    
                      <div class="form-group row">
-                       <label for="contrasena" class="col-sm-4 col-form-label">Telefono</label>
+                       <label for="contrasena" class="col-sm-4 col-form-label">Contrasena</label>
                        <div class="col">
                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="XXX" readonly>
                        </div>
