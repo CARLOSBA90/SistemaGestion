@@ -4,12 +4,22 @@
         HttpSession sesion = request.getSession();
         String usuario=null;
         String nivel=null;
+        String contrasena=null;
+        String fecha=null;
+        String correo=null;
         
         if(sesion.getAttribute("usuario")!=null && sesion.getAttribute("nivel")!=null){
         	
         	usuario = sesion.getAttribute("usuario").toString();
         	
+        	contrasena = sesion.getAttribute("contrasena").toString();
+        	
+        	correo = sesion.getAttribute("correo").toString();
+        	
         	nivel = sesion.getAttribute("nivel").toString();
+        	
+        	fecha = sesion.getAttribute("fechaAlta").toString();
+        	
         	
         }else{
         	out.print("<script>location.replace('/sesion/login.jsp');</script>");
@@ -254,7 +264,7 @@
                      <div class="form-group row">
                        <label for="contrasena" class="col-sm-4 col-form-label">Contrasena</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="telefono" name="telefono" placeholder="XXX" readonly>
+                       <input type="text" class="form-control" id="telefono" name="telefono" value="<%=contrasena%>" readonly>
                        </div>
                      </div>
 
@@ -262,14 +272,21 @@
                      <div class="form-group row">
                        <label for="correo" class="col-sm-4 col-form-label">Email</label>
                        <div class="col">
-                       <input type="email" class="form-control" id="correo" name="correo" placeholder="Email" readonly>
+                       <input type="email" class="form-control" id="correo" name="correo"  value="<%=correo%>" readonly>
                        </div>
                      </div>
                      
                      <div class="form-group row">
                        <label for="nivel" class="col-sm-4 col-form-label">Nivel</label>
                        <div class="col">
-                       <input type="nivel" class="form-control" id="nivel" name="nivel" value="<%=nivel%>" readonly>
+                       <input type="text" class="form-control" id="nivel" name="nivel" value="<%=nivel%>" readonly>
+                       </div>
+                     </div>
+                     
+                      <div class="form-group row">
+                       <label for="nivel" class="col-sm-4 col-form-label">Fecha de alta</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="nivel" name="nivel" value="<%=fecha%>" readonly>
                        </div>
                      </div>
 

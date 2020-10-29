@@ -62,7 +62,7 @@ public class ControladorPedido extends HttpServlet {
 	}
 
 	
-	private void InsertarBBDD(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+	private void InsertarBBDD(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		// TODO Auto-generated method stub
 		
 		String nombre = request.getParameter("cliente");
@@ -77,7 +77,7 @@ public class ControladorPedido extends HttpServlet {
 	
 		modelo.nuevoPedido(nombre,forma,lista[0],lista[1]);
 		
-		ObtenerPedidos(request,response);
+		 response.sendRedirect("/ControladorPedido?instruccion=listar");
 	}
 
 	private void NuevoPedido(HttpServletRequest request, HttpServletResponse response) {

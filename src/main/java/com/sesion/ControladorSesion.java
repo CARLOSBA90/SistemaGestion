@@ -116,9 +116,12 @@ public class ControladorSesion extends HttpServlet {
 			
 			request.setAttribute("registrado", true);
 			
-            RequestDispatcher miDispatcher=request.getRequestDispatcher("/sesion/login.jsp");
 			
-			miDispatcher.forward(request,response);
+			response.sendRedirect("/sesion/login.jsp");
+			
+       /**     RequestDispatcher miDispatcher=request.getRequestDispatcher("/sesion/login.jsp");
+			
+			miDispatcher.forward(request,response);  ///Prevenir duplicado!*/
 			
 		}else {
 			
@@ -159,6 +162,12 @@ public class ControladorSesion extends HttpServlet {
 			sesion.setAttribute("usuario", usuario.getUsuario());
 			
 			sesion.setAttribute("nivel", nivel);
+			
+			sesion.setAttribute("correo", usuario.getEmail());
+			
+			sesion.setAttribute("fechaAlta", usuario.getFecha());
+			
+			sesion.setAttribute("contransena", usuario.getContrasena());
 			
 			response.sendRedirect("/ControladorInicio");
 			

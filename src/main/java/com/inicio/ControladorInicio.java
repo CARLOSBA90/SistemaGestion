@@ -65,7 +65,7 @@ public class ControladorInicio extends HttpServlet {
 
 
 
-	private void nuevaNota(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+	private void nuevaNota(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		// TODO Auto-generated method stub
 	
 		String titulo = request.getParameter("titulo");
@@ -76,7 +76,7 @@ public class ControladorInicio extends HttpServlet {
 		
 		modelo.agregarNuevaNota(temp);
 		
-		obtenerTablero(request,response);
+		 response.sendRedirect("/ControladorInicio?instruccion=tablero");
 		
 		
 	}

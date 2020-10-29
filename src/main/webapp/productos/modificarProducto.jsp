@@ -256,7 +256,7 @@
 												<option
 													value="${tempProducto.cod_calzado}/${tempProducto.tipo}/${tempProducto.nombre}/${tempProducto.precio}/${tempProducto.fabricante}/${tempProducto.talla}/${tempProducto.stock}">${tempProducto.nombre}</option>
 											</c:forEach>
-										</select> <input type="submit" class="form-control form-control-user"  name="submit" id="submit" value="Modificar" class="btn btn-primary">
+										</select> <input type="submit" name="submit" id="submit" value="Modificar" class="btn btn-primary">
 									</form>
 								</div>
 								</div>

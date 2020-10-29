@@ -261,7 +261,7 @@
 											</select>
 											
 										
-											 <input class="form-control form-control-user"  type="submit" name="submit" id="submit" value="Modificar" >
+											 <input type="submit" name="submit" id="submit" value="Modificar" class="btn btn-primary">
 											 
 											 </div>
 											

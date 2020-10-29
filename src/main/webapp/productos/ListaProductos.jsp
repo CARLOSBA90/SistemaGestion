@@ -253,32 +253,32 @@
 															<tr role="row">
 																<th class="sorting_asc" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 159px;"
+																	style="width: 60px;"
 																	aria-label="Codigo Producto: activate to sort column descending"
 																	aria-sort="ascending">Codigo Producto</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 246px;"
+																	style="width: 120px;"
 																	aria-label="Tipo: activate to sort column ascending">Tipo</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 116px;"
+																	style="width: 120px;"
 																	aria-label="Nombre: activate to sort column ascending">Nombre</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 51px;"
+																	style="width: 70px;"
 																	aria-label="Precio: activate to sort column ascending">Precio</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 108px;"
+																	style="width: 120px;"
 																	aria-label="Fabricante: activate to sort column ascending">Fabricante</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 101px;"
+																	style="width: 50px;"
 																	aria-label="Talla: activate to sort column ascending">Talla</th>
 																<th class="sorting_asc" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 159px;"
+																	style="width: 60px;"
 																	aria-label="Stock: activate to sort column descending"
 																	aria-sort="ascending">Stock</th>
 															</tr>

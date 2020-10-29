@@ -101,7 +101,7 @@ public class ControladorCliente extends HttpServlet {
 
 
 
-	private void actualizar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+	private void actualizar(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		// TODO Auto-generated method stub
 		
 		///Recibir por parametros los datos del formulario
@@ -123,7 +123,7 @@ public class ControladorCliente extends HttpServlet {
           modeloCliente.actualizar(temp);
 		
 		//Poner Listado
-		obtenerClientes(request,response);
+          response.sendRedirect("/ControladorCliente?instruccion=listar");
 		
 	}
 

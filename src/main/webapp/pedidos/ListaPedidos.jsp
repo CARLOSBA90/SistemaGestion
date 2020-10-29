@@ -254,37 +254,37 @@
 															<tr role="row">
 																<th class="sorting_asc" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 159px;"
+																	style="width: 50px;"
 																	aria-label="Codigo Pedido: activate to sort column descending"
 																	aria-sort="ascending">Codigo Pedido</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 246px;"
+																	style="width: 200px;"
 																	aria-label="Cliente: activate to sort column ascending">Cliente</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 116px;"
+																	style="width: 80px;"
 																	aria-label="Forma Pago: activate to sort column ascending">Forma Pago</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 51px;"
+																	style="width: 30px;"
 																	aria-label="Enviado: activate to sort column ascending">Enviado</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 108px;"
+																	style="width: 90px;"
 																	aria-label="Fecha: activate to sort column ascending">Fecha</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 101px;"
+																	style="width: 40px;"
 																	aria-label="Cantidad: activate to sort column ascending">Cantidad</th>
 																<th class="sorting_asc" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 159px;"
+																	style="width: 90px;"
 																	aria-label="Total: activate to sort column descending"
 																	aria-sort="ascending">Total</th>
 																<th class="sorting_asc" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 159px;"
+																	style="width: 200px;"
 																	aria-label="Detalle: activate to sort column descending"
 																	aria-sort="ascending">Detalle</th>
 															</tr>

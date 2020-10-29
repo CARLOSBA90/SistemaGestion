@@ -87,7 +87,7 @@ public class ControladorProducto extends HttpServlet {
 	}
 
 
-	private void actualizar(HttpServletRequest request, HttpServletResponse response) {
+	private void actualizar(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// TODO Auto-generated method stub
 		
 		int codigo=Integer.parseInt(request.getParameter("codigoProducto"));
@@ -103,20 +103,19 @@ public class ControladorProducto extends HttpServlet {
 	     
 		modelo.actualizar(temp);
 		
-		obtenerProductos(request,response);
-		
+		 response.sendRedirect("/ControladorProducto?instruccion=listar");
 	}
 
 
 
-	private void eliminar(HttpServletRequest request, HttpServletResponse response) {
+	private void eliminar(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// TODO Auto-generated method stub
 		
 		int codigo=Integer.parseInt(request.getParameter("Codigo"));
 		
 		modelo.eliminar(codigo);
 		
-		obtenerProductos(request,response);
+		 response.sendRedirect("/ControladorProducto?instruccion=listar");
 		
 	}
 
@@ -147,7 +146,7 @@ public class ControladorProducto extends HttpServlet {
 
 
 
-	private void insertarBBDD(HttpServletRequest request, HttpServletResponse response) {
+	private void insertarBBDD(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// TODO Auto-generated method stub
 		
 		
@@ -168,7 +167,7 @@ public class ControladorProducto extends HttpServlet {
 		
 		modelo.insertar(temp);
 		
-		obtenerProductos(request,response);
+		 response.sendRedirect("/ControladorProducto?instruccion=listar");
 	}
 
 
