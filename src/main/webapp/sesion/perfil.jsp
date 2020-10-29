@@ -10,15 +10,15 @@
         
         if(sesion.getAttribute("usuario")!=null && sesion.getAttribute("nivel")!=null){
         	
-        	usuario = sesion.getAttribute("usuario").toString();
+        	usuario = (sesion.getAttribute("usuario").toString()==null)? "-":sesion.getAttribute("usuario").toString();
         	
-        	contrasena = sesion.getAttribute("contrasena").toString();
+        	contrasena = (sesion.getAttribute("contrasena").toString()==null)? "-":sesion.getAttribute("contrasena").toString();
         	
-        	correo = sesion.getAttribute("correo").toString();
+        	correo = (sesion.getAttribute("correo").toString()==null)? "-":sesion.getAttribute("correo").toString();
         	
-        	nivel = sesion.getAttribute("nivel").toString();
+        	nivel = (sesion.getAttribute("nivel").toString()==null)? "-":sesion.getAttribute("nivel").toString();
         	
-        	fecha = sesion.getAttribute("fechaAlta").toString();
+        	fecha = (sesion.getAttribute("fechaAlta").toString()==null)? "-":sesion.getAttribute("fechaAlta").toString();
         	
         	
         }else{
