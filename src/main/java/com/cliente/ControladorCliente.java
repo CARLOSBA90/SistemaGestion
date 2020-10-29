@@ -174,7 +174,7 @@ public class ControladorCliente extends HttpServlet {
 	    
 	    modeloCliente.agregarNuevoCliente(nuevoCliente);
 	    
-	    obtenerClientes(request,response);
+	    response.sendRedirect("/ControladorCliente?instruccion=listar");
 	    
 	    
 	    
