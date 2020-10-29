@@ -155,7 +155,7 @@ public class ControladorCliente extends HttpServlet {
 	}
 
 
-	private void insertarCliente(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+	private void insertarCliente(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		// TODO Auto-generated method stub
 		
 		String nombre=request.getParameter("nombre");

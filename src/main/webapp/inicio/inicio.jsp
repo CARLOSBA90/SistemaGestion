@@ -247,8 +247,20 @@
 
 					<!-- Content Row -->
 					<div class="row">
+					
 
 						<div class="col-12">
+						<div class="card shadow mb-2">
+									<div class="card-header">
+										<h6 class="m-0 font-weight-bold text-primary">Proyecto CRUD, Sistema de Gestion de Distribuidora de Calzados</h6>
+									</div>
+									<div class="card-body">
+										<p>El sitio web representa un sistema de gestion de pedidos de una empresa ficticia que distribuye calzados, se basa en un 
+										CRUD, el cual contiene las secciones CLIENTES, PEDIDOS, PRODUCTOS. Por lo cual se manejan los datos dinamicamente como Webapp
+										mediante uso de SERVLET, JSP y MySQL. A continuacion en la parte inferior se representan "Noticias" las cuales provienen de
+										la base de datos.</p>
+									</div>
+								</div>
 
 							<!-- Noticias-->
 
