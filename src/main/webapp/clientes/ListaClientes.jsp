@@ -255,32 +255,32 @@
 															<tr role="row">
 																<th class="sorting_asc" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 159px;"
+																	style="width: 60px;"
 																	aria-label="Codigo Cliente: activate to sort column descending"
 																	aria-sort="ascending">Codigo Cliente</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 246px;"
+																	style="width: 120px;"
 																	aria-label="Nombre: activate to sort column ascending">Nombre</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 116px;"
+																	style="width: 120px;"
 																	aria-label="Apellido: activate to sort column ascending">Apellido</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 51px;"
+																	style="width: 50px;"
 																	aria-label="DNI: activate to sort column ascending">DNI</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 108px;"
+																	style="width: 90px;"
 																	aria-label="Telefono: activate to sort column ascending">Telefono</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 101px;"
+																	style="width: 90px;"
 																	aria-label="Direccion: activate to sort column ascending">Direccion</th>
 																<th class="sorting_asc" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 159px;"
+																	style="width: 120px;"
 																	aria-label="Correo: activate to sort column descending"
 																	aria-sort="ascending">Correo</th>
 															</tr>

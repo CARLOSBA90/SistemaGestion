@@ -263,6 +263,8 @@
 								</div>
 
 							<!-- Noticias-->
+							
+							<h2 class="h3 mb-0 text-gray-800">Noticias</h2>
 
 							<%-- Referencia al tamano de coleccion--%>
 							<c:set var="tamano" value="${fn:length(NOTICIAS)}" />

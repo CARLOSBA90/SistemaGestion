@@ -241,11 +241,13 @@
 
 
                   <%-- Formulario para modificar un nuevo Cliente--%>
-
+                       
+                       <div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h1 class="h3 mb-0 text-gray-800">Lista de clientes</h1>
+						</div>
 
                       <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                          <h6 class="m-0 font-weight-bold text-primary">Lista de clientes</h6>
 										<form name="modificacion" method="post" action="clientes/modificando.jsp">
 										 <div class="form-group">
 											<select name="listaCliente" id="listaCliente" class="form-control">
@@ -258,11 +260,8 @@
 												
 											</select>
 											
-											 </div>
-											 
-											 <div class="form-group">
 										
-											 <input type="submit" name="submit" id="submit" value="Modificar">
+											 <input class="form-control form-control-user"  type="submit" name="submit" id="submit" value="Modificar" >
 											 
 											 </div>
 											
