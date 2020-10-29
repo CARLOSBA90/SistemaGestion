@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="utf-8"%>
 
 <%
         HttpSession sesion = request.getSession();
@@ -262,9 +262,9 @@
 
                    
                      <div class="form-group row">
-                       <label for="contrasena" class="col-sm-4 col-form-label">Contrasena</label>
+                       <label for="contrasena" class="col-sm-4 col-form-label">Contraseña</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="telefono" name="telefono" value="<%=contrasena%>" readonly>
+                       <input type="text" class="form-control" id="contrasena" name="contrasena" value="<%=contrasena%>" readonly>
                        </div>
                      </div>
 
@@ -284,9 +284,9 @@
                      </div>
                      
                       <div class="form-group row">
-                       <label for="nivel" class="col-sm-4 col-form-label">Fecha de alta</label>
+                       <label for="fecha" class="col-sm-4 col-form-label">Fecha de alta</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="nivel" name="nivel" value="<%=fecha%>" readonly>
+                       <input type="text" class="form-control" id="fecha" name="fecha" value="<%=fecha%>" readonly>
                        </div>
                      </div>
 
