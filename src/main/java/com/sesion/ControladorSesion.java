@@ -157,7 +157,7 @@ public class ControladorSesion extends HttpServlet {
 		
 		default:
 			
-			usuario = modelo.obtenerUsuario(request.getParameter("usuario"));
+			usuario =modelo.obtenerUsuario(request.getParameter("usuario"));
 			
 			sesion = request.getSession();
 			
@@ -170,6 +170,8 @@ public class ControladorSesion extends HttpServlet {
 			sesion.setAttribute("fechaAlta", usuario.getFecha());
 			
 			sesion.setAttribute("contransena", usuario.getContrasena());
+			
+			System.out.println(usuario.getUsuario()+usuario.getEmail()+usuario.getFecha()+usuario.getContrasena());
 			
 			response.sendRedirect("/ControladorInicio");
 			
