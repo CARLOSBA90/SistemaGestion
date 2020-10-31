@@ -124,27 +124,27 @@ public class ModeloSesion {
 	public Usuario obtenerUsuario(String usuario) throws SQLException, ClassNotFoundException, IOException {
 		// TODO Auto-generated method stub
 		
-		 Statement miStatement=null;
+		   Usuario temp=null;
 		
-		 Usuario temp=null;
-		 
+	       PreparedStatement miStatement=null;
+			
 			ResultSet rs;
 			
-			String sql = "SELECT * from heroku_a449933febac428.usuarios where usuario="+usuario;
-			
+			String sql = "SELECT * FROM heroku_a449933febac428.usuarios WHERE usuario=?";
 			
 			try {
-				
 				miConexion = conectar.createConnection();
-
-				miStatement=miConexion.createStatement();
 				
-				rs=miStatement.executeQuery(sql);
+				miStatement = miConexion.prepareStatement(sql);
+				
+				miStatement.setString(1, usuario);
+				
+				rs = miStatement.executeQuery();
 				
 				
 				while(rs.next()) {
 					
-				temp= new Usuario(rs.getString(2),rs.getString(4),rs.getString(2),rs.getDate(5),rs.getInt(6));
+				temp= new Usuario(rs.getString(2),rs.getString(4),rs.getString(3),rs.getDate(5),rs.getInt(6));
 					
 				}
 				
