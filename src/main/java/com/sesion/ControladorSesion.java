@@ -48,7 +48,7 @@ public class ControladorSesion extends HttpServlet {
 		case "login":
 			try {
 				loguear(request,response);
-			} catch (SQLException e) {
+			} catch (SQLException | ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -136,7 +136,7 @@ public class ControladorSesion extends HttpServlet {
 
 
 
-	private void loguear(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+	private void loguear(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		
 		Usuario usuario = new Usuario(request.getParameter("usuario"),request.getParameter("contrasena"));
@@ -156,6 +156,8 @@ public class ControladorSesion extends HttpServlet {
 			break;
 		
 		default:
+			
+			usuario = modelo.obtenerUsuario(request.getParameter("usuario"));
 			
 			sesion = request.getSession();
 			

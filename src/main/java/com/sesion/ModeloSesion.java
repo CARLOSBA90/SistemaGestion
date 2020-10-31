@@ -1,9 +1,11 @@
 package com.sesion;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import com.conexion.DbManager;
 
@@ -117,6 +119,47 @@ public class ModeloSesion {
 		
 		if(verificacion!=1) return true; else
 		return false;
+	}
+
+	public Usuario obtenerUsuario(String usuario) throws SQLException, ClassNotFoundException, IOException {
+		// TODO Auto-generated method stub
+		
+		 Statement miStatement=null;
+		
+		 Usuario temp=null;
+		 
+			ResultSet rs;
+			
+			String sql = "SELECT * from heroku_a449933febac428.usuarios where usuario="+usuario;
+			
+			
+			try {
+				
+				miConexion = conectar.createConnection();
+
+				miStatement=miConexion.createStatement();
+				
+				rs=miStatement.executeQuery(sql);
+				
+				
+				while(rs.next()) {
+					
+				temp= new Usuario(rs.getString(2),rs.getString(4),rs.getString(2),rs.getDate(5),rs.getInt(6));
+					
+				}
+				
+			
+			}catch(SQLException e) {
+
+				e.printStackTrace();
+			}finally {
+				miStatement.close();
+				miConexion.close();
+			}
+		
+		
+		
+		return temp;
 	}
 
 }
