@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <%
-  /*      HttpSession sesion = request.getSession();
+        HttpSession sesion = request.getSession();
         String usuario=null;
         String nivel=null;
         
@@ -17,11 +17,11 @@
         	
         }else{
         	out.print("<script>location.replace('/sesion/login.jsp');</script>");
-        }*/
+        }
 
 
 %>
-
+ <!--  
 <c:choose> 
   <c:when test="${sessionScope.usuario!=null}">
    <c:set var="usuario" value="${sessionScope.usuario}"/>
@@ -29,10 +29,10 @@
    
   </c:when>
   <c:otherwise>
- <!--     <c:out value="${'<script>location.replace('/sesion/login.jsp');</script>'}"/>-->
+   <c:out value="${'<script>location.replace('/sesion/login.jsp');</script>'}"/>
   </c:otherwise>
 </c:choose>
-
+-->
 
 
 
