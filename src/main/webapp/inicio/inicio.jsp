@@ -29,7 +29,6 @@
    
   </c:when>
   <c:otherwise>
-   <c:out value="${'<script>location.replace('/sesion/login.jsp');</script>'}"/>
   </c:otherwise>
 </c:choose>
 -->
