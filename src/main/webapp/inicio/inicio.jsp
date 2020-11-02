@@ -23,7 +23,7 @@
 %>
 
 <c:choose> 
-  <c:when test="${sessionScope:usuario!=null}">
+  <c:when test="${sessionScope.usuario!=null}">
    positivo
    
    <c:set var="usuario" value="${sessionScope.usuario}"  />
