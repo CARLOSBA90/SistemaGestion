@@ -24,14 +24,12 @@
 
 <c:choose> 
   <c:when test="${sessionScope.usuario!=null}">
-   positivo
-   
-   <c:set var="usuario" value="${sessionScope.usuario}"  />
-   <c:set var="nivel" value="${sessionScope.nivel}"  />
+   <c:set var="usuario" value="${sessionScope.usuario}"/>
+   <c:set var="nivel" value="${sessionScope.nivel}"/>
    
   </c:when>
   <c:otherwise>
-    <c:out value="${'<script>location.replace('/sesion/login.jsp');</script>'}"/>
+ <!--     <c:out value="${'<script>location.replace('/sesion/login.jsp');</script>'}"/>-->
   </c:otherwise>
 </c:choose>
 
