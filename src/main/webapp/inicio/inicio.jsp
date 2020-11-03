@@ -26,10 +26,10 @@
   <c:when test="${sessionScope.usuario!=null}">
    <c:set var="usuario" value="${sessionScope.usuario}"/>
    <c:set var="nivel" value="${sessionScope.nivel}"/>
-    <c:out value = "${'validado'}"/>
+    <!--<c:out value = "${'validado'}"/>-->
   </c:when>
   <c:otherwise>
-   <c:out value = "${'invalidado'}"/>
+    <c:redirect url = "/sesion/login.jsp"/>
   </c:otherwise>
 </c:choose>
 
