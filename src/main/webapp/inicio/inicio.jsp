@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
-<%
+<%/*
         HttpSession sesion = request.getSession();
         String usuario=null;
         String nivel=null;
@@ -19,19 +19,20 @@
         	out.print("<script>location.replace('/sesion/login.jsp');</script>");
         }
 
-
+*/
 %>
- <!--  
+ 
 <c:choose> 
   <c:when test="${sessionScope.usuario!=null}">
    <c:set var="usuario" value="${sessionScope.usuario}"/>
    <c:set var="nivel" value="${sessionScope.nivel}"/>
-   
+    <c:out value = "${'validado'}"/>
   </c:when>
   <c:otherwise>
+   <c:out value = "${'invalidado'}"/>
   </c:otherwise>
 </c:choose>
--->
+
 
 
 
