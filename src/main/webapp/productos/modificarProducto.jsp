@@ -10,14 +10,14 @@
     <!--<c:out value = "${'validado'}"/>-->
   </c:when>
   
-  <c:when test="${usuario!=null && nivel==1}">
-    <c:redirect url = "/sesion/denegado.jsp"/>
-  </c:when>
-  
   <c:otherwise>
     <c:redirect url = "/sesion/login.jsp"/>
   </c:otherwise>
 </c:choose>
+
+<c:if test="${usuario!=null && nivel==1}">					 
+    <c:redirect url = "/sesion/denegado.jsp"/>					
+</c:if>	
 
 
 <!DOCTYPE html>
