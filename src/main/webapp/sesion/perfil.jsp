@@ -1,33 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="utf-8"%>
 
-<%
-        HttpSession sesion = request.getSession();
-        String usuario=null;
-        String nivel=null;
-        String contrasena=null;
-        String fecha=null;
-        String correo=null;
-        
-        if(sesion.getAttribute("usuario")!=null && sesion.getAttribute("nivel")!=null){
-        	
-        	usuario = sesion.getAttribute("usuario").toString();
-        	
-        	contrasena = sesion.getAttribute("contrasena").toString();
-        	
-        	correo = sesion.getAttribute("correo").toString();
-        	
-        	nivel = sesion.getAttribute("nivel").toString();
-        	
-        	fecha = sesion.getAttribute("fechaAlta").toString();
-        	
-        	
-        }else{
-        	out.print("<script>location.replace('/sesion/login.jsp');</script>");
-        }
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
-
-%>
-
+<c:choose> 
+  <c:when test="${sessionScope.usuario!=null}">
+   <c:set var="usuario" value="${sessionScope.usuario}"/>
+   <c:set var="nivel" value="${sessionScope.nivel}"/>
+   <c:set var="contrasena" value="${sessionScope.contrasena}"/>
+   <c:set var="correo" value="${sessionScope.correo}"/>
+   <c:set var="fechaAlta" value="${sessionScope.fechaAlta}"/>
+    <!--<c:out value = "${'validado'}"/>-->
+  </c:when>
+  <c:otherwise>
+    <c:redirect url = "/sesion/login.jsp"/>
+  </c:otherwise>
+</c:choose>
 
   <!DOCTYPE html>
   <html>
@@ -195,26 +183,28 @@
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=usuario%></span>
-                <img class="img-profile rounded-circle" src="../img/usuario.png">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="/sesion/perfil.jsp">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Perfil
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Configuracion
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Registro Actividad
-                </a>
+         	<!-- Nav Item - User Information -->
+						<li class="nav-item dropdown no-arrow"><a
+							class="nav-link dropdown-toggle" href="#" id="userDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <span
+								class="mr-2 d-none d-lg-inline text-gray-600 small"><c:out value="${usuario}"/></span>
+								<img class="img-profile rounded-circle" src="img/usuario.png">
+						</a> <!-- Dropdown - User Information -->
+							<div
+								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="userDropdown">
+								   <a class="dropdown-item" href="/sesion/perfil.jsp"> <i
+									class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
+								</a> 
+								
+							<!--  <a class="dropdown-item" href="#"> <i
+									class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+									Configuracion
+								</a> <a class="dropdown-item" href="#"> <i
+									class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+									Registro Actividad
+								</a>  -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -256,7 +246,7 @@
                      <div class="form-group row">
                        <label for="usuario" class="col-sm-4 col-form-label">Usuario</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="usuario" name="usuario" value="<%=usuario%>" readonly>
+                       <input type="text" class="form-control" id="usuario" name="usuario" value="<c:out value="${usuario}"/>" readonly>
                        </div>
                      </div>
 
@@ -264,7 +254,7 @@
                      <div class="form-group row">
                        <label for="contrasena" class="col-sm-4 col-form-label">Contraseña</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="contrasena" name="contrasena" value="<%=contrasena%>" readonly>
+                       <input type="text" class="form-control" id="contrasena" name="contrasena" value="<c:out value="${contrasena}"/>" readonly>
                        </div>
                      </div>
 
@@ -272,21 +262,21 @@
                      <div class="form-group row">
                        <label for="correo" class="col-sm-4 col-form-label">Email</label>
                        <div class="col">
-                       <input type="email" class="form-control" id="correo" name="correo"  value="<%=correo%>" readonly>
+                       <input type="email" class="form-control" id="correo" name="correo"  value="<c:out value="${correo}"/>" readonly>
                        </div>
                      </div>
                      
                      <div class="form-group row">
                        <label for="nivel" class="col-sm-4 col-form-label">Nivel</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="nivel" name="nivel" value="<%=nivel%>" readonly>
+                       <input type="text" class="form-control" id="nivel" name="nivel" value="<c:out value="${nivel}"/>" readonly>
                        </div>
                      </div>
                      
                       <div class="form-group row">
                        <label for="fecha" class="col-sm-4 col-form-label">Fecha de alta</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="fecha" name="fecha" value="<%=fecha%>" readonly>
+                       <input type="text" class="form-control" id="fecha" name="fecha" value="<c:out value="${fechaAlta}"/>" readonly>
                        </div>
                      </div>
 

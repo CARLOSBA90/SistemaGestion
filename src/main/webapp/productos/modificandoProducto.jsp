@@ -1,23 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="utf-8"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+ 
+<c:choose> 
+  <c:when test="${sessionScope.usuario!=null}">
+   <c:set var="usuario" value="${sessionScope.usuario}"/>
+   <c:set var="nivel" value="${sessionScope.nivel}"/>
+    <!--<c:out value = "${'validado'}"/>-->
+  </c:when>
+  <c:otherwise>
+    <c:redirect url = "/sesion/login.jsp"/>
+  </c:otherwise>
+</c:choose>
 
-<%
-        HttpSession sesion = request.getSession();
-        String usuario=null;
-        String nivel=null;
-        
-        if(sesion.getAttribute("usuario")!=null && sesion.getAttribute("nivel")!=null){
-        	
-        	usuario = sesion.getAttribute("usuario").toString();
-        	
-        	nivel = sesion.getAttribute("nivel").toString();
-        	
-        }else{
-        	out.print("<script>location.replace('/sesion/login.jsp');</script>");
-        }
-
-
-%>
   <!DOCTYPE html>
   <html>
     <head>
@@ -182,26 +178,28 @@
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=usuario%></span>
-                <img class="img-profile rounded-circle" src="../img/usuario.png">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                   <a class="dropdown-item" href="/sesion/perfil.jsp">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Perfil
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Configuracion
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Registro Actividad
-                </a>
+      	<!-- Nav Item - User Information -->
+						<li class="nav-item dropdown no-arrow"><a
+							class="nav-link dropdown-toggle" href="#" id="userDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <span
+								class="mr-2 d-none d-lg-inline text-gray-600 small"><c:out value="${usuario}"/></span>
+								<img class="img-profile rounded-circle" src="img/usuario.png">
+						</a> <!-- Dropdown - User Information -->
+							<div
+								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="userDropdown">
+								   <a class="dropdown-item" href="/sesion/perfil.jsp"> <i
+									class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
+								</a> 
+								
+							<!--  <a class="dropdown-item" href="#"> <i
+									class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+									Configuracion
+								</a> <a class="dropdown-item" href="#"> <i
+									class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+									Registro Actividad
+								</a>  -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
