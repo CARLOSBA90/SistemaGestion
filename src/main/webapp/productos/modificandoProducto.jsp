@@ -16,7 +16,7 @@
 </c:choose>
 
 <c:if test="${usuario!=null && nivel==1}">					 
-    <c:redirect url = "/sesion/denegado.jsp"/>					
+    <c:redirect url = "../sesion/denegado.jsp"/>					
 </c:if>	
 
   <!DOCTYPE html>
