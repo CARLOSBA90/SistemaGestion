@@ -232,7 +232,7 @@
               
               
                 <div class="text-center">
-                 <div class="error mx-auto" data-text="404">Acceso Denegado</div>
+                 <div class="error mx-auto" data-text="Acceso Denegado">Acceso Denegado</div>
                  <p class="lead text-gray-800 mb-5">No tienes el nivel permitido para entrar a esta sección</p>
                  <p class="text-gray-500 mb-0">Para acceder comunicate con el administrador...</p>
                  <a href="../ControladorSesion">&larr; Volver al Inicio</a>

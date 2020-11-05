@@ -148,7 +148,7 @@
 						
 						 <c:if test="${nivel == 2 || nivel ==3 }">
 						 
-						 <c:out value = "${'<a class='collapse-item' href='productos/agregarProducto.jsp'>Nuevo producto</a>'}" escapeXml="false"/>
+						 <a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a> 
 						
 						<!--  <a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a> -->
 						
