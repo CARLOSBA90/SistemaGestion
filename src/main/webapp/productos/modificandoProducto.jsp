@@ -10,7 +10,7 @@
     <!--<c:out value = "${'validado'}"/>-->
   </c:when>
   
-  <c:when test="${sessionScope.usuario!=null && sessionScope.nivel==1}">
+  <c:when test="${usuario!=null && nivel==1}">
     <c:redirect url = "/sesion/denegado.jsp"/>
   </c:when>
   
