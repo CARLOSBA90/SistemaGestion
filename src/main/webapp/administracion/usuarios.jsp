@@ -7,15 +7,17 @@
   <c:when test="${sessionScope.usuario!=null}">
    <c:set var="usuario" value="${sessionScope.usuario}"/>
    <c:set var="nivel" value="${sessionScope.nivel}"/>
-   <c:set var="contrasena" value="${sessionScope.contrasena}"/>
-   <c:set var="correo" value="${sessionScope.correo}"/>
-   <c:set var="fechaAlta" value="${sessionScope.fechaAlta}"/>
     <!--<c:out value = "${'validado'}"/>-->
   </c:when>
+  
   <c:otherwise>
     <c:redirect url = "/sesion/login.jsp"/>
   </c:otherwise>
 </c:choose>
+
+<c:if test="${usuario!=null && (nivel==1 || nivel==2)}">					 
+    <c:redirect url = "../sesion/denegado.jsp"/>					
+</c:if>	
 
   <!DOCTYPE html>
   <html>
@@ -111,7 +113,7 @@
               </li>
 
 
-                 <!-- Nav Item - PRODUCTOS -->
+                  <!-- Nav Item - PRODUCTOS -->
 			<li class="nav-item"><a class="nav-link collapsed" href="#"
 				data-toggle="collapse" data-target="#MenuProducto"
 				aria-expanded="true" aria-controls="MenuProducto"> <i
@@ -243,16 +245,24 @@
                 <div class="container-fluid">
 
                   <!-- Page Heading -->
-              
-              
-                <div class="text-center">
-                 <div class="error auto" data-text="Acceso Denegado">Acceso Denegado</div>
-                 <p class="lead text-gray-800 mb-5">No tienes el nivel permitido para entrar a esta sección</p>
-                 <p class="text-gray-500 mb-0">Para acceder comunicate con el administrador...</p>
-                 <a href="../ControladorInicio">&larr; Volver al Inicio</a>
-               </div>
- 
 
+                  <!-- Content Row -->
+                  <div class="row">
+
+                  <div class="col">
+
+                  <%-- TABLA USUARIOS--%>
+
+                    
+                    En construccion!
+                    
+                    
+                </div>
+
+
+
+
+                  </div>
 
                 </div>
                 <!-- /.container-fluid -->
