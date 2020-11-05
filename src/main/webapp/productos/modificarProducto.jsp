@@ -1,26 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="utf-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+ 
+<c:choose> 
+  <c:when test="${sessionScope.usuario!=null}">
+   <c:set var="usuario" value="${sessionScope.usuario}"/>
+   <c:set var="nivel" value="${sessionScope.nivel}"/>
+    <!--<c:out value = "${'validado'}"/>-->
+  </c:when>
+  <c:otherwise>
+    <c:redirect url = "/sesion/login.jsp"/>
+  </c:otherwise>
+</c:choose>
 
-<%
-        HttpSession sesion = request.getSession();
-        String usuario=null;
-        String nivel=null;
-        
-        if(sesion.getAttribute("usuario")!=null && sesion.getAttribute("nivel")!=null){
-        	
-        	usuario = sesion.getAttribute("usuario").toString();
-        	
-        	nivel = sesion.getAttribute("nivel").toString();
-        	
-        }else{
-        	out.print("<script>location.replace('/sesion/login.jsp');</script>");
-        }
-
-
-%>
 
 <!DOCTYPE html>
 <html>
@@ -204,13 +197,14 @@
 								aria-labelledby="userDropdown">
 								   <a class="dropdown-item" href="/sesion/perfil.jsp"> <i
 									class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
-								</a> <a class="dropdown-item" href="#"> <i
+								</a> 
+							<!--  <a class="dropdown-item" href="#"> <i
 									class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 									Configuracion
 								</a> <a class="dropdown-item" href="#"> <i
 									class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
 									Registro Actividad
-								</a>
+								</a>  -->
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" data-toggle="modal"
 									data-target="#logoutModal"> <i
