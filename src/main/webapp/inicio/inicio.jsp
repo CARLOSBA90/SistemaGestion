@@ -145,11 +145,25 @@
 					aria-labelledby="cabeceraProducto" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Opciones</h6>
-						<a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a>
+						
+						 <c:if test="${nivel == 2 || nivel ==3 }">
+						 
+						 <c:out value = "${'<a class='collapse-item' href='productos/agregarProducto.jsp'>Nuevo producto</a>'}" escapeXml="false"/>
+						
+						<!--  <a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a> -->
+						
+						</c:if>	
+						
 						 <a class="collapse-item"
 							href="ControladorProducto?instruccion=listar">Ver listado</a>
+							
+							
+						 <c:if test="${nivel == 2 || nivel ==3 }">
+							
 						<a class="collapse-item"
 							href="ControladorProducto?instruccion=modificar">Modificar</a>
+							
+						   </c:if>	
 					</div>
 				</div></li>
 
@@ -228,7 +242,7 @@
 									Registro Actividad
 								</a>  -->
 								<div class="dropdown-divider"></div>
-						,		<a class="dropdown-item" href="#" data-toggle="modal"
+								<a class="dropdown-item" href="#" data-toggle="modal"
 									data-target="#logoutModal"> <i
 									class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 									Salir
