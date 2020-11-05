@@ -9,6 +9,11 @@
    <c:set var="nivel" value="${sessionScope.nivel}"/>
     <!--<c:out value = "${'validado'}"/>-->
   </c:when>
+  
+  <c:when test="${sessionScope.usuario!=null && sessionScope.nivel==1}">
+    <c:redirect url = "/sesion/denegado.jsp"/>
+  </c:when>
+  
   <c:otherwise>
     <c:redirect url = "/sesion/login.jsp"/>
   </c:otherwise>
@@ -126,31 +131,47 @@
 					aria-labelledby="cabeceraProducto" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Opciones</h6>
-						<a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a>
-						<a class="collapse-item" href="ControladorProducto?instruccion=listar">Ver listado</a>
-						<a class="collapse-item" href="ControladorProducto?instruccion=modificar">Modificar</a>
+						
+						 <c:if test="${nivel == 2 || nivel ==3 }">
+						 
+						 <a class="collapse-item" href="productos/agregarProducto.jsp">Nuevo producto</a> 
+						
+						</c:if>	
+						
+						 <a class="collapse-item"
+							href="ControladorProducto?instruccion=listar">Ver listado</a>
+							
+							
+						 <c:if test="${nivel == 2 || nivel ==3 }">
+							
+						<a class="collapse-item"
+							href="ControladorProducto?instruccion=modificar">Modificar</a>
+							
+						   </c:if>	
 					</div>
 				</div></li>
-
+       
+        <c:if test="${nivel ==3 }">
 			<!-- Divider -->
 			<hr class="sidebar-divider">
-
 			<!-- Heading -->
-			<div class="sidebar-heading">Utilidades</div>
+			<div class="sidebar-heading">Utilidades(En proceso)</div>
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item"><a class="nav-link collapsed" href="#"
 				data-toggle="collapse" data-target="#collapsePages"
 				aria-expanded="true" aria-controls="collapsePages"> <i
-					class="fas fa-fw fa-folder"></i> <span>..</span>
+					class="fas fa-fw fa-folder"></i> <span>Administracion Web</span>
 			</a>
 				<div id="collapsePages" class="collapse"
 					aria-labelledby="headingPages" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">..</h6>
-						<a class="collapse-item" href="#">..</a>
+						<h6 class="collapse-header">Opciones</h6>
+						<a class="collapse-item" href="#">Usuarios</a>
 					</div>
 				</div></li>
+ 
+          </c:if>	
 
 
 			<!-- Divider -->

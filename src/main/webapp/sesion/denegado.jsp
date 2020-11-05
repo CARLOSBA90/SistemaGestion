@@ -111,43 +111,57 @@
               </li>
 
 
-                  <!-- Nav Item - PRODUCTOS -->
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MenuProducto" aria-expanded="true" aria-controls="MenuProducto">
-                  <i class="fab fa-product-hunt"></i>
-                  <span>Productos</span>
-                </a>
-                <div id="MenuProducto" class="collapse" aria-labelledby="cabeceraProducto" data-parent="#accordionSidebar">
-                  <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Opciones</h6>
-                    <a class="collapse-item" href="../productos/agregarProducto.jsp">Nuevo producto</a>
-                    <a class="collapse-item" href="../ControladorProducto?instruccion=listar">Ver listado</a>
-                    <a class="collapse-item" href="../ControladorProducto?instruccion=modificar">Modificar</a>
-                  </div>
-                </div>
-              </li>
+                 <!-- Nav Item - PRODUCTOS -->
+			<li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-toggle="collapse" data-target="#MenuProducto"
+				aria-expanded="true" aria-controls="MenuProducto"> <i
+					class="fab fa-product-hunt"></i> <span>Productos</span>
+			</a>
+				<div id="MenuProducto" class="collapse"
+					aria-labelledby="cabeceraProducto" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<h6 class="collapse-header">Opciones</h6>
+						
+						 <c:if test="${nivel == 2 || nivel ==3 }">
+						 
+						 <a class="collapse-item" href="../productos/agregarProducto.jsp">Nuevo producto</a> 
+						
+						</c:if>	
+						
+						 <a class="collapse-item"
+							href="../ControladorProducto?instruccion=listar">Ver listado</a>
+							
+							
+						 <c:if test="${nivel == 2 || nivel ==3 }">
+							
+						<a class="collapse-item"
+							href="../ControladorProducto?instruccion=modificar">Modificar</a>
+							
+						   </c:if>	
+					</div>
+				</div></li>
+       
+        <c:if test="${nivel ==3 }">
+			<!-- Divider -->
+			<hr class="sidebar-divider">
+			<!-- Heading -->
+			<div class="sidebar-heading">Utilidades(En proceso)</div>
 
-              <!-- Divider -->
-              <hr class="sidebar-divider">
-
-              <!-- Heading -->
-              <div class="sidebar-heading">
-                Utilidades
-              </div>
-
-              <!-- Nav Item - Pages Collapse Menu -->
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                  <i class="fas fa-fw fa-folder"></i>
-                  <span>..</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                  <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">..</h6>
-                    <a class="collapse-item" href="#">..</a>
-                  </div>
-                </div>
-              </li>
+			<!-- Nav Item - Pages Collapse Menu -->
+			<li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-toggle="collapse" data-target="#collapsePages"
+				aria-expanded="true" aria-controls="collapsePages"> <i
+					class="fas fa-fw fa-folder"></i> <span>Administracion Web</span>
+			</a>
+				<div id="collapsePages" class="collapse"
+					aria-labelledby="headingPages" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<h6 class="collapse-header">Opciones</h6>
+						<a class="collapse-item" href="#">Usuarios</a>
+					</div>
+				</div></li>
+ 
+          </c:if>	
 
 
               <!-- Divider -->
@@ -232,7 +246,7 @@
               
               
                 <div class="text-center">
-                 <div class="error mx-auto" data-text="Acceso Denegado">Acceso Denegado</div>
+                 <div class="error auto" data-text="Acceso Denegado">Acceso Denegado</div>
                  <p class="lead text-gray-800 mb-5">No tienes el nivel permitido para entrar a esta sección</p>
                  <p class="text-gray-500 mb-0">Para acceder comunicate con el administrador...</p>
                  <a href="../ControladorSesion">&larr; Volver al Inicio</a>
