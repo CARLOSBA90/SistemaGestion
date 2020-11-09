@@ -24,12 +24,18 @@ public class ControladorAdministracion extends HttpServlet {
 		
 	}
 	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+			
+			listarUsuarios(request,response);
+		
+	}
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 			
-			listarUsuarios(request,response);
+
 		
 	}
 
