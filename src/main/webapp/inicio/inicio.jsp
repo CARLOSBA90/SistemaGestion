@@ -277,13 +277,13 @@
 						<div class="col-12">
 						<div class="card shadow mb-2">
 									<div class="card-header">
-										<h6 class="m-0 font-weight-bold text-primary">Proyecto CRUD, Sistema de Gestion de Distribuidora de Calzados</h6>
+										<h6 class="m-0 font-weight-bold text-primary">Proyecto CRUD, Sistema de Gestión de Distribuidora de Calzados</h6>
 									</div>
 									<div class="card-body">
-										<p>El sitio web representa un sistema de gestion de pedidos de una empresa ficticia que distribuye calzados, se basa en un 
-										CRUD, el cual contiene las secciones CLIENTES, PEDIDOS, PRODUCTOS. Por lo cual se manejan los datos dinamicamente como Webapp
-										mediante uso de SERVLET, JSP y MySQL. A continuacion en la parte inferior se representan "Noticias" las cuales provienen de
-										la base de datos.</p>
+										<p>El sitio web representa un sistema de gestión de pedidos de una empresa ficticia que distribuye calzados, 
+										se basa en un CRUD, el cual contiene las secciones CLIENTES, PEDIDOS, PRODUCTOS. Por lo cual se manejan los datos 
+										dinámicamente como WEBAPP mediante uso de SERVLET, JSP y MySQL. A continuación en la parte inferior se representan 
+										"Noticias" las cuales provienen de la base de datos.</p>
 									</div>
 								</div>
 
@@ -321,7 +321,7 @@
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span> Desarrollado por Carlos Pena </span>
+						<span> Desarrollado por Carlos Peña </span>
 					</div>
 				</div>
 			</footer>

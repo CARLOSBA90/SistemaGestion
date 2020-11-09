@@ -159,7 +159,7 @@
 					aria-labelledby="headingPages" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Opciones</h6>
-						<a class="collapse-item" href="#">Usuarios</a>
+						<a class="collapse-item" href="../ControladorAdministracion">Usuarios</a>
 					</div>
 				</div></li>
  
@@ -345,7 +345,7 @@
               <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                   <div class="copyright text-center my-auto">
-                    <span> Desarrollado por Carlos Pena </span>
+                    <span> Desarrollado por Carlos Peña </span>
                   </div>
                 </div>
               </footer>
@@ -374,7 +374,7 @@
                 <div class="modal-body">Selecciona "Salir" si estas listo para cerrar la sesion actual.</div>
                 <div class="modal-footer">
                   <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                  <a class="btn btn-primary" href="ControladorSesion?instruccion=cerrar">Salir</a>
+                  <a class="btn btn-primary" href="../ControladorSesion?instruccion=cerrar">Salir</a>
                 </div>
               </div>
             </div>

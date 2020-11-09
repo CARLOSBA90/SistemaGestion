@@ -161,7 +161,7 @@
 					aria-labelledby="headingPages" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Opciones</h6>
-						<a class="collapse-item" href="#">Usuarios</a>
+						<a class="collapse-item" href="/ControladorAdministracion">Usuarios</a>
 					</div>
 				</div></li>
  
@@ -347,7 +347,7 @@
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span> Desarrollado por Carlos Pena </span>
+						<span> Desarrollado por Carlos Peña </span>
 					</div>
 				</div>
 			</footer>
