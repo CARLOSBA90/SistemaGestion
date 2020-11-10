@@ -1,6 +1,7 @@
 package com.administracion;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.sesion.Usuario;
 
 /**
  * Servlet implementation class ControladorInicio
@@ -27,7 +30,12 @@ public class ControladorAdministracion extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 			
-			listarUsuarios(request,response);
+			try {
+				listarUsuarios(request,response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
 	}
 	
@@ -41,9 +49,15 @@ public class ControladorAdministracion extends HttpServlet {
 
 
 
-	private void listarUsuarios(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void listarUsuarios(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
+		
+		List<Usuario> usuarios = new ArrayList<>();
+		
+		usuarios = modelo.listarUsuarios();
+		
 		response.sendRedirect("/administracion/usuarios.jsp");
+		
 	}
 	
 }
