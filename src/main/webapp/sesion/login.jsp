@@ -41,10 +41,10 @@
                   <form class="user" name="form1" method="post" action="../ControladorSesion">
 										<input type="hidden" name="instruccion" value="login">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Coloque usuario aqui..." required>
+                      <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Coloque usuario aquí..." required>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="contrasena" name="contrasena" placeholder="Contrasena" required>
+                      <input type="password" class="form-control form-control-user" id="contrasena" name="contrasena" placeholder="Contraseña" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>

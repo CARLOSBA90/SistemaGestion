@@ -304,7 +304,7 @@
 																<tr role="row" class="odd">
 																	<td>${tempUsuario.id}</td>
 																	<td>${tempUsuario.usuario}</td>
-																	<td>${tempUsuario.correo}</td>
+																	<td>${tempUsuario.email}</td>
 																	<td>${tempUsuario.fecha}</td>
 																	<td>${tempUsuario.nivel}</td>
 																	
