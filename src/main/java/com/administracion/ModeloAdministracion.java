@@ -53,7 +53,7 @@ public class ModeloAdministracion {
 
 				while(miResulset.next()) {
 
-				//	int    codigo=miResulset.getInt(1);
+					int    codigo=miResulset.getInt(1);
 					String usuario=miResulset.getString(2);
 					String correo=miResulset.getString(3);
 					String contrasena=miResulset.getString(4);
@@ -61,7 +61,7 @@ public class ModeloAdministracion {
 					int    nivel=miResulset.getInt(6);
 			
 
-					Usuario usuarioTemp= new Usuario(usuario,contrasena,correo,fecha,nivel);
+					Usuario usuarioTemp= new Usuario(codigo,usuario,contrasena,correo,fecha,nivel);
 
 					usuarios.add(usuarioTemp);
 

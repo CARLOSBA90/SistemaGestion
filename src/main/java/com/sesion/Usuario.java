@@ -17,6 +17,19 @@ public class Usuario {
 		this.fecha = fecha;
 		this.nivel = nivel;
 	}
+	
+	public Usuario(int id, String usuario, String contrasena, String email, Date fecha,int nivel) {
+		this.id = id;
+		this.usuario = usuario;
+		this.contrasena = contrasena;
+		this.email = email;
+		this.fecha = fecha;
+		this.nivel = nivel;
+	}
+	
+	
+	
+	
 
 
 	public String getUsuario() {
@@ -54,17 +67,27 @@ public class Usuario {
 	}
 	
 	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Usuario [usuario=" + usuario + ", contrasena=" + contrasena + ", email=" + email + ", fecha=" + fecha
 				+ ", nivel=" + nivel + "]";
 	}
 
+ 
 
 
 
-
-
+    private int id;
 	private String usuario;
 	private String contrasena;
 	private String email;

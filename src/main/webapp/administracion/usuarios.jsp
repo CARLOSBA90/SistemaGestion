@@ -253,8 +253,80 @@
 
                   <%-- TABLA USUARIOS--%>
 
-                    
-                    En construccion!
+                 <div class="col-md-auto">
+
+							<div class="card shadow mb-4">
+								<div class="card-header py-3">
+									<h6 class="m-0 font-weight-bold text-primary">Lista de Usuarios</h6>
+								</div>
+								<div class="card-body">
+									<div class="table-responsive">
+										<div id="dataTable_wrapper"
+											class="dataTables_wrapper dt-bootstrap4">
+											<div class="row">
+												<div class="col-sm-12">
+													<table class="table table-bordered dataTable"
+														id="dataTable" role="grid"
+														aria-describedby="dataTable_info" style="width: 100%;"
+														width="100%" cellspacing="0">
+														<thead>
+															<tr role="row">
+																<th class="sorting_asc" tabindex="0"
+																	aria-controls="dataTable" rowspan="1" colspan="1"
+																	style="width: 60px;"
+																	aria-label="Codigo de Usuario: activate to sort column descending"
+																	aria-sort="ascending">Codigo de Usuario</th>
+																<th class="sorting" tabindex="0"
+																	aria-controls="dataTable" rowspan="1" colspan="1"
+																	style="width: 120px;"
+																	aria-label="Nombre: activate to sort column ascending">Nombre</th>
+																<th class="sorting" tabindex="0"
+																	aria-controls="dataTable" rowspan="1" colspan="1"
+																	style="width: 140px;"
+																	aria-label="Correo: activate to sort column ascending">Correo</th>
+																<th class="sorting" tabindex="0"
+																	aria-controls="dataTable" rowspan="1" colspan="1"
+																	style="width: 50px;"
+																	aria-label="Fecha de alta: activate to sort column ascending">Fecha de alta</th>
+																<th class="sorting" tabindex="0"
+																	aria-controls="dataTable" rowspan="1" colspan="1"
+																	style="width: 90px;"
+																	aria-label="Nivel: activate to sort column ascending">Nivel</th>
+																<th class="sorting" tabindex="0"
+																	aria-controls="dataTable" rowspan="1" colspan="1"
+																	style="width: 90px;"
+																	aria-label="Opciones: activate to sort column ascending">Opciones</th>
+															
+															</tr>
+
+														</thead>
+														<tbody>
+															<c:forEach var="tempUsuario" items="${usuarios}">
+																<tr role="row" class="odd">
+																	<td>${tempUsuario.id}</td>
+																	<td>${tempUsuario.usuario}</td>
+																	<td>${tempUsuario.correo}</td>
+																	<td>${tempUsuario.fecha}</td>
+																	<td>${tempUsuario.nivel}</td>
+																	
+																	<td>
+																	<c:if test="${tempUsuario.id != 1 }">
+																	<button class="btn btn-primary mb1 bg-blue" href="#">Eliminar</button>
+																	<button class="btn btn-primary mb1 bg-blue" href="#">Editar</button>
+																	</c:if>
+																	</td>
+																</tr>
+															</c:forEach>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
                     
                     
                 </div>
