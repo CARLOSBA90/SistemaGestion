@@ -301,7 +301,7 @@
 
 														</thead>
 														<tbody>
-															<c:forEach var="tempUsuario" items="${usuarios}">
+															<c:forEach var="tempUsuario" items="${USUARIOS}">
 																<tr role="row" class="odd">
 																	<td>${tempUsuario.id}</td>
 																	<td>${tempUsuario.usuario}</td>
