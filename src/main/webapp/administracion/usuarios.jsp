@@ -262,39 +262,38 @@
 								<div class="card-body">
 									<div class="table-responsive">
 										<div id="dataTable_wrapper"
-											class="dataTables_wrapper dt-bootstrap4">
+											class="dataTables_wrapper">
 											<div class="row">
-												<div class="col-sm-12">
-													<table class="table table-bordered dataTable"
-														id="dataTable" role="grid"
-														aria-describedby="dataTable_info" style="width: 100%;"
-														width="100%" cellspacing="0">
+												<div class="col">
+													<table class="table dataTable"
+														id="dataTable"
+														aria-describedby="dataTable_info" style="width: 100%;">
 														<thead>
 															<tr role="row">
 																<th class="sorting_asc" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 60px;"
-																	aria-label="Codigo de Usuario: activate to sort column descending"
-																	aria-sort="ascending">Codigo de Usuario</th>
+																	style="width: 30px;"
+																	aria-label="Codigo: activate to sort column descending"
+																	aria-sort="ascending">Codigo</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 120px;"
+																	style="width: 80px;"
 																	aria-label="Nombre: activate to sort column ascending">Nombre</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 140px;"
+																	style="width: 100px;"
 																	aria-label="Correo: activate to sort column ascending">Correo</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 50px;"
+																	style="width: 70px;"
 																	aria-label="Fecha de alta: activate to sort column ascending">Fecha de alta</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 90px;"
+																	style="width: 30px;"
 																	aria-label="Nivel: activate to sort column ascending">Nivel</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 90px;"
+																	style="width: 150px;"
 																	aria-label="Opciones: activate to sort column ascending">Opciones</th>
 															
 															</tr>

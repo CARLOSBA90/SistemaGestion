@@ -56,7 +56,7 @@ public class ControladorAdministracion extends HttpServlet {
 		
 		usuarios = modelo.listarUsuarios();
 		
-		request.setAttribute("usuarios",usuarios);
+		request.setAttribute("USUARIOS",usuarios);
 		
 		RequestDispatcher miDispatcher=request.getRequestDispatcher("administracion/usuarios.jsp");
 		
