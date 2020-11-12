@@ -116,12 +116,9 @@ public class ControladorSesion extends HttpServlet {
 			
 			request.setAttribute("registrado", true);
 			
+		     RequestDispatcher miDispatcher=request.getRequestDispatcher("/sesion/login.jsp");
 			
-			response.sendRedirect("/sesion/login.jsp");
-			
-       /**     RequestDispatcher miDispatcher=request.getRequestDispatcher("/sesion/login.jsp");
-			
-			miDispatcher.forward(request,response);  ///Prevenir duplicado!*/
+			miDispatcher.forward(request,response);  ///Prevenir duplicado!, error al registrar de nuevo si se actualiza?*/
 			
 		}else {
 			

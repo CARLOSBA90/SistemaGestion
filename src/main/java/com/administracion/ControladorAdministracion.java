@@ -29,17 +29,37 @@ public class ControladorAdministracion extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-			
+		
+		String comando = request.getParameter("instruccion");
+		
+		
+		if(comando==null) comando="listar";
+		
+		switch(comando) {
+		
+		
+		case "listar":
 			try {
 				listarUsuarios(request,response);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		
+			
+			break;
+			
+		case "eliminar":
+			
+			eliminarUsuario(request,response);
+			
+			
+			break;
+			
+			
+			default:
+		}
 	}
-	
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 			
@@ -48,6 +68,27 @@ public class ControladorAdministracion extends HttpServlet {
 	}
 
 
+	
+	private void eliminarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		int id = Integer.parseInt(request.getParameter("codigo"));
+		
+		boolean eliminacion = modelo.eliminar(id);
+		
+		String frase = (eliminacion)? "eliminado" : "no_eliminado";
+		
+		request.setAttribute(frase, true);
+		
+        RequestDispatcher miDispatcher=request.getRequestDispatcher("/ControladorAdministracion?instruccion=listar");
+		
+		miDispatcher.forward(request,response);
+		
+		
+		
+		
+		
+	}
 
 	private void listarUsuarios(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub

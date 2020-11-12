@@ -2,6 +2,7 @@ package com.administracion;
 
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -75,5 +76,51 @@ public class ModeloAdministracion {
 
 			return usuarios;
 		}
+
+
+
+		public boolean eliminar(int id) {
+			// TODO Auto-generated method stub
+			
+			PreparedStatement miStatement=null;
+			
+			boolean eliminado = false;
+
+			try{
+				miConexion = conectar.createConnection();
+
+				String sql="DELETE FROM usuarios WHERE ID=?";
+
+				miStatement= miConexion.prepareStatement(sql);
+
+				miStatement.setInt(1,id);
+
+				miStatement.execute();
+				
+				eliminado = true;
+
+
+
+			}catch(Exception e) {
+				e.printStackTrace();
+
+			}finally {
+				try {
+					miStatement.close();
+					miConexion.close();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+			
+			
+			return eliminado;
+		}
+
+
+
+	
 
 }

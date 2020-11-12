@@ -311,7 +311,7 @@
 																	<td>
 																	<c:if test="${tempUsuario.id != 1 }">
 																	<button class="btn btn-primary mb1 bg-blue" href="#">Eliminar</button>
-																	<button class="btn btn-primary mb1 bg-blue" href="#">Editar</button>
+																	<button class="btn btn-primary mb1 bg-blue" onclick="location.href='../ControladorAdministracion?instruccion=eliminar&Codigo=${tempUsuario.id}'">Editar</button>
 																	</c:if>
 																	</td>
 																</tr>
@@ -326,9 +326,19 @@
 							</div>
 
 						</div>
-                    
-                    
-                </div>
+
+							<c:if test="${eliminado}">
+								<div class="alert alert-success" role="alert">Usuario
+									eliminado con exito!</div>
+							</c:if>
+
+							<c:if test="${no_eliminado}">
+								<div class="alert alert-danger" role="alert">Error al
+									eliminar!</div>
+							</c:if>
+
+
+						</div>
 
 
 
