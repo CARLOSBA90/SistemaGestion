@@ -310,8 +310,8 @@
 																	
 																	<td>
 																	<c:if test="${tempUsuario.id != 1 }">
-																	<button class="btn btn-primary mb1 bg-blue" href="#">Eliminar</button>
-																	<button class="btn btn-primary mb1 bg-blue" onclick="location.href='../ControladorAdministracion?instruccion=eliminar&Codigo=${tempUsuario.id}'">Editar</button>
+																	<button class="btn btn-primary mb1 bg-blue" href="#">Editar</button>
+																	<button class="btn btn-primary mb1 bg-blue" onclick="location.href='../ControladorAdministracion?instruccion=eliminar&codigo=${tempUsuario.id}'">Eliminar</button>
 																	</c:if>
 																	</td>
 																</tr>
