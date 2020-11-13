@@ -88,7 +88,9 @@ public class ControladorAdministracion extends HttpServlet {
 			
 			request.setAttribute("cuentaEliminada", true);
 			
-			response.sendRedirect("/ControladorSesion?instruccion=cerrar");
+			  RequestDispatcher miDispatcher=request.getRequestDispatcher("/ControladorSesion?instruccion=cerrar");
+				
+			  miDispatcher.forward(request,response);
 			
 		}
 		
