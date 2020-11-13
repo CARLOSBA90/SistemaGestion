@@ -310,11 +310,21 @@
 																	<td>
 																	<c:if test="${tempUsuario.id != 1 }">
 																
-																        <button class="btn btn-primary mb1 bg-blue" href="#" data-toggle="modal" data-target="#EditarModal">Editar</button>
+																        <button class="btn btn-primary mb1 bg-blue" href="#EditarModal" data-toggle="modal" data-target="#EditarModal" 
+																        
+																        data-id="${tempUsuario.id}"
+																        data-usuario="${tempUsuario.usuario}"
+																        data-email="${tempUsuario.email}"
+																        data-fecha="${tempUsuario.fecha}"
+																        data-nivel="${tempUsuario.nivel}"
+																        data-contra="${tempUsuario.contra}"
+																        
+																        
+																         >Editar</button>
 									
 									                                    <form name="form1"
 																				class="form-group" method="post"
-																				action="../ControladorAdministracion">
+																				action="../ControladorAdministracion" style="display: inline;">
 																				<div style="display: none">
 																					<input name="instruccion" value="eliminar">
 																					<input name="codigo" value="${tempUsuario.id}">
@@ -401,7 +411,7 @@
 				     <div class="form-group row">
                        <label for="id" class="col-sm-4 col-form-label">ID</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="id" name="id" placeholder="id" readonly>
+                       <input type="text" class="form-control" id="id" name="id" value="" readonly>
                        </div>
                      </div>
 				
@@ -409,35 +419,35 @@
                      <div class="form-group row">
                        <label for="usuario" class="col-sm-4 col-form-label">Usuario</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="usuario" name="usuario" placeholder="usuario" required>
+                       <input type="text" class="form-control" id="usuario" name="usuario" value="" required>
                        </div>
                      </div>
                      
                      <div class="form-group row">
                        <label for="contrasena" class="col-sm-4 col-form-label">Contraseña</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                       <input type="text" class="form-control" id="contrasena" name="contrasena" value="" required>
                        </div>
                      </div>
                      
                      <div class="form-group row">
                        <label for="correo" class="col-sm-4 col-form-label">Correo</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo" required>
+                       <input type="text" class="form-control" id="correo" name="correo" value="" required>
                        </div>
                      </div>
                      
                      <div class="form-group row">
                        <label for="fecha" class="col-sm-4 col-form-label">Fecha de alta</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="fecha" name="fecha" placeholder="fecha" readonly>
+                       <input type="text" class="form-control" id="fecha" name="fecha" value="" readonly>
                        </div>
                      </div>
                      
                      <div class="form-group row">
                        <label for="nivel" class="col-sm-4 col-form-label">Nivel</label>
                        <div class="col">
-                        <select class="form-control" id="nivel" name="nivel">
+                        <select class="form-control" id="nivel" name="nivel" value="">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -495,6 +505,8 @@
 
           <!-- Page level plugins -->
           <script src="../vendor/chart.js/Chart.min.js"></script>
+          
+          <script src="../js/modalEditarUsuario.js"></script>
 
       </body>
     </html>
