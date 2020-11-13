@@ -309,9 +309,9 @@
 																	
 																	<td>
 																	<c:if test="${tempUsuario.id != 1 }">
-																	<button class="btn btn-primary mb1 bg-blue" href="#">Editar</button>
+																<!--  	<button class="btn btn-primary mb1 bg-blue" href="#">Editar</button> -->
 									
-									                         <form name="form1" method="post" action="../ControladorAdministracion">
+									                         <form name="form1" class="form-group" method="post" action="../ControladorAdministracion">
 										                           <input type="hidden" name="instruccion" value="eliminar">
 										                           <input type="hidden" name="codigo" value="${tempUsuario.id}">
 										                           <input type="hidden" name="codSesion" value="${sessionScope.idSesion}">

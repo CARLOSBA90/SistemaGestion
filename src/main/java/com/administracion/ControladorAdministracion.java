@@ -104,11 +104,11 @@ public class ControladorAdministracion extends HttpServlet {
 		
 		String frase = (eliminacion)? "eliminado" : "no_eliminado";
 		
-		if(mismoID && frase=="eliminado") {
+		if(mismoID && frase.equals("eliminado") ) {
 			
 			request.setAttribute("cuentaEliminada", true);
 			
-			  RequestDispatcher miDispatcher=request.getRequestDispatcher("/ControladorSesion?instruccion=cerrar");
+			  RequestDispatcher miDispatcher=request.getRequestDispatcher("../ControladorSesion?instruccion=cerrar");
 				
 			  miDispatcher.forward(request,response);
 			
