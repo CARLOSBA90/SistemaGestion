@@ -313,7 +313,7 @@
 									
 									
 									                
-									                         <form name="form1" class="form-group" method="post" action="../ControladorAdministracion">
+									                         <form style="display:none" name="form1" class="form-group" method="post" action="../ControladorAdministracion">
 										                         <div style="display:none">
 										                           <input name="instruccion" value="eliminar">
 										                           <input name="codigo" value="${tempUsuario.id}">

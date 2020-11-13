@@ -106,13 +106,7 @@ public class ControladorAdministracion extends HttpServlet {
 		
 		if(mismoID && frase.equals("eliminado") ) {
 			
-			request.setAttribute("cuentaEliminada", true);
-			
-			System.out.println("entrada al condicional");
-			
-			  RequestDispatcher miDispatcher=request.getRequestDispatcher("../ControladorSesion?instruccion=cerrar");
-				
-			  miDispatcher.forward(request,response);
+			response.sendRedirect("/ControladorSesion?instruccion=cerrar");
 			
 		}else {
 		
