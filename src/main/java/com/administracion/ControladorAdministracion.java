@@ -108,6 +108,8 @@ public class ControladorAdministracion extends HttpServlet {
 			
 			request.setAttribute("cuentaEliminada", true);
 			
+			System.out.println("entrada al condicional");
+			
 			  RequestDispatcher miDispatcher=request.getRequestDispatcher("../ControladorSesion?instruccion=cerrar");
 				
 			  miDispatcher.forward(request,response);

@@ -253,7 +253,6 @@
 									<div class="table-responsive">
 										<div id="dataTable_wrapper"
 											class="dataTables_wrapper dt-bootstrap4">
-											<div class="row">
 												<div class="col-sm-12">
 													<table class="table table-bordered dataTable"
 														id="dataTable" role="grid"
@@ -314,7 +313,6 @@
 													</table>
 												</div>
 											</div>
-										</div>
 									</div>
 								</div>
 							</div>
