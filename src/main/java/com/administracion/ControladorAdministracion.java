@@ -48,6 +48,32 @@ public class ControladorAdministracion extends HttpServlet {
 			
 			break;
 			
+			default:
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+			
+		
+	String comando = request.getParameter("instruccion");
+		
+		
+		if(comando==null) comando="listar";
+		
+		switch(comando) {
+		
+		
+		case "listar":
+			try {
+				listarUsuarios(request,response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			break;
+			
 		case "eliminar":
 			
 			eliminarUsuario(request,response);
@@ -58,11 +84,6 @@ public class ControladorAdministracion extends HttpServlet {
 			
 			default:
 		}
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-			
 
 		
 	}
@@ -72,12 +93,6 @@ public class ControladorAdministracion extends HttpServlet {
 	private void eliminarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		if(request.getParameter("nivel")!="3") 
-			
-			{response.sendRedirect("../sesion/denegado.jsp"); // Evasion de vunerabilidad para usuarios diferentes de nivel 3
-		       	}
-	
-		else {
 			
 		int id = Integer.parseInt(request.getParameter("codigo"));
 		
@@ -106,7 +121,7 @@ public class ControladorAdministracion extends HttpServlet {
 		miDispatcher.forward(request,response);
 		
 		      }
-		}
+		
 		
 		
 	}

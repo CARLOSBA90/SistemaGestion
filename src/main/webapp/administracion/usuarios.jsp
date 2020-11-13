@@ -311,8 +311,12 @@
 																	<c:if test="${tempUsuario.id != 1 }">
 																	<button class="btn btn-primary mb1 bg-blue" href="#">Editar</button>
 									
-																	<button class="btn btn-primary mb1 bg-blue" onclick="location.href='../ControladorAdministracion?instruccion=eliminar&codigo=${tempUsuario.id}&codSesion=${sessionScope.idSesion}'">Eliminar</button>
-																	
+									                         <form name="form1" method="post" action="../ControladorAdministracion">
+										                           <input type="hidden" name="instruccion" value="eliminar">
+										                           <input type="hidden" name="codigo" value="${tempUsuario.id}">
+										                           <input type="hidden" name="codSesion" value="${sessionScope.idSesion}">
+																<button type="submit" class="btn btn-primary mb1 bg-blue">Eliminar</button>
+															 </form>	
 																	</c:if>
 																	</td>
 																</tr>
