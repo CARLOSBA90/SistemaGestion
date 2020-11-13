@@ -92,7 +92,7 @@ public class ControladorAdministracion extends HttpServlet {
 				
 			  miDispatcher.forward(request,response);
 			
-		}
+		}else {
 		
 		request.setAttribute(frase, true);
 		
@@ -100,7 +100,7 @@ public class ControladorAdministracion extends HttpServlet {
 		
 		miDispatcher.forward(request,response);
 		
-		
+		}
 		
 		
 		
