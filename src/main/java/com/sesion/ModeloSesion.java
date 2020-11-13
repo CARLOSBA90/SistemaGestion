@@ -144,7 +144,7 @@ public class ModeloSesion {
 				
 				while(rs.next()) {
 					
-				temp= new Usuario(rs.getString(2),rs.getString(4),rs.getString(3),rs.getDate(5),rs.getInt(6));
+				temp= new Usuario(rs.getInt(1),rs.getString(2),rs.getString(4),rs.getString(3),rs.getDate(5),rs.getInt(6));
 					
 				}
 				

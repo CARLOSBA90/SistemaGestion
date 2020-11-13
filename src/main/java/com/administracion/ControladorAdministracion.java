@@ -74,9 +74,21 @@ public class ControladorAdministracion extends HttpServlet {
 		
 		int id = Integer.parseInt(request.getParameter("codigo"));
 		
+		int idSesion = Integer.parseInt(request.getParameter("idSesion"));
+		
+		boolean mismoID = (id==idSesion)? true: false;
+		
 		boolean eliminacion = modelo.eliminar(id);
 		
 		String frase = (eliminacion)? "eliminado" : "no_eliminado";
+		
+		if(mismoID && frase=="eliminado") {
+			
+			request.setAttribute("cuentaEliminada", true);
+			
+			response.sendRedirect("/ControladorSesion?instruccion=cerrar");
+			
+		}
 		
 		request.setAttribute(frase, true);
 		

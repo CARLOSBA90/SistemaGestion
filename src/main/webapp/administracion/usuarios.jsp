@@ -263,7 +263,6 @@
 									<div class="table-responsive">
 										<div id="dataTable_wrapper"
 											class="dataTables_wrapper">
-											<div class="row">
 												<div class="col">
 													<table class="table dataTable"
 														id="dataTable"
@@ -311,7 +310,9 @@
 																	<td>
 																	<c:if test="${tempUsuario.id != 1 }">
 																	<button class="btn btn-primary mb1 bg-blue" href="#">Editar</button>
+									
 																	<button class="btn btn-primary mb1 bg-blue" onclick="location.href='../ControladorAdministracion?instruccion=eliminar&codigo=${tempUsuario.id}'">Eliminar</button>
+																	
 																	</c:if>
 																	</td>
 																</tr>
@@ -319,7 +320,6 @@
 														</tbody>
 													</table>
 												</div>
-											</div>
 										</div>
 									</div>
 								</div>

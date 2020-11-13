@@ -168,6 +168,8 @@ public class ControladorSesion extends HttpServlet {
 			
 			sesion.setAttribute("contrasena", usuario.getContrasena());
 			
+			sesion.setAttribute("idSesion", usuario.getId());
+			
 			response.sendRedirect("/ControladorInicio");
 			
 			

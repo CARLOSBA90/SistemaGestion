@@ -85,6 +85,12 @@
              </div>
         </c:if> 
         
+          <c:if test="${cuentaEliminada}">
+            <div class="alert alert-danger" role="alert">
+              La cuenta de la sesion actual ha sido eliminada!
+             </div>
+        </c:if> 
+        
         
       </div>
 
