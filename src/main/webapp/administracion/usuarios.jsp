@@ -310,7 +310,7 @@
 																	<td>
 																	<c:if test="${tempUsuario.id != 1 }">
 																
-																        <button class="btn btn-primary mb1 bg-blue" href="#" data-toggle="modal" data-target="#EditarModal">Editar</button> -->
+																        <button class="btn btn-primary mb1 bg-blue" href="#" data-toggle="modal" data-target="#EditarModal">Editar</button>
 									
 									                                    <form name="form1"
 																				class="form-group" method="post"
@@ -390,7 +390,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Listo para salir?</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Editar usuario</h5>
                   <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   </button>
                 </div>
