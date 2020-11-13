@@ -72,9 +72,11 @@ public class ControladorAdministracion extends HttpServlet {
 	private void eliminarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		if(request.getParameter("nivel")!="3") response.sendRedirect("../sesion/denegado.jsp"); // Evasion de vunerabilidad para usuarios diferentes de nivel 3
+		
 		int id = Integer.parseInt(request.getParameter("codigo"));
 		
-		int idSesion = Integer.parseInt(request.getParameter("idSesion"));
+		int idSesion = Integer.parseInt(request.getParameter("codSesion"));
 		
 		boolean mismoID = (id==idSesion)? true: false;
 		

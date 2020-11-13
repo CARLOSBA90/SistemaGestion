@@ -311,7 +311,7 @@
 																	<c:if test="${tempUsuario.id != 1 }">
 																	<button class="btn btn-primary mb1 bg-blue" href="#">Editar</button>
 									
-																	<button class="btn btn-primary mb1 bg-blue" onclick="location.href='../ControladorAdministracion?instruccion=eliminar&codigo=${tempUsuario.id}'">Eliminar</button>
+																	<button class="btn btn-primary mb1 bg-blue" onclick="location.href='../ControladorAdministracion?instruccion=eliminar&codigo=${tempUsuario.id}&codSesion=${sessionScope.idSesion}'">Eliminar</button>
 																	
 																	</c:if>
 																	</td>
