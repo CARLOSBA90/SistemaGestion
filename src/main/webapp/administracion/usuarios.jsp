@@ -309,20 +309,23 @@
 																	
 																	<td>
 																	<c:if test="${tempUsuario.id != 1 }">
-																<!--  	<button class="btn btn-primary mb1 bg-blue" href="#">Editar</button> -->
+																
+																        <button class="btn btn-primary mb1 bg-blue" href="#" data-toggle="modal" data-target="#EditarModal">Editar</button> -->
 									
-									
-									                
-									                         <form  name="form1" class="form-group" method="post" action="../ControladorAdministracion">
-										                         <div style="display:none">
-										                           <input name="instruccion" value="eliminar">
-										                           <input name="codigo" value="${tempUsuario.id}">
-										                           <input name="codSesion" value="${sessionScope.idSesion}">
-										                          </div>	
-																<button type="submit" class="btn btn-primary mb1 bg-blue">Eliminar</button>
-															 </form>	
-													 
-																	</c:if>
+									                                    <form name="form1"
+																				class="form-group" method="post"
+																				action="../ControladorAdministracion">
+																				<div style="display: none">
+																					<input name="instruccion" value="eliminar">
+																					<input name="codigo" value="${tempUsuario.id}">
+																					<input name="codSesion"
+																						value="${sessionScope.idSesion}">
+																				</div>
+																				<button type="submit"
+																					class="btn btn-primary mb1 bg-blue">Eliminar</button>
+																			</form>
+
+																		</c:if>
 																	</td>
 																</tr>
 															</c:forEach>
@@ -380,6 +383,87 @@
           <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
           </a>
+          
+          
+           <!-- Editar Modal-->
+          <div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Listo para salir?</h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                <div class="modal-body">
+                <form name="form1" method="post" action="#">
+				<input style="display: none" type="hidden" name="instruccion" value="editar">
+				
+				     <div class="form-group row">
+                       <label for="id" class="col-sm-4 col-form-label">ID</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="id" name="id" placeholder="id" readonly>
+                       </div>
+                     </div>
+				
+
+                     <div class="form-group row">
+                       <label for="usuario" class="col-sm-4 col-form-label">Usuario</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="usuario" name="usuario" placeholder="usuario" required>
+                       </div>
+                     </div>
+                     
+                     <div class="form-group row">
+                       <label for="contrasena" class="col-sm-4 col-form-label">Contraseña</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                       </div>
+                     </div>
+                     
+                     <div class="form-group row">
+                       <label for="correo" class="col-sm-4 col-form-label">Correo</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo" required>
+                       </div>
+                     </div>
+                     
+                     <div class="form-group row">
+                       <label for="fecha" class="col-sm-4 col-form-label">Fecha de alta</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="fecha" name="fecha" placeholder="fecha" readonly>
+                       </div>
+                     </div>
+                     
+                     <div class="form-group row">
+                       <label for="nivel" class="col-sm-4 col-form-label">Nivel</label>
+                       <div class="col">
+                        <select class="form-control" id="nivel" name="nivel">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        </select>
+                       </div>
+                     </div>
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                </form>
+                
+                
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                  <a class="btn btn-primary" href="#">Guardar</a>
+                </div>
+              </div>
+            </div>
+            </div>
+          
 
           <!-- Logout Modal-->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
