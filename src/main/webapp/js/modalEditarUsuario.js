@@ -11,7 +11,7 @@ $('#EditarModal').on('show.bs.modal', function(e) {
     var fecha = $(e.relatedTarget).data('fecha');
     $(e.currentTarget).find('input[name="fecha"]').val(fecha);
     
-    var contra = $(e.relatedTarget).data('contra');
+    var contra = $(e.relatedTarget).data('contrasena');
     $(e.currentTarget).find('input[name="contrasena"]').val(contra);
     
     var nivel = $(e.relatedTarget).data('nivel');

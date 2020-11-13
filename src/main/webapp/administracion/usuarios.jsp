@@ -317,7 +317,7 @@
 																        data-email="${tempUsuario.email}"
 																        data-fecha="${tempUsuario.fecha}"
 																        data-nivel="${tempUsuario.nivel}"
-																        data-contra="${tempUsuario.contra}"
+																        data-contrasena="${tempUsuario.contrasena}"
 																        
 																        
 																         >Editar</button>
