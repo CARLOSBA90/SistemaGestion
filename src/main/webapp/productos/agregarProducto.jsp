@@ -147,7 +147,7 @@
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 			<!-- Heading -->
-			<div class="sidebar-heading">Utilidades(En proceso)</div>
+			<div class="sidebar-heading">Utilidades</div>
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item"><a class="nav-link collapsed" href="#"
@@ -367,7 +367,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Listo para salir?</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
                   <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   </button>
                 </div>

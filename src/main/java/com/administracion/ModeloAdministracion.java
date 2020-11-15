@@ -1,5 +1,6 @@
 package com.administracion;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -117,6 +118,54 @@ public class ModeloAdministracion {
 			
 			
 			return eliminado;
+		}
+
+
+
+		public boolean editar(Usuario tempUsuario) throws SQLException {
+			// TODO Auto-generated method stub
+			PreparedStatement miStatement=null;
+			
+			boolean ok = false;
+
+			try {
+
+				miConexion = conectar.createConnection();
+
+				String sql="UPDATE usuarios SET usuario=?, correo=?, contrasena=?, nivel=? WHERE ID=?";	
+
+				miStatement = miConexion.prepareStatement(sql);
+
+				miStatement.setString(1,tempUsuario.getUsuario());
+
+				miStatement.setString(2,tempUsuario.getEmail());
+
+				miStatement.setString(3, tempUsuario.getContrasena());
+
+				miStatement.setInt(4, tempUsuario.getNivel());
+
+				miStatement.setInt(5,tempUsuario.getId());
+
+				miStatement.execute();
+				
+				ok = true;
+				
+				
+
+			}catch(SQLException | ClassNotFoundException | IOException e) {
+
+				e.printStackTrace();
+			}finally {
+				miStatement.close();
+				miConexion.close();
+			}
+
+
+
+			
+			
+			
+			return ok;
 		}
 
 

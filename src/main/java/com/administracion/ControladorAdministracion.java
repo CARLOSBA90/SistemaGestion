@@ -74,6 +74,17 @@ public class ControladorAdministracion extends HttpServlet {
 			
 			break;
 			
+		case "editar":
+			
+			try {
+				editarUsuario(request,response);
+			} catch (SQLException | ServletException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			break;
+			
 		case "eliminar":
 			
 			eliminarUsuario(request,response);
@@ -90,6 +101,26 @@ public class ControladorAdministracion extends HttpServlet {
 
 
 	
+	private void editarUsuario(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		Usuario tempUsuario = new Usuario(Integer.parseInt(request.getParameter("id")),request.getParameter("usuario"),request.getParameter("email"),request.getParameter("contrasena"),Integer.parseInt(request.getParameter("nivel")));
+		
+		boolean ok = modelo.editar(tempUsuario);
+		
+		
+		String frase = (ok)? "edicion_ok" : "edicion_no_ok";
+		
+
+	    	request.setAttribute(frase, true);
+			
+	        RequestDispatcher miDispatcher=request.getRequestDispatcher("/ControladorAdministracion?instruccion=listar");
+			
+			miDispatcher.forward(request,response);
+		
+		
+	}
+
 	private void eliminarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		

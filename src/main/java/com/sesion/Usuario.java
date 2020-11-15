@@ -27,6 +27,14 @@ public class Usuario {
 		this.nivel = nivel;
 	}
 	
+	public Usuario(int id, String usuario, String email, String contrasena,int nivel) {
+		this.id = id;
+		this.usuario = usuario;
+		this.contrasena = contrasena;
+		this.email = email;
+		this.nivel = nivel;
+	}
+	
 	
 	
 	

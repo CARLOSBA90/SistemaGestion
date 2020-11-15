@@ -147,7 +147,7 @@
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 			<!-- Heading -->
-			<div class="sidebar-heading">Utilidades(En proceso)</div>
+			<div class="sidebar-heading">Utilidades</div>
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item"><a class="nav-link collapsed" href="#"
@@ -358,6 +358,16 @@
 								<div class="alert alert-danger" role="alert">Error al
 									eliminar!</div>
 							</c:if>
+							
+							<c:if test="${edicion_ok}">
+								<div class="alert alert-danger" role="alert">Editado con exito!</div>
+							</c:if>
+							
+							
+							<c:if test="${no_eliminado}">
+								<div class="alert alert-danger" role="alert">Error al editar!</div>
+							</c:if>
+							
 
 
 						</div>
@@ -404,8 +414,9 @@
                   <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   </button>
                 </div>
+                
+              <form name="form2" method="post" action="../ControladorAdministracion">
                 <div class="modal-body">
-                <form name="form1" method="post" action="#">
 				<input style="display: none" type="hidden" name="instruccion" value="editar">
 				
 				     <div class="form-group row">
@@ -414,7 +425,6 @@
                        <input type="text" class="form-control" id="id" name="id" value="" readonly>
                        </div>
                      </div>
-				
 
                      <div class="form-group row">
                        <label for="usuario" class="col-sm-4 col-form-label">Usuario</label>
@@ -455,21 +465,13 @@
                        </div>
                      </div>
                      
-                     
-                     
-                     
-                     
-                     
-                     
-                     
-                </form>
-                
-                
                 </div>
                 <div class="modal-footer">
                   <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                  <a class="btn btn-primary" href="#">Guardar</a>
+                  <button type="submit"  class="btn btn-primary">Guardar</button>
                 </div>
+                
+              </form>
               </div>
             </div>
             </div>
@@ -480,7 +482,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Listo para salir?</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
                   <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   </button>
                 </div>
