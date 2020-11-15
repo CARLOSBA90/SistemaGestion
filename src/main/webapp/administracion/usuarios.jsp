@@ -443,7 +443,7 @@
                      <div class="form-group row">
                        <label for="correo" class="col-sm-4 col-form-label">Correo</label>
                        <div class="col">
-                       <input type="text" class="form-control" id="correo" name="correo" value="" required>
+                       <input type="email" class="form-control" id="correo" name="correo" value="" required>
                        </div>
                      </div>
                      

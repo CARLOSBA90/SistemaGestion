@@ -104,7 +104,7 @@ public class ControladorAdministracion extends HttpServlet {
 	private void editarUsuario(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		Usuario tempUsuario = new Usuario(Integer.parseInt(request.getParameter("id")),request.getParameter("usuario"),request.getParameter("email"),request.getParameter("contrasena"),Integer.parseInt(request.getParameter("nivel")));
+		Usuario tempUsuario = new Usuario(Integer.parseInt(request.getParameter("id")),request.getParameter("usuario"),request.getParameter("correo"),request.getParameter("contrasena"),Integer.parseInt(request.getParameter("nivel")));
 		
 		boolean ok = modelo.editar(tempUsuario);
 		
