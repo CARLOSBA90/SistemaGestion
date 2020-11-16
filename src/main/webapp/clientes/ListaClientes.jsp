@@ -287,7 +287,7 @@
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
 																	style="width: 60px;"
-																	aria-label="Telefono: activate to sort column ascending">Telefono</th>
+																	aria-label="Telefono: activate to sort column ascending">Teléfono</th>
 																<th class="sorting" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
 																	style="width: 120px;"
@@ -431,7 +431,7 @@
                         </div>
 
                         <div class="form-group row">
-                          <label for="telefono" class="col-sm-4 col-form-label">Telefono</label>
+                          <label for="telefono" class="col-sm-4 col-form-label">Teléfono</label>
                           <div class="col-sm-8">
                           <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9]{10}" value="" required>
                           </div>
@@ -459,6 +459,7 @@
                   <button type="submit"  class="btn btn-primary">Guardar</button>
                 </div>
                 
+               <div class="alert alert-success" role="alert">Formato para Teléfono: 01166665555</div>
               </form>
               </div>
             </div>

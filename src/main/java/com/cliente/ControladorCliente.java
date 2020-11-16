@@ -107,7 +107,7 @@ public class ControladorCliente extends HttpServlet {
 		
 		///Recibir por parametros los datos del formulario
 		
-		  int codigo = Integer.parseInt(request.getParameter("codigoCliente"));
+		  int codigo = Integer.parseInt(request.getParameter("id"));
 		  String nombre = request.getParameter("nombre");
 		  String apellido = request.getParameter("apellido");
           int dni = Integer.parseInt(request.getParameter("dni"));		  
