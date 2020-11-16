@@ -1,4 +1,4 @@
-$('#EditarModalCliente').on('show.bs.modal', function(e) {
+$('#EditarModal').on('show.bs.modal', function(e) {
     var id = $(e.relatedTarget).data('id');
     $(e.currentTarget).find('input[name="id"]').val(id);
     
