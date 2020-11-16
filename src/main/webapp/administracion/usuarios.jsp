@@ -7,6 +7,9 @@
   <c:when test="${sessionScope.usuario!=null}">
    <c:set var="usuario" value="${sessionScope.usuario}"/>
    <c:set var="nivel" value="${sessionScope.nivel}"/>
+   <!--<c:set var="contrasena" value="${sessionScope.contrasena}"/>-->
+   <c:set var="correo" value="${sessionScope.correo}"/>
+   <c:set var="fechaAlta" value="${sessionScope.fechaAlta}"/>
     <!--<c:out value = "${'validado'}"/>-->
   </c:when>
   
@@ -210,7 +213,7 @@
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
 								aria-labelledby="userDropdown">
-								   <a class="dropdown-item" href="/sesion/perfil.jsp"> <i
+								   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#PerfilModal"> <i
 									class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
 								</a> 
 								
@@ -360,12 +363,12 @@
 							</c:if>
 							
 							<c:if test="${edicion_ok}">
-								<div class="alert alert-danger" role="alert">Editado con exito!</div>
+								<div class="alert alert-success" role="alert">Usuario actualizado con exito!</div>
 							</c:if>
 							
 							
-							<c:if test="${no_eliminado}">
-								<div class="alert alert-danger" role="alert">Error al editar!</div>
+							<c:if test="${edicion_no_ok}">
+								<div class="alert alert-danger" role="alert">Error al actualizar usuario!</div>
 							</c:if>
 							
 
@@ -477,7 +480,63 @@
             </div>
           
 
-          <!-- Logout Modal-->
+          <!-- Perfil Modal-->
+          <div class="modal fade" id="PerfilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                   <h4 class="m-0 font-weight-bold text-primary">Perfil</h4>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                <div class="modal-body">
+                
+                <div class="col-8">
+					
+                     <div class="form-group row">
+                       <label for="usuario" class="col-sm-4 col-form-label">Usuario</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="usuario" name="usuario" value="<c:out value="${usuario}"/>" readonly>
+                       </div>
+                     </div>
+                     
+                     <div class="form-group row">
+                       <label for="correo" class="col-sm-4 col-form-label">Correo Electrónico</label>
+                       <div class="col">
+                       <input type="email" class="form-control" id="correo" name="correo"  value="<c:out value="${correo}"/>" readonly>
+                       </div>
+                     </div>
+                     
+                     <div class="form-group row">
+                       <label for="nivel" class="col-sm-4 col-form-label">Nivel</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="nivel" name="nivel" value="<c:out value="${nivel}"/>" readonly>
+                       </div>
+                     </div>
+                     
+                      <div class="form-group row">
+                       <label for="fecha" class="col-sm-4 col-form-label">Fecha de alta</label>
+                       <div class="col">
+                       <input type="text" class="form-control" id="fecha" name="fecha" value="<c:out value="${fechaAlta}"/>" readonly>
+                       </div>
+                     </div>
+
+                      </div>
+                </div>
+                
+                
+                
+                
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Ok</button>
+                </div>
+              </div>
+            </div>
+       
+          
+          
+          <!-- Logout modal!-->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -486,7 +545,7 @@
                   <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   </button>
                 </div>
-                <div class="modal-body">Selecciona "Salir" si estas listo para cerrar la sesion actual.</div>
+                <div class="modal-body">Selecciona "Salir" si estas listo para cerrar la sesión actual.</div>
                 <div class="modal-footer">
                   <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                   <a class="btn btn-primary" href="../ControladorSesion?instruccion=cerrar">Salir</a>
@@ -494,6 +553,8 @@
               </div>
             </div>
           </div>
+          
+          
 
           <!-- Bootstrap core JavaScript-->
           <script src="../vendor/jquery/jquery.min.js"></script>
