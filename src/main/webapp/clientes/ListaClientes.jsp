@@ -300,7 +300,7 @@
 															
 														       	<th class="sorting_asc" tabindex="0"
 																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 170px;"
+																	style="width: 250px;"
 																	aria-label="Opciones: activate to sort column descending"
 																	aria-sort="ascending">Opciones</th>
 															</tr>
