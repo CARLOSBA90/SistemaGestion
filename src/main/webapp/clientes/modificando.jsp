@@ -283,7 +283,7 @@
                         <div class="form-group row">
                           <label for="codigoCliente" class="col-sm-4 col-form-label">Codigo Cliente</label>
                           <div class="col-sm-8">
-                          <input type="text" class="form-control"  name="codigoCliente" id="codigoCliente" value="<%=datos[0]%>" readonly>
+                          <input type="text" class="form-control"  name="id" id="id" value="<%=datos[0]%>" readonly>
                           </div>
                         </div>
 
