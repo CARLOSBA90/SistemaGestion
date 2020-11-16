@@ -341,7 +341,7 @@
                   <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   </button>
                 </div>
-                <div class="modal-body">Selecciona "Salir" si estas listo para cerrar la sesion actual.</div>
+                <div class="modal-body">Selecciona "Salir" si estas listo para cerrar la sesión actual.</div>
                 <div class="modal-footer">
                   <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                   <a class="btn btn-primary" href="../ControladorSesion?instruccion=cerrar">Salir</a>

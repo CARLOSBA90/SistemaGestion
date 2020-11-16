@@ -377,7 +377,7 @@
 					</button>
 				</div>
 				<div class="modal-body">Selecciona "Salir" si estas listo para
-					cerrar la sesion actual.</div>
+					cerrar la sesión actual.</div>
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancelar</button>

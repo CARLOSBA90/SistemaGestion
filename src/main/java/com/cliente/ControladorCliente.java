@@ -34,9 +34,6 @@ public class ControladorCliente extends HttpServlet {
 		
 		switch(comando) {
 		
-		case "eliminar":
-			  eliminar(request,response);
-			break;
 		
 		case "listar":
 			obtenerClientes(request,response);
@@ -78,6 +75,10 @@ public class ControladorCliente extends HttpServlet {
 		
 				e.printStackTrace();
 			}
+			break;
+			
+		case "eliminar":
+			  eliminar(request,response);
 			break;
 		
 			default:

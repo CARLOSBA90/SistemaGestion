@@ -297,6 +297,12 @@
 																	style="width: 120px;"
 																	aria-label="Correo: activate to sort column descending"
 																	aria-sort="ascending">Correo</th>
+															
+														       	<th class="sorting_asc" tabindex="0"
+																	aria-controls="dataTable" rowspan="1" colspan="1"
+																	style="width: 120px;"
+																	aria-label="Opciones: activate to sort column descending"
+																	aria-sort="ascending">Opciones</th>
 															</tr>
 
 														</thead>
@@ -310,6 +316,35 @@
 																	<td>${tempCliente.telefono}</td>
 																	<td>${tempCliente.direccion}</td>
 																	<td>${tempCliente.correo}</td>
+																	
+																	<td>
+																        <button class="btn btn-primary mb1 bg-blue" href="#EditarModal" data-toggle="modal" data-target="#EditarModal" 
+																        
+																        data-id="${tempCliente.cod_cliente}"
+																        data-nombre="${tempCliente.nombre}"
+																        data-apellido="${tempCliente.apellido}"
+																        data-dni="${tempCliente.dni}"
+																        data-telefono="${tempCliente.telefono}"
+																        data-direccion="${tempCliente.direccion}"
+																        data-correo="${tempCliente.correo}"
+																        
+																        
+																         >Editar</button>
+									
+									                                    <form name="form2"
+																				class="form-group" method="post"
+																				action="../ControladorCliente" style="display: inline;">
+																				<div style="display: none">
+																					<input name="instruccion" value="eliminar">
+																					<input name="Codigo" value="${tempCliente.cod_cliente}">
+																				</div>
+																				<button type="submit"
+																					class="btn btn-primary mb1 bg-blue">Eliminar</button>
+																			</form>
+
+																	</td>
+																	
+																	
 																</tr>
 															</c:forEach>
 														</tbody>
@@ -350,7 +385,86 @@
 	<a class="scroll-to-top rounded" href="#page-top"> <i
 		class="fas fa-angle-up"></i>
 	</a>
-	
+
+ <!-- Editar Modal-->
+          <div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Editar usuario</h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                
+              <form name="Modificacion" method="post" action="../ControladorCliente">
+                <div class="modal-body">
+			     <input style="display: none" type="hidden" name="instruccion" value="actualizar">
+
+
+                        <div class="form-group row">
+                          <label for="id" class="col-sm-4 col-form-label">Codigo Cliente</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control"  name="id" id="id" value="" readonly>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control" id="nombre" name="nombre" value="" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="apellido" class="col-sm-4 col-form-label">Apellido</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control" id="apellido" name="apellido" value="" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="dni" class="col-sm-4 col-form-label">DNI</label>
+                          <div class="col-sm-8">
+                          <input type="tel" class="form-control" id="dni" name="dni" pattern="[0-9]{8}" value="" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="telefono" class="col-sm-4 col-form-label">Telefono</label>
+                          <div class="col-sm-8">
+                          <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9]{10}" value="" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="direccion" class="col-sm-4 col-form-label">Direccion</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control" id="direccion" name="direccion" value=""  required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="correo" class="col-sm-4 col-form-label">Email</label>
+                          <div class="col-sm-8">
+                          <input type="email" class="form-control" id="correo" name="correo" value="" required>
+                          </div>
+                        </div>
+
+									
+                     
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                  <button type="submit"  class="btn btn-primary">Guardar</button>
+                </div>
+                
+              </form>
+              </div>
+            </div>
+            </div>
+
+
 	
 	<!-- Perfil Modal-->
           <div class="modal fade" id="PerfilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -402,6 +516,7 @@
                  </div>
               </div>
             </div>
+        
 
 	<!-- Logout Modal-->
 	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
@@ -416,7 +531,7 @@
 					</button>
 				</div>
 				<div class="modal-body">Selecciona "Salir" si estas listo para
-					cerrar la sesion actual.</div>
+					cerrar la sesión actual.</div>
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancelar</button>
@@ -439,6 +554,7 @@
 	<!-- Page level plugins -->
 	<script src="vendor/chart.js/Chart.min.js"></script>
 
+    <script src="../js/modalEditarCliente.js"></script>
 
 
 </body>
