@@ -264,7 +264,7 @@
 										<div id="dataTable_wrapper"
 											class="dataTables_wrapper dt-bootstrap4">
 											<div class="col-sm-12">
-												<table id="table" data-show-columns="true"
+												<table class="table" id="table" data-show-columns="true"
 													data-search="true" data-mobile-responsive="true"
 													data-check-on-init="true">
 													<thead class="thead-dark">
@@ -282,6 +282,7 @@
 														</tr>
 
 													</thead>
+													 <tbody>
 													<c:forEach var="tempCliente" items="${LISTACLIENTES}">
 														<tr>
 															<th scope="row">${tempCliente.nombre}
@@ -318,6 +319,7 @@
 
 														</tr>
 													</c:forEach>
+													</tbody>
 												</table>
 											</div>
 										</div>
