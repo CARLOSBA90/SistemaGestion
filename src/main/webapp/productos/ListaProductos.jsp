@@ -252,7 +252,7 @@
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
 									<h3 class="m-0 font-weight-bold text-primary">Lista de
-										Clientes</h3>
+										Productos</h3>
 								</div>
 							<div class="card-body">
 									<div class="table-responsive">
@@ -270,6 +270,7 @@
 															<th data-field="Precio" data-sortable="true" scope="col" rowspan="1" colspan="1">Precio</th>
 															<th data-field="Fabricante" data-sortable="true" scope="col" rowspan="1" colspan="1">Fabricante</th>
 															<th data-field="Talla" data-sortable="true" scope="col" rowspan="1" colspan="1">Talla</th>
+															<th data-field="Stock" data-sortable="true" scope="col" rowspan="1" colspan="1">Stock</th>
 															
 															 <c:if test="${nivel == 2 || nivel ==3 }">
 															<th data-field="Opciones" data-sortable="true" scope="col" rowspan="1" colspan="1">Opciones</th>
