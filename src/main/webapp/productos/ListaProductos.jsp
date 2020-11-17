@@ -379,7 +379,7 @@
 
 
                         <div class="form-group row">
-                         <label for="codigoProducto" class="col-sm-4 col-form-label">Codigo Producto</label>
+                         <label for="codigo" class="col-sm-4 col-form-label">Codigo Producto</label>
                          <div class="col-sm-8">
                          <input type="text" class="form-control" name="codigo" id="codigo" value="" readonly>
                          </div>

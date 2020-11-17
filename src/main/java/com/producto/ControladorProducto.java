@@ -90,7 +90,7 @@ public class ControladorProducto extends HttpServlet {
 	private void actualizar(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// TODO Auto-generated method stub
 		
-		int codigo=Integer.parseInt(request.getParameter("codigoProducto"));
+		int codigo=Integer.parseInt(request.getParameter("codigo"));
 		String tipo=request.getParameter("tipo");
 		String nombre=request.getParameter("nombre");
 		double precio=Double.parseDouble(request.getParameter("precio"));

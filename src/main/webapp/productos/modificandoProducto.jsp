@@ -280,9 +280,9 @@
 											<input type="hidden" name="instruccion" value="actualizar">
 
                         <div class="form-group row">
-                         <label for="codigoProducto" class="col-sm-4 col-form-label">Codigo Producto</label>
+                         <label for="codigo" class="col-sm-4 col-form-label">Codigo Producto</label>
                          <div class="col-sm-8">
-                         <input type="text" class="form-control" input type="text" name="codigoProducto" id="codigoProducto" value="<%=datos[0]%>" readonly>
+                         <input type="text" class="form-control" input type="text" name="codigo" id="codigo" value="<%=datos[0]%>" readonly>
                          </div>
                        </div>
 
