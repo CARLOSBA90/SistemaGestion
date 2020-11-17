@@ -261,7 +261,7 @@
 								</div>
 								<div class="card-body">
 												<table id="table" data-show-columns="true"
-													data-search="true" data-url="json/data1.json"
+													data-search="true"
 													data-mobile-responsive="true" data-check-on-init="true">
 													<thead>
 														<tr>
@@ -275,7 +275,6 @@
 														</tr>
 
 													</thead>
-													<tbody>
 														<c:forEach var="tempCliente" items="${LISTACLIENTES}">
 															<tr role="row" class="odd">
 																<td>${tempCliente.nombre}${tempCliente.apellido}</td>
@@ -312,7 +311,6 @@
 
 															</tr>
 														</c:forEach>
-													</tbody>
 												</table>
 								</div>
 							</div>
