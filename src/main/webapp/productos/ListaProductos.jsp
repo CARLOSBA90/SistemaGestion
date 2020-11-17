@@ -40,6 +40,9 @@
 <!-- Custom styles for this template-->
 <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+<script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.18.0/dist/extensions/mobile/bootstrap-table-mobile.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -248,64 +251,74 @@
 
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">Lista de
-										Clientes</h6>
+									<h3 class="m-0 font-weight-bold text-primary">Lista de
+										Clientes</h3>
 								</div>
-								<div class="card-body">
+							<div class="card-body">
 									<div class="table-responsive">
 										<div id="dataTable_wrapper"
 											class="dataTables_wrapper dt-bootstrap4">
-												<div class="col-sm-12">
-													<table class="table table-bordered dataTable"
-														id="dataTable" role="grid"
-														aria-describedby="dataTable_info" style="width: 100%;"
-														width="100%" cellspacing="0">
-														<thead>
-															<tr role="row">
-																<th class="sorting_asc" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 60px;"
-																	aria-label="Codigo Producto: activate to sort column descending"
-																	aria-sort="ascending">Codigo Producto</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 120px;"
-																	aria-label="Tipo: activate to sort column ascending">Tipo</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 120px;"
-																	aria-label="Nombre: activate to sort column ascending">Nombre</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 70px;"
-																	aria-label="Precio: activate to sort column ascending">Precio</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 120px;"
-																	aria-label="Fabricante: activate to sort column ascending">Fabricante</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 50px;"
-																	aria-label="Talla: activate to sort column ascending">Talla</th>
-																<th class="sorting_asc" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 60px;"
-																	aria-label="Stock: activate to sort column descending"
-																	aria-sort="ascending">Stock</th>
-															</tr>
-
+											<div class="col">
+												<table class="table" id="table" data-show-columns="true"
+													data-search="true" data-mobile-responsive="true"
+													data-check-on-init="true">
+													<thead class="thead-dark">
+														<tr>
+															<th data-field="CodigoProducto" data-sortable="true" scope="col" rowspan="1" colspan="1">Codigo Producto</th>
+															<th data-field="Tipo" data-sortable="true" scope="col" rowspan="1" colspan="1">Tipo</th>
+															<th data-field="Nombre" data-sortable="true" scope="col" rowspan="1" colspan="1">Nombre</th>
+															<th data-field="Precio" data-sortable="true" scope="col" rowspan="1" colspan="1">Precio</th>
+															<th data-field="Fabricante" data-sortable="true" scope="col" rowspan="1" colspan="1">Fabricante</th>
+															<th data-field="Talla" data-sortable="true" scope="col" rowspan="1" colspan="1">Talla</th>
+															
+															 <c:if test="${nivel == 2 || nivel ==3 }">
+															<th data-field="Opciones" data-sortable="true" scope="col" rowspan="1" colspan="1">Opciones</th>
+                                                            </c:if>
+                                                            
+														</tr>
+														
 														</thead>
 														<tbody>
 															<c:forEach var="tempProducto" items="${LISTAPRODUCTOS}">
 
 																<tr>
-																	<td class="filas">${tempProducto.cod_calzado}</td>
-																	<td class="filas">${tempProducto.tipo}</td>
-																	<td class="filas">${tempProducto.nombre}</td>
-																	<td class="filas">${tempProducto.precio}</td>
-																	<td class="filas">${tempProducto.fabricante}</td>
-																	<td class="filas">${tempProducto.talla}</td>
-																	<td class="filas">${tempProducto.stock}</td>
+																	<td>${tempProducto.cod_calzado}</td>
+																	<td>${tempProducto.tipo}</td>
+																	<td>${tempProducto.nombre}</td>
+																	<td>${tempProducto.precio}</td>
+																	<td>${tempProducto.fabricante}</td>
+																	<td>${tempProducto.talla}</td>
+																	<td>${tempProducto.stock}</td>
+
+
+                                                            <c:if test="${nivel == 2 || nivel ==3 }">
+						 
+                                                                     <td>
+																<button class="btn btn-primary mb1 bg-blue"
+																	href="#EditarModal" data-toggle="modal"
+																	data-target="#EditarModal"
+																	data-codigo="${tempProducto.cod_calzado}"
+																	data-tipo="${tempProducto.tipo}"
+																	data-nombre="${tempProducto.nombre}"
+																	data-precio="${tempProducto.precio}"
+																	data-fabricante="${tempProducto.fabricante}"
+																	data-talla="${tempProducto.talla}"
+																	data-stock="${tempProducto.stock}">Editar</button>
+
+																<form name="form2" class="form-group" method="post"
+																	action="../ControladorProducto" style="display: inline;">
+																	<div style="display: none">
+																		<input name="instruccion" value="eliminar"> <input
+																			name="Codigo" value="${tempProducto.cod_calzado}">
+																	</div>
+																	<button type="submit"
+																		class="btn btn-primary mb1 bg-blue">Eliminar</button>
+																</form>
+
+															</td>
+															
+															</c:if>
+
 
 
 																</tr>
@@ -323,7 +336,6 @@
 
 					</div>
 
-				</div>
 				<!-- /.container-fluid -->
 
 			</div>
@@ -349,6 +361,86 @@
 	<a class="scroll-to-top rounded" href="#page-top"> <i
 		class="fas fa-angle-up"></i>
 	</a>
+	
+	<!-- Editar Modal-->
+          <div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                
+              <form name="Modificacion" method="post" action="../ControladorProducto">
+                <div class="modal-body">
+			     <input style="display: none" type="hidden" name="instruccion" value="actualizar">
+
+
+                        <div class="form-group row">
+                         <label for="codigoProducto" class="col-sm-4 col-form-label">Codigo Producto</label>
+                         <div class="col-sm-8">
+                         <input type="text" class="form-control" name="codigo" id="codigo" value="" readonly>
+                         </div>
+                       </div>
+
+                       <div class="form-group row">
+                         <label for="tipo" class="col-sm-4 col-form-label">Tipo</label>
+                         <div class="col-sm-8">
+                         <input type="text" class="form-control" name="tipo" id="tipo" value="" required>
+                         </div>
+                       </div>
+
+
+                        <div class="form-group row">
+                          <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control" id="nombre" name="nombre" value="" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="fabricante" class="col-sm-4 col-form-label">Fabricante</label>
+                          <div class="col-sm-8">
+                          <input type="text" class="form-control" id="fabricante" name="fabricante" value="" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="precio" class="col-sm-4 col-form-label">Precio</label>
+                          <div class="col-sm-8">
+                          <input type="number" min="0" max="99999" class="form-control" id="precio" name="precio" value=""  required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="talla" class="col-sm-4 col-form-label">Talla</label>
+                          <div class="col-sm-8">
+                          <input type="number" min="0" max="60" class="form-control" id="talla" name="talla" value="" required>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label for="stock" class="col-sm-4 col-form-label">Stock</label>
+                          <div class="col-sm-8">
+                          <input type="number" min="0" max="99999" class="form-control" id="stock" name="stock" value="" required>
+                          </div>
+                        </div>
+
+									
+                     
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                  <button type="submit"  class="btn btn-primary">Guardar</button>
+                </div>
+           
+              </form>
+              </div>
+            </div>
+            </div>
+	
 	
 	<!-- Perfil Modal-->
           <div class="modal fade" id="PerfilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -437,6 +529,8 @@
 
 	<!-- Page level plugins -->
 	<script src="vendor/chart.js/Chart.min.js"></script>
+	
+	  <script src="../js/modalEditarProducto.js"></script>
 
 
 

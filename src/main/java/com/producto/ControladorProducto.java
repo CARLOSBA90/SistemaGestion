@@ -43,10 +43,6 @@ public class ControladorProducto extends HttpServlet {
 		case "listar": 
 			obtenerProductos(request,response);
 		     break;
-			
-		case "eliminar":
-			eliminar(request,response);
-			break;
 		
 		case "modificar":
 			modificar(request,response);
@@ -76,6 +72,10 @@ public class ControladorProducto extends HttpServlet {
 	    
 		case "actualizar":
 			actualizar(request,response);
+			break;
+			
+		case "eliminar":
+			eliminar(request,response);
 			break;
 			
 			default:
