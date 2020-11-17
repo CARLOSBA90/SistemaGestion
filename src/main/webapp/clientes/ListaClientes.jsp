@@ -263,6 +263,7 @@
 									<div class="table-responsive">
 										<div id="dataTable_wrapper"
 											class="dataTables_wrapper dt-bootstrap4">
+											<div class="col-sm-12">
 												<table id="table" data-show-columns="true"
 													data-search="true"
 													data-mobile-responsive="true" data-check-on-init="true">
