@@ -260,24 +260,27 @@
 										Clientes</h3>
 								</div>
 								<div class="card-body">
+									<div class="table-responsive">
+										<div id="dataTable_wrapper"
+											class="dataTables_wrapper dt-bootstrap4">
 												<table id="table" data-show-columns="true"
 													data-search="true"
 													data-mobile-responsive="true" data-check-on-init="true">
-													<thead>
+													<thead class="thead-dark">
 														<tr>
-												<th data-field="Cliente" data-sortable="true">Cliente</th>
-												<th data-field="DNI" data-sortable="true">DNI</th>
-												<th data-field="Teléfono" data-sortable="true">Teléfono</th>
-												<th data-field="Dirección" data-sortable="true">Dirección</th>
-												<th data-field="Correo" data-sortable="true">Correo</th>
-												<th data-field="Opciones" data-sortable="true">Opciones</th>
+												<th data-field="Cliente" data-sortable="true" scope="col">Cliente</th>
+												<th data-field="DNI" data-sortable="true" scope="col">DNI</th>
+												<th data-field="Teléfono" data-sortable="true" scope="col">Teléfono</th>
+												<th data-field="Dirección" data-sortable="true" scope="col">Dirección</th>
+												<th data-field="Correo" data-sortable="true" scope="col">Correo</th>
+												<th data-field="Opciones" data-sortable="true" scope="col">Opciones</th>
 												
 														</tr>
 
 													</thead>
 														<c:forEach var="tempCliente" items="${LISTACLIENTES}">
-															<tr role="row" class="odd">
-																<td>${tempCliente.nombre}${tempCliente.apellido}</td>
+															<tr>
+																<th scope="row">${tempCliente.nombre} ${tempCliente.apellido}</th>
 																<td>${tempCliente.dni}</td>
 																<td>${tempCliente.telefono}</td>
 																<td>${tempCliente.direccion}</td>
