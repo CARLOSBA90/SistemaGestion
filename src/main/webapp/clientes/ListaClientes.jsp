@@ -269,15 +269,15 @@
 													data-check-on-init="true">
 													<thead class="thead-dark">
 														<tr>
-															<th data-field="Cliente" data-sortable="true" scope="col">Cliente</th>
-															<th data-field="DNI" data-sortable="true" scope="col">DNI</th>
-															<th data-field="Teléfono" data-sortable="true"
-																scope="col">Teléfono</th>
-															<th data-field="Dirección" data-sortable="true"
-																scope="col">Dirección</th>
-															<th data-field="Correo" data-sortable="true" scope="col">Correo</th>
+															<th data-field="Cliente" data-sortable="true" scope="col" rowspan="1" colspan="1">Cliente</th>
+															<th data-field="DNI" data-sortable="true" scope="col" rowspan="1" colspan="1">DNI</th>
+															<th data-field="Telefono" data-sortable="true"
+																scope="col" rowspan="1" colspan="1">Teléfono</th>
+															<th data-field="Direccion" data-sortable="true"
+																scope="col" rowspan="1" colspan="1">Dirección</th>
+															<th data-field="Correo" data-sortable="true" scope="col" rowspan="1" colspan="1">Correo</th>
 															<th data-field="Opciones" data-sortable="true"
-																scope="col">Opciones</th>
+																scope="col" rowspan="1" colspan="1">Opciones</th>
 
 														</tr>
 
