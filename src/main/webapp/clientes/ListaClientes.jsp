@@ -265,64 +265,69 @@
 											class="dataTables_wrapper dt-bootstrap4">
 											<div class="col-sm-12">
 												<table id="table" data-show-columns="true"
-													data-search="true"
-													data-mobile-responsive="true" data-check-on-init="true">
+													data-search="true" data-mobile-responsive="true"
+													data-check-on-init="true">
 													<thead class="thead-dark">
 														<tr>
-												<th data-field="Cliente" data-sortable="true" scope="col">Cliente</th>
-												<th data-field="DNI" data-sortable="true" scope="col">DNI</th>
-												<th data-field="Teléfono" data-sortable="true" scope="col">Teléfono</th>
-												<th data-field="Dirección" data-sortable="true" scope="col">Dirección</th>
-												<th data-field="Correo" data-sortable="true" scope="col">Correo</th>
-												<th data-field="Opciones" data-sortable="true" scope="col">Opciones</th>
-												
+															<th data-field="Cliente" data-sortable="true" scope="col">Cliente</th>
+															<th data-field="DNI" data-sortable="true" scope="col">DNI</th>
+															<th data-field="Teléfono" data-sortable="true"
+																scope="col">Teléfono</th>
+															<th data-field="Dirección" data-sortable="true"
+																scope="col">Dirección</th>
+															<th data-field="Correo" data-sortable="true" scope="col">Correo</th>
+															<th data-field="Opciones" data-sortable="true"
+																scope="col">Opciones</th>
+
 														</tr>
 
 													</thead>
-														<c:forEach var="tempCliente" items="${LISTACLIENTES}">
-															<tr>
-																<th scope="row">${tempCliente.nombre} ${tempCliente.apellido}</th>
-																<td>${tempCliente.dni}</td>
-																<td>${tempCliente.telefono}</td>
-																<td>${tempCliente.direccion}</td>
-																<td>${tempCliente.correo}</td>
+													<c:forEach var="tempCliente" items="${LISTACLIENTES}">
+														<tr>
+															<th scope="row">${tempCliente.nombre}
+																${tempCliente.apellido}</th>
+															<td>${tempCliente.dni}</td>
+															<td>${tempCliente.telefono}</td>
+															<td>${tempCliente.direccion}</td>
+															<td>${tempCliente.correo}</td>
 
-																<td>
-																	<button class="btn btn-primary mb1 bg-blue"
-																		href="#EditarModal" data-toggle="modal"
-																		data-target="#EditarModal"
-																		data-id="${tempCliente.cod_cliente}"
-																		data-nombre="${tempCliente.nombre}"
-																		data-apellido="${tempCliente.apellido}"
-																		data-dni="${tempCliente.dni}"
-																		data-telefono="${tempCliente.telefono}"
-																		data-direccion="${tempCliente.direccion}"
-																		data-correo="${tempCliente.correo}">Editar</button>
+															<td>
+																<button class="btn btn-primary mb1 bg-blue"
+																	href="#EditarModal" data-toggle="modal"
+																	data-target="#EditarModal"
+																	data-id="${tempCliente.cod_cliente}"
+																	data-nombre="${tempCliente.nombre}"
+																	data-apellido="${tempCliente.apellido}"
+																	data-dni="${tempCliente.dni}"
+																	data-telefono="${tempCliente.telefono}"
+																	data-direccion="${tempCliente.direccion}"
+																	data-correo="${tempCliente.correo}">Editar</button>
 
-																	<form name="form2" class="form-group" method="post"
-																		action="../ControladorCliente"
-																		style="display: inline;">
-																		<div style="display: none">
-																			<input name="instruccion" value="eliminar"> <input
-																				name="Codigo" value="${tempCliente.cod_cliente}">
-																		</div>
-																		<button type="submit"
-																			class="btn btn-primary mb1 bg-blue">Eliminar</button>
-																	</form>
+																<form name="form2" class="form-group" method="post"
+																	action="../ControladorCliente" style="display: inline;">
+																	<div style="display: none">
+																		<input name="instruccion" value="eliminar"> <input
+																			name="Codigo" value="${tempCliente.cod_cliente}">
+																	</div>
+																	<button type="submit"
+																		class="btn btn-primary mb1 bg-blue">Eliminar</button>
+																</form>
 
-																</td>
+															</td>
 
 
-															</tr>
-														</c:forEach>
+														</tr>
+													</c:forEach>
 												</table>
+											</div>
+										</div>
+									</div>
 								</div>
+
 							</div>
 
 						</div>
-
 					</div>
-
 				</div>
 				<!-- /.container-fluid -->
 
