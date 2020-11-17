@@ -39,6 +39,9 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 	rel="stylesheet">
+	
+<script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.18.0/dist/extensions/mobile/bootstrap-table-mobile.min.js"></script>
 
 <!-- Custom styles for this template-->
 <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -253,105 +256,64 @@
 
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">Lista de
-										Clientes</h6>
+									<h3 class="m-0 font-weight-bold text-primary">Lista de
+										Clientes</h3>
 								</div>
 								<div class="card-body">
-									<div class="table-responsive">
-										<div id="dataTable_wrapper"
-											class="dataTables_wrapper dt-bootstrap4">
-												<div class="col-sm-12">
-													<table class="table table-bordered dataTable"
-														id="dataTable" role="grid"
-														aria-describedby="dataTable_info" style="width: 100%;"
-														width="100%" cellspacing="0">
-														<thead>
-															<tr role="row">
-																<th class="sorting_asc" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 30px;"
-																	aria-label="Codigo Cliente: activate to sort column descending"
-																	aria-sort="ascending">Codigo Cliente</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 70px;"
-																	aria-label="Nombre: activate to sort column ascending">Nombre</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 70px;"
-																	aria-label="Apellido: activate to sort column ascending">Apellido</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 50px;"
-																	aria-label="DNI: activate to sort column ascending">DNI</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 60px;"
-																	aria-label="Telefono: activate to sort column ascending">Teléfono</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 120px;"
-																	aria-label="Direccion: activate to sort column ascending">Direccion</th>
-																<th class="sorting_asc" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 90px;"
-																	aria-label="Correo: activate to sort column descending"
-																	aria-sort="ascending">Correo</th>
-															
-														       	<th class="sorting_asc" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 250px;"
-																	aria-label="Opciones: activate to sort column descending"
-																	aria-sort="ascending">Opciones</th>
+												<table id="table" data-show-columns="true"
+													data-search="true" data-url="json/data1.json"
+													data-mobile-responsive="true" data-check-on-init="true">
+													<thead>
+														<tr>
+												<th data-field="Cliente" data-sortable="true">Cliente</th>
+												<th data-field="DNI" data-sortable="true">DNI</th>
+												<th data-field="Teléfono" data-sortable="true">Teléfono</th>
+												<th data-field="Dirección" data-sortable="true">Dirección</th>
+												<th data-field="Correo" data-sortable="true">Correo</th>
+												<th data-field="Opciones" data-sortable="true">Opciones</th>
+												
+														</tr>
+
+													</thead>
+													<tbody>
+														<c:forEach var="tempCliente" items="${LISTACLIENTES}">
+															<tr role="row" class="odd">
+																<td>${tempCliente.nombre}${tempCliente.apellido}</td>
+																<td>${tempCliente.dni}</td>
+																<td>${tempCliente.telefono}</td>
+																<td>${tempCliente.direccion}</td>
+																<td>${tempCliente.correo}</td>
+
+																<td>
+																	<button class="btn btn-primary mb1 bg-blue"
+																		href="#EditarModal" data-toggle="modal"
+																		data-target="#EditarModal"
+																		data-id="${tempCliente.cod_cliente}"
+																		data-nombre="${tempCliente.nombre}"
+																		data-apellido="${tempCliente.apellido}"
+																		data-dni="${tempCliente.dni}"
+																		data-telefono="${tempCliente.telefono}"
+																		data-direccion="${tempCliente.direccion}"
+																		data-correo="${tempCliente.correo}">Editar</button>
+
+																	<form name="form2" class="form-group" method="post"
+																		action="../ControladorCliente"
+																		style="display: inline;">
+																		<div style="display: none">
+																			<input name="instruccion" value="eliminar"> <input
+																				name="Codigo" value="${tempCliente.cod_cliente}">
+																		</div>
+																		<button type="submit"
+																			class="btn btn-primary mb1 bg-blue">Eliminar</button>
+																	</form>
+
+																</td>
+
+
 															</tr>
-
-														</thead>
-														<tbody>
-															<c:forEach var="tempCliente" items="${LISTACLIENTES}">
-																<tr role="row" class="odd">
-																	<td>${tempCliente.cod_cliente}</td>
-																	<td>${tempCliente.nombre}</td>
-																	<td>${tempCliente.apellido}</td>
-																	<td>${tempCliente.dni}</td>
-																	<td>${tempCliente.telefono}</td>
-																	<td>${tempCliente.direccion}</td>
-																	<td>${tempCliente.correo}</td>
-																	
-																	<td>
-																        <button class="btn btn-primary mb1 bg-blue" href="#EditarModal" data-toggle="modal" data-target="#EditarModal" 
-																        
-																        data-id="${tempCliente.cod_cliente}"
-																        data-nombre="${tempCliente.nombre}"
-																        data-apellido="${tempCliente.apellido}"
-																        data-dni="${tempCliente.dni}"
-																        data-telefono="${tempCliente.telefono}"
-																        data-direccion="${tempCliente.direccion}"
-																        data-correo="${tempCliente.correo}"
-																        
-																        
-																         >Editar</button>
-									
-									                                    <form name="form2"
-																				class="form-group" method="post"
-																				action="../ControladorCliente" style="display: inline;">
-																				<div style="display: none">
-																					<input name="instruccion" value="eliminar">
-																					<input name="Codigo" value="${tempCliente.cod_cliente}">
-																				</div>
-																				<button type="submit"
-																					class="btn btn-primary mb1 bg-blue">Eliminar</button>
-																			</form>
-
-																	</td>
-																	
-																	
-																</tr>
-															</c:forEach>
-														</tbody>
-													</table>
-												</div>
-											</div>
-										</div>
+														</c:forEach>
+													</tbody>
+												</table>
 								</div>
 							</div>
 
@@ -541,6 +503,13 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	<script>
+     $(function() {
+      $('#table').bootstrapTable()
+       })
+     </script>
 
 	<!-- Bootstrap core JavaScript-->
 	<script src="vendor/jquery/jquery.min.js"></script>
@@ -556,7 +525,7 @@
 	<script src="vendor/chart.js/Chart.min.js"></script>
 
     <script src="../js/modalEditarCliente.js"></script>
-
+  
 
 </body>
 </html>
