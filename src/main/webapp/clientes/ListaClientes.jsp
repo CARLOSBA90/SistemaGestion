@@ -25,7 +25,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -259,7 +259,7 @@
 							
 												<table class="table" id="table" data-show-columns="true"
 													data-search="true" data-mobile-responsive="true"
-													data-check-on-init="true">
+													data-check-on-init="true" width="100%">
 													<thead class="thead-dark">
 														<tr>
 															<th data-field="Cliente" data-sortable="true" scope="col" rowspan="1" colspan="1">Cliente</th>
