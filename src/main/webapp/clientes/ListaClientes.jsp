@@ -256,10 +256,7 @@
 						
 						<h3 class="m-0 font-weight-bold text-primary">Lista de Clientes</h3>
 						
-							<div class="table-responsive">
-										<div id="dataTable_wrapper"
-											class="dataTables_wrapper dt-bootstrap4">
-											<div class="col">
+							
 												<table class="table" id="table" data-show-columns="true"
 													data-search="true" data-mobile-responsive="true"
 													data-check-on-init="true">
@@ -317,12 +314,16 @@
 													</c:forEach>
 													</tbody>
 												</table>
-											</div>
-										</div>
-									</div>
+											
+										
+									
 								</div>
 						
-						
+						<div class="container my-auto">
+					<div class="copyright text-center my-auto">
+						<span> Desarrollado por Carlos Peña </span>
+					</div>
+				   </div>
 
                          <!-- 
 
