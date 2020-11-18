@@ -241,80 +241,53 @@
 
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">Lista de
-										Pedidos</h6>
+									<h3 class="m-0 font-weight-bold text-primary">Lista de
+										Pedidos</h3>
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
 										<div id="dataTable_wrapper"
 											class="dataTables_wrapper dt-bootstrap4">
-												<div class="col-sm-12">
-													<table class="table table-bordered dataTable"
-														id="dataTable" role="grid"
-														aria-describedby="dataTable_info" style="width: 100%;"
-														width="100%" cellspacing="0">
-														<thead>
-															<tr role="row">
-																<th class="sorting_asc" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 50px;"
-																	aria-label="Codigo Pedido: activate to sort column descending"
-																	aria-sort="ascending">Codigo Pedido</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 200px;"
-																	aria-label="Cliente: activate to sort column ascending">Cliente</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 80px;"
-																	aria-label="Forma Pago: activate to sort column ascending">Forma Pago</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 30px;"
-																	aria-label="Enviado: activate to sort column ascending">Enviado</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 90px;"
-																	aria-label="Fecha: activate to sort column ascending">Fecha</th>
-																<th class="sorting" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 40px;"
-																	aria-label="Cantidad: activate to sort column ascending">Cantidad</th>
-																<th class="sorting_asc" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 90px;"
-																	aria-label="Total: activate to sort column descending"
-																	aria-sort="ascending">Total</th>
-																<th class="sorting_asc" tabindex="0"
-																	aria-controls="dataTable" rowspan="1" colspan="1"
-																	style="width: 200px;"
-																	aria-label="Detalle: activate to sort column descending"
-																	aria-sort="ascending">Detalle</th>
-															</tr>
+												<div class="col">
+												
+												<table class="table" id="table" data-show-columns="true"
+													data-search="true" data-mobile-responsive="true"
+													data-check-on-init="true">
+													<thead class="thead-dark">
+														<tr>
+															<th data-field="Código Pedido" data-sortable="true" scope="col" rowspan="1" colspan="1">Código Pedido</th>
+															<th data-field="Cliente" data-sortable="true" scope="col" rowspan="1" colspan="1">Cliente</th>
+															<th data-field="Forma Pago" data-sortable="true" scope="col" rowspan="1" colspan="1">Forma Pago</th>
+															<th data-field="Enviado" data-sortable="true" scope="col" rowspan="1" colspan="1">Enviado</th>
+															<th data-field="Fecha" data-sortable="true" scope="col" rowspan="1" colspan="1">Fecha</th>
+															<th data-field="Cantidad" data-sortable="true" scope="col" rowspan="1" colspan="1">Cantidad</th>
+															<th data-field="Total" data-sortable="true" scope="col" rowspan="1" colspan="1">Total</th>
+                                                            <th data-field="Detalle" data-sortable="true" scope="col" rowspan="1" colspan="1">Detalle</th>
+														</tr>
 
-														</thead>
-														<tbody>
-															<c:forEach var="tempP" items="${LISTAPEDIDOS}">
+													</thead>
+													<tbody>
+													<c:forEach var="tempP" items="${LISTAPEDIDOS}">
 
 																<tr>
-																	<td class="filas">${tempP.cod_pedido}</td>
-																	<td class="filas">
-																		(${tempP.cod_producto})${tempP.nombreApellido}</td>
-																	<td class="filas">${tempP.forma_pago}</td>
-																	<td class="filas"><c:set value="${tempP.enviado}"
+																	<td>${tempP.cod_pedido}</td>
+																	<td>(${tempP.cod_producto})${tempP.nombreApellido}</td>
+																	<td>${tempP.forma_pago}</td>
+																	<td><c:set value="${tempP.enviado}"
 																			var="enviado" /> <c:out
 																			value="${enviado eq true ? 'SI': 'NO'}" /></td>
-																	<td class="filas">${tempP.fecha}</td>
-																	<td class="filas">${tempP.cantidadCalzados}</td>
-																	<td class="filas">${tempP.total}</td>
-																	<td class="filas">${tempP.cantidad}</td>
+																	<td>${tempP.fecha}</td>
+																	<td>${tempP.cantidadCalzados}</td>
+																	<td>$${tempP.total}</td>
+																	<td>${tempP.cantidad}</td>
 
 
 																</tr>
 
 															</c:forEach>
-														</tbody>
-													</table>
+													</tbody>
+												</table>
+												
 												</div>
 											</div>
 									</div>

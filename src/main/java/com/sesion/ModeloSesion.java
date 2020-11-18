@@ -38,7 +38,7 @@ public class ModeloSesion {
 			
 			miStatement = miConexion.prepareStatement(sql);
 			
-			miStatement.setString(1, usuario.getUsuario());
+			miStatement.setString(1, usuario.getUsuario().toLowerCase());
 			
 			miStatement.setString(2, usuario.getContrasena());
 			
