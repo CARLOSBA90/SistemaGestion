@@ -253,6 +253,79 @@
 					<div class="row">
 
 						<div class="col-md-auto">
+						
+						<h3 class="m-0 font-weight-bold text-primary">Lista de Clientes</h3>
+						
+							<div class="table-responsive">
+										<div id="dataTable_wrapper"
+											class="dataTables_wrapper dt-bootstrap4">
+											<div class="col">
+												<table class="table" id="table" data-show-columns="true"
+													data-search="true" data-mobile-responsive="true"
+													data-check-on-init="true">
+													<thead class="thead-dark">
+														<tr>
+															<th data-field="Cliente" data-sortable="true" scope="col" rowspan="1" colspan="1">Cliente</th>
+															<th data-field="DNI" data-sortable="true" scope="col" rowspan="1" colspan="1">DNI</th>
+															<th data-field="Telefono" data-sortable="true"
+																scope="col" rowspan="1" colspan="1">Teléfono</th>
+															<th data-field="Direccion" data-sortable="true"
+																scope="col" rowspan="1" colspan="1">Dirección</th>
+															<th data-field="Correo" data-sortable="true" scope="col" rowspan="1" colspan="1">Correo</th>
+															<th data-field="Opciones" data-sortable="true"
+																scope="col" rowspan="1" colspan="1">Opciones</th>
+
+														</tr>
+
+													</thead>
+													 <tbody>
+													<c:forEach var="tempCliente" items="${LISTACLIENTES}">
+														<tr>
+															<th scope="row">${tempCliente.nombre}
+																${tempCliente.apellido}</th>
+															<td>${tempCliente.dni}</td>
+															<td>${tempCliente.telefono}</td>
+															<td>${tempCliente.direccion}</td>
+															<td>${tempCliente.correo}</td>
+
+															<td>
+																<button class="btn btn-primary mb1 bg-blue"
+																	href="#EditarModal" data-toggle="modal"
+																	data-target="#EditarModal"
+																	data-id="${tempCliente.cod_cliente}"
+																	data-nombre="${tempCliente.nombre}"
+																	data-apellido="${tempCliente.apellido}"
+																	data-dni="${tempCliente.dni}"
+																	data-telefono="${tempCliente.telefono}"
+																	data-direccion="${tempCliente.direccion}"
+																	data-correo="${tempCliente.correo}">Editar</button>
+
+																<form name="form2" class="form-group" method="post"
+																	action="../ControladorCliente" style="display: inline;">
+																	<div style="display: none">
+																		<input name="instruccion" value="eliminar"> <input
+																			name="Codigo" value="${tempCliente.cod_cliente}">
+																	</div>
+																	<button type="submit"
+																		class="btn btn-primary mb1 bg-blue">Eliminar</button>
+																</form>
+
+															</td>
+
+
+														</tr>
+													</c:forEach>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+						
+						
+
+                         <!-- 
+
 
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
@@ -327,7 +400,8 @@
 								</div>
 
 							</div>
-
+                         
+                         !--->
 						</div>
 					</div>
 				</div>
