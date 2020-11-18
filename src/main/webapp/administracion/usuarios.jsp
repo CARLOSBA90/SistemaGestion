@@ -95,7 +95,7 @@
                     <h6 class="collapse-header">Opciones</h6>
                     <a class="collapse-item" href="../clientes/agregar.jsp">Nuevo cliente</a>
                     <a class="collapse-item" href="../ControladorCliente?instruccion=listar">Ver listado</a>
-                    <a class="collapse-item" href="../ControladorCliente?instruccion=modificar">Modificar</a>
+                  <!--  <a class="collapse-item" href="../ControladorCliente?instruccion=modificar">Modificar</a> -->
                   </div>
                 </div>
               </li>
@@ -137,12 +137,12 @@
 							href="../ControladorProducto?instruccion=listar">Ver listado</a>
 							
 							
-						 <c:if test="${nivel == 2 || nivel ==3 }">
+					<!--	 <c:if test="${nivel == 2 || nivel ==3 }">
 							
 						<a class="collapse-item"
 							href="../ControladorProducto?instruccion=modificar">Modificar</a>
 							
-						   </c:if>	
+						   </c:if>	-->
 					</div>
 				</div></li>
        

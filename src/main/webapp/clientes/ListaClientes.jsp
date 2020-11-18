@@ -252,7 +252,7 @@
 					<!-- Content Row -->
 					<div class="row">
 
-						<div class="col-md-auto">
+						<div class="card">
 						
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
@@ -266,7 +266,7 @@
 											<div class="col">
 												<table class="table" id="table" data-show-columns="true"
 													data-search="true" data-mobile-responsive="true"
-													data-check-on-init="true" width=100%>
+													data-check-on-init="true">
 													<thead class="thead-dark">
 														<tr>
 															<th data-field="Cliente" data-sortable="true" scope="col" rowspan="1" colspan="1">Cliente</th>
