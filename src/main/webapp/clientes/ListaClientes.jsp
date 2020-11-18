@@ -98,7 +98,6 @@
 						<h6 class="collapse-header">Opciones</h6>
 						<a class="collapse-item" href="clientes/agregar.jsp">Nuevo cliente</a>
 						<a class="collapse-item" href="ControladorCliente?instruccion=listar">Ver listado</a>
-						<a class="collapse-item" href="ControladorCliente?instruccion=modificar">Modificar</a>
 					</div>
 				</div></li>
 
@@ -140,12 +139,6 @@
 							href="ControladorProducto?instruccion=listar">Ver listado</a>
 							
 							
-						 <c:if test="${nivel == 2 || nivel ==3 }">
-							
-						<a class="collapse-item"
-							href="ControladorProducto?instruccion=modificar">Modificar</a>
-							
-						   </c:if>	
 					</div>
 				</div></li>
        
@@ -252,7 +245,7 @@
 					<!-- Content Row -->
 					<div class="row">
 
-						<div class="card">
+						<div class="col-md-auto">
 						
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
