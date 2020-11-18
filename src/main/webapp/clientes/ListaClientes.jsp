@@ -25,7 +25,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1">
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -254,80 +254,6 @@
 
 						<div class="col-md-auto">
 						
-						<h3 class="m-0 font-weight-bold text-primary">Lista de Clientes</h3>
-						
-							
-												<table class="table" id="table" data-show-columns="true"
-													data-search="true" data-mobile-responsive="true"
-													data-check-on-init="true" width="100%">
-													<thead class="thead-dark">
-														<tr>
-															<th data-field="Cliente" data-sortable="true" scope="col" rowspan="1" colspan="1">Cliente</th>
-															<th data-field="DNI" data-sortable="true" scope="col" rowspan="1" colspan="1">DNI</th>
-															<th data-field="Telefono" data-sortable="true"
-																scope="col" rowspan="1" colspan="1">Teléfono</th>
-															<th data-field="Direccion" data-sortable="true"
-																scope="col" rowspan="1" colspan="1">Dirección</th>
-															<th data-field="Correo" data-sortable="true" scope="col" rowspan="1" colspan="1">Correo</th>
-															<th data-field="Opciones" data-sortable="true"
-																scope="col" rowspan="1" colspan="1">Opciones</th>
-
-														</tr>
-
-													</thead>
-													 <tbody>
-													<c:forEach var="tempCliente" items="${LISTACLIENTES}">
-														<tr>
-															<th scope="row">${tempCliente.nombre}
-																${tempCliente.apellido}</th>
-															<td>${tempCliente.dni}</td>
-															<td>${tempCliente.telefono}</td>
-															<td>${tempCliente.direccion}</td>
-															<td>${tempCliente.correo}</td>
-
-															<td>
-																<button class="btn btn-primary mb1 bg-blue"
-																	href="#EditarModal" data-toggle="modal"
-																	data-target="#EditarModal"
-																	data-id="${tempCliente.cod_cliente}"
-																	data-nombre="${tempCliente.nombre}"
-																	data-apellido="${tempCliente.apellido}"
-																	data-dni="${tempCliente.dni}"
-																	data-telefono="${tempCliente.telefono}"
-																	data-direccion="${tempCliente.direccion}"
-																	data-correo="${tempCliente.correo}">Editar</button>
-
-																<form name="form2" class="form-group" method="post"
-																	action="../ControladorCliente" style="display: inline;">
-																	<div style="display: none">
-																		<input name="instruccion" value="eliminar"> <input
-																			name="Codigo" value="${tempCliente.cod_cliente}">
-																	</div>
-																	<button type="submit"
-																		class="btn btn-primary mb1 bg-blue">Eliminar</button>
-																</form>
-
-															</td>
-
-
-														</tr>
-													</c:forEach>
-													</tbody>
-												</table>
-											
-										
-									
-								</div>
-						
-						<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span> Desarrollado por Carlos Peña </span>
-					</div>
-				   </div>
-
-                         <!-- 
-
-
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
 									<h3 class="m-0 font-weight-bold text-primary">Lista de
@@ -340,7 +266,7 @@
 											<div class="col">
 												<table class="table" id="table" data-show-columns="true"
 													data-search="true" data-mobile-responsive="true"
-													data-check-on-init="true">
+													data-check-on-init="true" width=100%>
 													<thead class="thead-dark">
 														<tr>
 															<th data-field="Cliente" data-sortable="true" scope="col" rowspan="1" colspan="1">Cliente</th>
@@ -404,14 +330,14 @@
                          
                         
 						</div>
-					</div> !--->
+					</div> 
 				</div>
 				<!-- /.container-fluid -->
 
 			</div>
 			<!-- End of Main Content -->
 
-			<!-- Footer
+			<!-- Footer -->
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
@@ -419,7 +345,7 @@
 					</div>
 				</div>
 			</footer>
-			End of Footer  -->
+			<!-- End of Footer  -->
 
 		</div>
 		<!-- End of Content Wrapper -->
