@@ -278,7 +278,7 @@
 																	<td>${tempProducto.cod_calzado}</td>
 																	<td>${tempProducto.tipo}</td>
 																	<td>${tempProducto.nombre}</td>
-																	<td>${tempProducto.precio}</td>
+																	<td>$${tempProducto.precio}</td>
 																	<td>${tempProducto.fabricante}</td>
 																	<td>${tempProducto.talla}</td>
 																	<td>${tempProducto.stock}</td>
