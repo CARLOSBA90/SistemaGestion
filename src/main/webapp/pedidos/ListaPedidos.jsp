@@ -343,11 +343,24 @@
                   </button>
                 </div>
                 <div class="modal-body">
-		
+
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">Detalle</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" id="detalle_tabla" name="detalle_tabla"></th>
+							</tr>
+						</tbody>
+					</table>
 
 
-                   
-                </div>
+
+
+				</div>
                 <div class="modal-footer">
                   <button class="btn btn-secondary" type="button" data-dismiss="modal">Ok</button>
                 </div>

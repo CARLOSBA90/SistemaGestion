@@ -66,7 +66,7 @@ public class CantidadCalzado {
 	
 	@Override
 	public String toString() {
-		return "COD_PRODUCTO "+cod_producto+": "+cantidad+" U. * "+precio+"="+total+" ";
+		return "+ Código Producto "+cod_producto+": "+cantidad+" unidades x $"+precio+" = $"+total+" ";
 	}
 	
 
