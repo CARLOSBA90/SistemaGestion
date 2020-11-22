@@ -5,13 +5,9 @@ $('#ListarModal').on('show.bs.modal', function(e) {
     
     arreglo = detalle.split(separador);
     
-    var lista;
+    for(i=1;i<arreglo.length;i++){
     
-    for(i=1;i<detalle.length;i++){
-    
-    	lista = arreglo[i];
-    
-    $(e.currentTarget).find('[name="detalle_tabla"]').val(detalle);
+    $(e.currentTarget).find('[name="detalle_tabla"]').val(arreglo[i]);
     
     }
 });

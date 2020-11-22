@@ -284,7 +284,7 @@
 																		<button class="btn btn-primary mb1 bg-blue"
 																	href="#" data-toggle="modal"
 																	data-target="#ListarModal"
-																	data-detalle="${tempP.cantidad}">Editar</button>
+																	data-detalle="${tempP.cantidad}">Descripción</button>
 																	
 																	</td>
 
@@ -347,7 +347,7 @@
 					<table class="table">
 						<thead class="thead-dark">
 							<tr>
-								<th scope="col">Detalle</th>
+								<th scope="col">Descripción</th>
 							</tr>
 						</thead>
 						<tbody>
