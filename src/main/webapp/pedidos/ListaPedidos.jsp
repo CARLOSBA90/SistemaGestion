@@ -352,7 +352,9 @@
 						</thead>
 						<tbody>
 							<tr>
-								<th scope="row" id="detalle_tabla" name="detalle_tabla"></th>
+								<th scope="row"><p id="detalle_tabla" name="detalletabla"> </p>
+								<input id="este" name="este2"></input>
+								</th>
 							</tr>
 						</tbody>
 					</table>
