@@ -352,8 +352,8 @@
 						</thead>
 						<tbody>
 							<tr>
-								<th scope="row"><p id="detalle_tabla" name="detalletabla"> </p>
-								<input id="este" name="este2"></input>
+								<th scope="row">
+								<input id="detalletabla" name="detalletabla" style="border:0;outline:0;"></input>
 								</th>
 							</tr>
 						</tbody>
