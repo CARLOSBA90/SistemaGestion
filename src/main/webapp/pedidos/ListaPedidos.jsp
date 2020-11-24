@@ -353,7 +353,7 @@
 						<tbody>
 							<tr>
 								<th scope="row">
-								<input id="detalletabla" name="detalletabla" style="border:0;outline:0;"></input>
+								<textarea id="detalletabla" name="detalletabla" style="border:0;outline:0;resize: none; width:100%; height:100%;"></textarea>
 								</th>
 							</tr>
 						</tbody>

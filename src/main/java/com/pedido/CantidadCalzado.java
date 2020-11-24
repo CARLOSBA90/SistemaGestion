@@ -66,7 +66,7 @@ public class CantidadCalzado {
 	
 	@Override
 	public String toString() {
-		return "+ Codigo Producto "+cod_producto+": "+cantidad+" unidades x $"+precio+" = $"+total+" ";
+		return "<br> Codigo Producto "+cod_producto+": "+cantidad+" unidades x $"+precio+" = $"+total+" ";
 	}
 	
 

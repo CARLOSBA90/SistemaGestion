@@ -1,6 +1,8 @@
 $('#ListarModal').on('show.bs.modal', function(e) {
     var detalle = $(e.relatedTarget).data('detalle');
+    $(e.currentTarget).find('textarea[name="detalletabla"]').val(detalle);
     
+ /*   
     separador = "+";
     
     arreglo = detalle.split(separador);
@@ -11,6 +13,6 @@ $('#ListarModal').on('show.bs.modal', function(e) {
     
     $(e.currentTarget).find('input[name="detalletabla"]').val(arreglo[i]);
     }
-    
+    */
     
 });
