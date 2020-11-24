@@ -281,10 +281,15 @@
 																	<td>$${tempP.total}</td>
 																	<td>
 																	
+																	<c:set var = "cantidad" value = "${tempP.cantidad}"/>
+																	
+																	${fn:replace(cantidad, "[", "")}
+																	${fn:replace(cantidad, "]", "")} 
+																	
 																		<button class="btn btn-primary mb1 bg-blue"
 																	href="#" data-toggle="modal"
 																	data-target="#ListarModal"
-																	data-detalle="${tempP.cantidad}">Descripción</button>
+																	data-detalle="${cantidad}">Descripción</button>
 																	
 																	</td>
 
