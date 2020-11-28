@@ -254,7 +254,7 @@
 
                     <!-- Recibe un arraylist del lado del servidor con los datos del clientes: codigo, nombre, apellido -->
 
-										<div class="form-row">
+										<div class="form-row d-flex align-items-center">
 										    <div class="form-group col-md-4">
 										      <label for="cliente">CLIENTES</label>
 													<select id="cliente" name="cliente" class="form-control">
@@ -327,7 +327,7 @@
 												<div class="col-sm-12">
 													<table class="table table-bordered dataTable"
 														id="dataTable" role="grid"
-														aria-describedby="dataTable_info" style="width: 700px;">
+														aria-describedby="dataTable_info" style="width: 100%;">
 														<thead>
 															<tr role="row">
 																<th class="sorting_asc" tabindex="0"
