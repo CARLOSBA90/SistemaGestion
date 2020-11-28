@@ -293,7 +293,7 @@
 									<!-- Todo este procesamiento se realiza con javascript puro por ende el codigo se encuentra en el inferior de la pagina -->
 
 
-									<div class="form-row">
+									<div class="form-row d-flex align-items-center">
 											<div class="form-group col-md-6">
 												<label for="prod">PRODUCTOS</label>
 												<select name="prod" id="prod" class="form-control" onchange="insertarStock();">
