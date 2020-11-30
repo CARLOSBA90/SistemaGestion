@@ -293,7 +293,7 @@
 																	data-detalle="${cantidad3}">Descripción</button>
 																	
 																	<form name="form2" class="form-group" method="post"
-																	action="../ControladorPDF" style="display: inline;">
+																	action="../ControladorPDF" style="display: inline;" target="_blank">
 																	<div style="display: none">
 																		<input name="instruccion" value="facturar"> <input
 																			name="Codigo" value="${tempP.cod_pedido}">

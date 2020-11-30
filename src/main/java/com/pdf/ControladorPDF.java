@@ -78,11 +78,13 @@ public class ControladorPDF extends HttpServlet {
 				
 				PdfWriter.getInstance(documento, out);
 				
+				documento.open();
+				
 				Paragraph parrafo = new Paragraph();
 				
 				Font fuente = new Font(Font.FontFamily.TIMES_ROMAN,18,Font.BOLD,BaseColor.BLACK);
 				
-				parrafo.add(new Phrase("Seccion en desarrollo!"+ request.getParameter("Codigo"), fuente));
+				parrafo.add(new Phrase("Seccion en desarrollo! Codigo de pedido: "+ request.getParameter("Codigo")+" ", fuente));
 
 				parrafo.setAlignment(Element.ALIGN_CENTER);
 				
