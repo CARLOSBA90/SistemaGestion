@@ -35,13 +35,13 @@ public class ControladorPDF extends HttpServlet {
 		modelo = new ModeloPedido();
 	}
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		String comando=request.getParameter("instruccion");
 		
-		if(comando==null) comando="listar";
+		if(comando==null) comando="nulo";
 		
 		switch(comando) {
 		
@@ -82,7 +82,7 @@ public class ControladorPDF extends HttpServlet {
 				
 				Font fuente = new Font(Font.FontFamily.TIMES_ROMAN,18,Font.BOLD,BaseColor.BLACK);
 				
-				parrafo.add(new Phrase("Sección en desarrollo!"+ request.getParameter("Codigo"), fuente));
+				parrafo.add(new Phrase("Seccion en desarrollo!"+ request.getParameter("Codigo"), fuente));
 
 				parrafo.setAlignment(Element.ALIGN_CENTER);
 				
