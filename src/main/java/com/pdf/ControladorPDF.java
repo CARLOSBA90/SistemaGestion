@@ -107,12 +107,11 @@ public class ControladorPDF extends HttpServlet {
 			        PdfPCell cell = new PdfPCell(new Phrase("FACTURA C", f));
 			        cell.setBackgroundColor(GrayColor.GRAYBLACK);
 			        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-			        cell.setColspan(3);
 			        table.addCell(cell);
 			        table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
 
 			              // Creando tabla anidada        
-			              float [] anidado = {150f, 500f};      
+			              float [] anidado = {800f, 600f};      
 			              
 			              PdfPTable Tabla2 = new PdfPTable(anidado);
 		                           Tabla2.addCell("Parte 1");
@@ -126,9 +125,11 @@ public class ControladorPDF extends HttpServlet {
 			            table.addCell("PRECIO UNITARIO");
 			            table.addCell("IMPORTE");
 			        
-			        table.setHeaderRows(3);
+			            
+			            cell.setColspan(4);
+			        table.setHeaderRows(4);
 			        table.setFooterRows(1);
-			        table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
+			       // table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
 			        table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 			        for (int counter = 1; counter < 5; counter++) {
 			            table.addCell(String.valueOf(counter));
