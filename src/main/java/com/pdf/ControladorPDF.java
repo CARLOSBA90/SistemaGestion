@@ -108,7 +108,9 @@ public class ControladorPDF extends HttpServlet {
 			        cell.setBackgroundColor(GrayColor.GRAYBLACK);
 			        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 			        table.addCell(cell);
-			        table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
+			        table.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
+			        cell.setColspan(2);
+			        table.setHeaderRows(2);
 
 			              // Creando tabla anidada        
 			              float [] anidado = {800f, 600f};      
@@ -125,10 +127,10 @@ public class ControladorPDF extends HttpServlet {
 			            table.addCell("PRECIO UNITARIO");
 			            table.addCell("IMPORTE");
 			        
-			            
 			            cell.setColspan(4);
-			        table.setHeaderRows(4);
-			        table.setFooterRows(1);
+				        table.setHeaderRows(4);
+				        table.setFooterRows(1);
+			       
 			       // table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
 			        table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 			        for (int counter = 1; counter < 5; counter++) {
