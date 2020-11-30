@@ -15,11 +15,16 @@ import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
+import com.itextpdf.text.Font.FontFamily;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.GrayColor;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.pedido.ModeloPedido;
 import com.producto.Producto;
+
 
 /**
  * Servlet implementation class ControladorPedido
@@ -79,7 +84,7 @@ public class ControladorPDF extends HttpServlet {
 				PdfWriter.getInstance(documento, out);
 				
 				documento.open();
-				
+				/*
 				Paragraph parrafo = new Paragraph();
 				
 				Font fuente = new Font(Font.FontFamily.TIMES_ROMAN,18,Font.BOLD,BaseColor.BLACK);
@@ -90,7 +95,51 @@ public class ControladorPDF extends HttpServlet {
 				
 				parrafo.add(new Phrase(Chunk.NEWLINE));
 
-				documento.add(parrafo);
+				documento.add(parrafo);*/
+				
+				
+				  float[] columnas = {1, 5, 5};
+			        PdfPTable table = new PdfPTable(columnas);
+			        table.setWidthPercentage(100);
+			        table.getDefaultCell().setUseAscender(true);
+			        table.getDefaultCell().setUseDescender(true);
+			        Font f = new Font(FontFamily.HELVETICA, 13, Font.NORMAL, GrayColor.GRAYWHITE);
+			        PdfPCell cell = new PdfPCell(new Phrase("FACTURA C", f));
+			        cell.setBackgroundColor(GrayColor.GRAYBLACK);
+			        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+			        cell.setColspan(3);
+			        table.addCell(cell);
+			        table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
+
+			              // Creando tabla anidada        
+			              float [] anidado = {150f, 500f};      
+			              
+			              PdfPTable Tabla2 = new PdfPTable(anidado);
+		                           Tabla2.addCell("Parte 1");
+			                       Tabla2.addCell("Parte 2");
+
+			             table.addCell(Tabla2);
+			                      
+			        
+			            table.addCell("CANTIDAD");
+			            table.addCell("DETALLE");
+			            table.addCell("PRECIO UNITARIO");
+			            table.addCell("IMPORTE");
+			        
+			        table.setHeaderRows(3);
+			        table.setFooterRows(1);
+			        table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
+			        table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+			        for (int counter = 1; counter < 5; counter++) {
+			            table.addCell(String.valueOf(counter));
+			            table.addCell("Contador Ejemplo " + counter);
+			            table.addCell("Valores " + counter);
+			            table.addCell("Otro " + counter);
+			        }
+			        
+			        documento.add(table);
+				
+				
 				
 				documento.close();
 				
