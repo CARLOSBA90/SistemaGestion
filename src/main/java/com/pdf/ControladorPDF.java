@@ -24,7 +24,7 @@ import com.producto.Producto;
 /**
  * Servlet implementation class ControladorPedido
  */
-@WebServlet("/ControladorPedido")
+@WebServlet("/ControladorPDF")
 public class ControladorPDF extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
