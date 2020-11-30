@@ -281,6 +281,8 @@
 																	<td>$${tempP.total}</td>
 																	<td>
 																	
+																	<!-- Se recibe por parametro una variable ToString, se inicializan variables en el JSP para extraer corchetes -->
+																	
 																	<c:set var = "cantidad" value = "${tempP.cantidad}"/>
 																	<c:set var = "cantidad2" value = "${fn:replace(cantidad, '[', '')}" />
 																	<c:set var = "cantidad3" value = "${fn:replace(cantidad2, ']', '')}" />
@@ -289,6 +291,17 @@
 																	href="#" data-toggle="modal"
 																	data-target="#ListarModal"
 																	data-detalle="${cantidad3}">Descripción</button>
+																	
+																	<form name="form2" class="form-group" method="post"
+																	action="../ControladorPDF" style="display: inline;">
+																	<div style="display: none">
+																		<input name="instruccion" value="facturar"> <input
+																			name="Codigo" value="${tempP.cod_pedido}">
+																	</div>
+																	<button type="submit"
+																		class="btn btn-primary mb1 bg-blue">Facturar</button>
+																</form>
+																	
 																	
 																	</td>
 
