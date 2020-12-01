@@ -103,10 +103,10 @@ public class ControladorPDF extends HttpServlet {
 			        tabla.getDefaultCell().setUseAscender(true);
 			        tabla.getDefaultCell().setUseDescender(true);
 			        Font f = new Font(FontFamily.HELVETICA, 18, Font.BOLD, GrayColor.GRAYWHITE);
-			        PdfPCell cell1 = new PdfPCell(new Phrase("FACTURA C", f));
-			        cell1.setBackgroundColor(GrayColor.GRAYBLACK);
-			        cell1.setHorizontalAlignment(Element.ALIGN_CENTER);
-			        tabla.addCell(cell1);
+			        PdfPCell titulo = new PdfPCell(new Phrase("FACTURA C", f));
+			        titulo.setBackgroundColor(GrayColor.GRAYBLACK);
+			        titulo.setHorizontalAlignment(Element.ALIGN_CENTER);
+			        tabla.addCell(titulo);
 			        tabla.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
 			       // cell1.setColspan(1);
 			      //  tabla.setHeaderRows(1);
@@ -115,11 +115,53 @@ public class ControladorPDF extends HttpServlet {
 
 			              // Creando tabla anidada      
 			              
-			              PdfPTable Tabla2 = new PdfPTable(2);
-		                           Tabla2.addCell("Parte 1");
-			                       Tabla2.addCell("Parte 2");
+			        
+			        /// CABECERA SUPERIOR CON 4 SECCIONES: IMAGEN LOGO(SUPERIOR IZQUIERDA), FECHA Y NRO PEDIDO(SUPERIOR DERECHA)
+			        /// DETALLES DEL CLIENTE INFERIOR IZQUIERDA, DETALLE DE PAGO(CONTADO O CREDITO) INFERIOR DERECHO
+			              PdfPTable cabeceraSuperior = new PdfPTable(2);
+			              
+			              ///////////////////////////////////////////////
+			              
+			              float[] cabeceraFloatA = {6,4};
+			              
+			              PdfPTable  cabeceraA = new PdfPTable(cabeceraFloatA);
+			              
+			              PdfPCell imagen = new PdfPCell(new Phrase ("IMAGEN AQUI"));
+			              
+			              imagen.setFixedHeight(80);
+			              
+			              cabeceraA.addCell(imagen);
+			              
+			              PdfPCell descripcionFactura = new PdfPCell(new Paragraph("Pedido Nro:"+ request.getParameter("Codigo")));
+			              
+			              descripcionFactura.addElement(new Paragraph("Fecha __/__/__"));
+			              
+			              cabeceraA.addCell(descripcionFactura);
+			              
+			              
+			              //////////////////////////////////////////////
+			              
+			              
+			             cabeceraSuperior.addCell(cabeceraA);
+			             
+			             
+			             float[] cabeceraFloatB = {8,2};
+			              
+			              PdfPTable  cabeceraB = new PdfPTable(cabeceraFloatB);
+			              
+			              PdfPCell clienteCelda = new PdfPCell(new Phrase ("Señor(es)....................."));
+			              
+			              clienteCelda.setFixedHeight(60);
+			              
+			              cabeceraB.addCell(clienteCelda);
+			              
+			              PdfPCell formaPagoCelda = new PdfPCell(new Phrase("Contado: __  Credito: __"));
+			              
+			              cabeceraB.addCell(formaPagoCelda);
+		                           
+			              cabeceraSuperior.addCell(cabeceraB);
 
-			             tabla.addCell(Tabla2);
+			             tabla.addCell(cabeceraSuperior);
 			             
 			             
 			             // Segunda tabla anidada
@@ -128,7 +170,7 @@ public class ControladorPDF extends HttpServlet {
 			             
 			             PdfPTable tabla3 = new PdfPTable(columnasTabla3);
 			             
-			             String[] cabecera = {"CANTIDAD","DETALLE","P. UNIT", "IMPORTE"};
+			             String[] cabecera = {"CANT.","DETALLE","P. UNIT.", "IMPORTE"};
 			      
 			             Font fuente3 = new Font(FontFamily.HELVETICA, 13, Font.NORMAL, GrayColor.GRAYWHITE);
 			             
@@ -150,11 +192,11 @@ public class ControladorPDF extends HttpServlet {
 			       
 			       // table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-			        for (int counter = 1; counter < 5; counter++) {
+			        for (int counter = 1; counter < 15; counter++) {
 			        	tabla3.addCell(String.valueOf(counter));
-			        	tabla3.addCell("Contador Ejemplo " + counter);
-			        	tabla3.addCell("Valores " + counter);
-			        	tabla3.addCell("Otro " + counter);
+			        	tabla3.addCell(" ");
+			        	tabla3.addCell(" ");
+			        	tabla3.addCell(" ");
 			        }
 			        
 			        tabla.addCell(tabla3);
