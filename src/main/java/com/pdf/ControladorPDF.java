@@ -98,49 +98,54 @@ public class ControladorPDF extends HttpServlet {
 				documento.add(parrafo);*/
 				
 				
-				  float[] columnas = {1, 5, 5};
-			        PdfPTable table = new PdfPTable(columnas);
-			        table.setWidthPercentage(100);
-			        table.getDefaultCell().setUseAscender(true);
-			        table.getDefaultCell().setUseDescender(true);
+			        PdfPTable tabla = new PdfPTable(1);
+			        tabla.setWidthPercentage(100);
+			        tabla.getDefaultCell().setUseAscender(true);
+			        tabla.getDefaultCell().setUseDescender(true);
 			        Font f = new Font(FontFamily.HELVETICA, 13, Font.NORMAL, GrayColor.GRAYWHITE);
-			        PdfPCell cell = new PdfPCell(new Phrase("FACTURA C", f));
-			        cell.setBackgroundColor(GrayColor.GRAYBLACK);
-			        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-			        table.addCell(cell);
-			        table.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
-			        cell.setColspan(2);
-			        table.setHeaderRows(2);
+			        PdfPCell cell1 = new PdfPCell(new Phrase("FACTURA C", f));
+			        cell1.setBackgroundColor(GrayColor.GRAYBLACK);
+			        cell1.setHorizontalAlignment(Element.ALIGN_CENTER);
+			        tabla.addCell(cell1);
+			        tabla.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
+			        cell1.setColspan(1);
+			        tabla.setHeaderRows(1);
+			        
+			        
 
-			              // Creando tabla anidada        
-			              float [] anidado = {800f, 600f};      
+			              // Creando tabla anidada      
 			              
-			              PdfPTable Tabla2 = new PdfPTable(anidado);
+			              PdfPTable Tabla2 = new PdfPTable(2);
 		                           Tabla2.addCell("Parte 1");
 			                       Tabla2.addCell("Parte 2");
 
-			             table.addCell(Tabla2);
-			                      
+			             tabla.addCell(Tabla2);
+			             
+			             
+			             // Segunda tabla anidada
+			             
+			             PdfPTable tabla3 = new PdfPTable(4);
+			      
 			        
-			            table.addCell("CANTIDAD");
-			            table.addCell("DETALLE");
-			            table.addCell("PRECIO UNITARIO");
-			            table.addCell("IMPORTE");
+			            tabla3.addCell("CANTIDAD");
+			            tabla3.addCell("DETALLE");
+			            tabla3.addCell("PRECIO UNITARIO");
+			            tabla3.addCell("IMPORTE");
 			        
-			            cell.setColspan(4);
-				        table.setHeaderRows(4);
-				        table.setFooterRows(1);
+			         
 			       
 			       // table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
-			        table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 			        for (int counter = 1; counter < 5; counter++) {
-			            table.addCell(String.valueOf(counter));
-			            table.addCell("Contador Ejemplo " + counter);
-			            table.addCell("Valores " + counter);
-			            table.addCell("Otro " + counter);
+			        	tabla3.addCell(String.valueOf(counter));
+			        	tabla3.addCell("Contador Ejemplo " + counter);
+			        	tabla3.addCell("Valores " + counter);
+			        	tabla3.addCell("Otro " + counter);
 			        }
 			        
-			        documento.add(table);
+			        tabla.addCell(tabla3);
+			        
+			        documento.add(tabla);
 				
 				
 				
