@@ -102,14 +102,14 @@ public class ControladorPDF extends HttpServlet {
 			        tabla.setWidthPercentage(100);
 			        tabla.getDefaultCell().setUseAscender(true);
 			        tabla.getDefaultCell().setUseDescender(true);
-			        Font f = new Font(FontFamily.HELVETICA, 13, Font.NORMAL, GrayColor.GRAYWHITE);
+			        Font f = new Font(FontFamily.HELVETICA, 18, Font.BOLD, GrayColor.GRAYWHITE);
 			        PdfPCell cell1 = new PdfPCell(new Phrase("FACTURA C", f));
 			        cell1.setBackgroundColor(GrayColor.GRAYBLACK);
 			        cell1.setHorizontalAlignment(Element.ALIGN_CENTER);
 			        tabla.addCell(cell1);
 			        tabla.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
-			        cell1.setColspan(1);
-			        tabla.setHeaderRows(1);
+			       // cell1.setColspan(1);
+			      //  tabla.setHeaderRows(1);
 			        
 			        
 
@@ -124,15 +124,29 @@ public class ControladorPDF extends HttpServlet {
 			             
 			             // Segunda tabla anidada
 			             
-			             PdfPTable tabla3 = new PdfPTable(4);
+			             float[] columnasTabla3 = {2, 10, 3 ,5};
+			             
+			             PdfPTable tabla3 = new PdfPTable(columnasTabla3);
+			             
+			             String[] cabecera = {"CANTIDAD","DETALLE","P. UNIT", "IMPORTE"};
 			      
+			             Font fuente3 = new Font(FontFamily.HELVETICA, 13, Font.NORMAL, GrayColor.GRAYWHITE);
+			             
+			             for(String a:cabecera) {
+					        PdfPCell Cabecera3 = new PdfPCell(new Phrase(a, fuente3));
+					        Cabecera3.setBackgroundColor(GrayColor.GRAYBLACK);
+					        Cabecera3.setHorizontalAlignment(Element.ALIGN_CENTER);
+					        tabla3.addCell(Cabecera3);
+			             }
 			        
+			             /*
 			            tabla3.addCell("CANTIDAD");
 			            tabla3.addCell("DETALLE");
 			            tabla3.addCell("PRECIO UNITARIO");
-			            tabla3.addCell("IMPORTE");
+			            tabla3.addCell("IMPORTE");*/
 			        
-			         
+			             tabla3.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
+					        tabla3.setHeaderRows(1);
 			       
 			       // table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
