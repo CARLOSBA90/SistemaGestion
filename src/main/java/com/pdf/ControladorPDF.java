@@ -149,7 +149,7 @@ public class ControladorPDF extends HttpServlet {
 			              
 			              PdfPTable  cabeceraB = new PdfPTable(cabeceraFloatB);
 			              
-			              PdfPCell clienteCelda = new PdfPCell(new Phrase ("Señor(es)....................."));
+			              PdfPCell clienteCelda = new PdfPCell(new Phrase ("Senor(es)....................."));
 			              
 			              clienteCelda.setFixedHeight(60);
 			              
