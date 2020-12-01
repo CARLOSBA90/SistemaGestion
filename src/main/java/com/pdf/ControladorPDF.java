@@ -84,19 +84,7 @@ public class ControladorPDF extends HttpServlet {
 				PdfWriter.getInstance(documento, out);
 				
 				documento.open();
-				/*
-				Paragraph parrafo = new Paragraph();
-				
-				Font fuente = new Font(Font.FontFamily.TIMES_ROMAN,18,Font.BOLD,BaseColor.BLACK);
-				
-				parrafo.add(new Phrase("Seccion en desarrollo! Codigo de pedido: "+ request.getParameter("Codigo")+" ", fuente));
-
-				parrafo.setAlignment(Element.ALIGN_CENTER);
-				
-				parrafo.add(new Phrase(Chunk.NEWLINE));
-
-				documento.add(parrafo);*/
-				
+		
 				
 			        PdfPTable tabla = new PdfPTable(1);
 			        tabla.setWidthPercentage(100);
@@ -108,17 +96,14 @@ public class ControladorPDF extends HttpServlet {
 			        titulo.setHorizontalAlignment(Element.ALIGN_CENTER);
 			        tabla.addCell(titulo);
 			        tabla.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
-			       // cell1.setColspan(1);
-			      //  tabla.setHeaderRows(1);
-			        
-			        
+			
 
 			              // Creando tabla anidada      
 			              
 			        
 			        /// CABECERA SUPERIOR CON 4 SECCIONES: IMAGEN LOGO(SUPERIOR IZQUIERDA), FECHA Y NRO PEDIDO(SUPERIOR DERECHA)
 			        /// DETALLES DEL CLIENTE INFERIOR IZQUIERDA, DETALLE DE PAGO(CONTADO O CREDITO) INFERIOR DERECHO
-			              PdfPTable cabeceraSuperior = new PdfPTable(2);
+			              PdfPTable cabeceraSuperior = new PdfPTable(1);
 			              
 			              ///////////////////////////////////////////////
 			              
@@ -132,7 +117,9 @@ public class ControladorPDF extends HttpServlet {
 			              
 			              cabeceraA.addCell(imagen);
 			              
-			              PdfPCell descripcionFactura = new PdfPCell(new Paragraph("Pedido Nro:"+ request.getParameter("Codigo")));
+			              PdfPCell descripcionFactura = new PdfPCell(new Paragraph());
+			              
+			              descripcionFactura.addElement(new Paragraph("Pedido Nro:"+ request.getParameter("Codigo")));
 			              
 			              descripcionFactura.addElement(new Paragraph("Fecha __/__/__"));
 			              
@@ -149,7 +136,7 @@ public class ControladorPDF extends HttpServlet {
 			              
 			              PdfPTable  cabeceraB = new PdfPTable(cabeceraFloatB);
 			              
-			              PdfPCell clienteCelda = new PdfPCell(new Phrase ("Senor(es)....................."));
+			              PdfPCell clienteCelda = new PdfPCell(new Phrase ("Sr(es)....................."));
 			              
 			              clienteCelda.setFixedHeight(60);
 			              
@@ -163,10 +150,10 @@ public class ControladorPDF extends HttpServlet {
 
 			             tabla.addCell(cabeceraSuperior);
 			             
-			             
+			      ///////////////////////////////////////////////////////////////       
 			             // Segunda tabla anidada
 			             
-			             float[] columnasTabla3 = {2, 10, 3 ,5};
+			             float[] columnasTabla3 = {2, 11, 3 ,4};
 			             
 			             PdfPTable tabla3 = new PdfPTable(columnasTabla3);
 			             
@@ -181,18 +168,14 @@ public class ControladorPDF extends HttpServlet {
 					        tabla3.addCell(Cabecera3);
 			             }
 			        
-			             /*
-			            tabla3.addCell("CANTIDAD");
-			            tabla3.addCell("DETALLE");
-			            tabla3.addCell("PRECIO UNITARIO");
-			            tabla3.addCell("IMPORTE");*/
+			        
 			        
 			             tabla3.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
 					        tabla3.setHeaderRows(1);
 			       
-			       // table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
+			    
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-			        for (int counter = 1; counter < 15; counter++) {
+			        for (int counter = 1; counter < 16; counter++) {
 			        	tabla3.addCell(String.valueOf(counter));
 			        	tabla3.addCell(" ");
 			        	tabla3.addCell(" ");
@@ -200,6 +183,21 @@ public class ControladorPDF extends HttpServlet {
 			        }
 			        
 			        tabla.addCell(tabla3);
+			     
+			        //////////////////////////////////////////////////////////////////////
+			        
+			        float[] cabeceraFinalC = {13,3,4};
+			        
+		              PdfPTable  cabeceraFinal = new PdfPTable(cabeceraFinalC);
+		              
+		              cabeceraFinal.addCell("");
+		              
+		              cabeceraFinal.addCell("TOTAL $");
+		              
+		              cabeceraFinal.addCell("");
+		              
+			        tabla.addCell(cabeceraFinal);
+			        
 			        
 			        documento.add(tabla);
 				
