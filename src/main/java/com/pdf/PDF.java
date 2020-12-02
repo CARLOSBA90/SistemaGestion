@@ -72,7 +72,7 @@ response.setContentType("application/pdf");
 			              
 			             PdfPTable  cabeceraA = new PdfPTable(cabeceraFloatA);
 			              
-			              Image image = Image.getInstance(new URL("https://i.ibb.co/hXhYdc0/logo.png"));
+			              Image image = Image.getInstance(new URL("https://i.ibb.co/qygj7gf/LOGO.png"));
 			              
 			              
 			              PdfPCell imagen = new PdfPCell(image, true);
@@ -80,7 +80,7 @@ response.setContentType("application/pdf");
 			              
 			              imagen.setFixedHeight(80);
 			              
-			             
+			               imagen.setBorder(PdfPCell.NO_BORDER);
 			              
 			              cabeceraA.addCell(imagen);
 			              
@@ -91,6 +91,8 @@ response.setContentType("application/pdf");
 			              descripcionFactura.addElement(new Paragraph("Pedido Nro:"+ request.getParameter("Codigo")));
 			              
 			              descripcionFactura.addElement(new Paragraph("Fecha __/__/__"));
+			              
+			              descripcionFactura.setBorder(PdfPCell.NO_BORDER);
 			              
 			              cabeceraA.addCell(descripcionFactura);
 			              
@@ -126,7 +128,7 @@ response.setContentType("application/pdf");
 			             
 			             PdfPTable tabla3 = new PdfPTable(columnasTabla3);
 			             
-			             tabla3.getDefaultCell().setFixedHeight(30);
+			             tabla3.getDefaultCell().setFixedHeight(15);
 			             
 			             String[] cabecera = {"CANT.","DETALLE","P. UNIT.", "IMPORTE"};
 			      
