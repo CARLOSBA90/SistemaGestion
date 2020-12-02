@@ -72,11 +72,10 @@ response.setContentType("application/pdf");
 			              
 			             PdfPTable  cabeceraA = new PdfPTable(cabeceraFloatA);
 			              
-			              Image image = Image.getInstance(new URL("https://s3-us-west-2.amazonaws.com/lasaga-blog/media/images/grupo_imagen.original.jpg"));
+			              Image image = Image.getInstance(new URL("https://i.ibb.co/hXhYdc0/logo.png"));
 			              
-			              image.setWidthPercentage(100);
 			              
-			              PdfPCell imagen = new PdfPCell(image, false);
+			              PdfPCell imagen = new PdfPCell(image, true);
 			              
 			              
 			              imagen.setFixedHeight(80);
@@ -127,6 +126,8 @@ response.setContentType("application/pdf");
 			             
 			             PdfPTable tabla3 = new PdfPTable(columnasTabla3);
 			             
+			             tabla3.getDefaultCell().setFixedHeight(30);
+			             
 			             String[] cabecera = {"CANT.","DETALLE","P. UNIT.", "IMPORTE"};
 			      
 			             Font fuente3 = new Font(FontFamily.HELVETICA, 13, Font.NORMAL, GrayColor.GRAYWHITE);
@@ -152,7 +153,7 @@ response.setContentType("application/pdf");
 			        	tabla3.addCell(" ");
 			        }
 			        
-			        tabla3.getDefaultCell().setFixedHeight(35);
+			        
 			        
 			        tabla.addCell(tabla3);
 			     
@@ -169,7 +170,7 @@ response.setContentType("application/pdf");
 		              cabeceraFinal.addCell("");
 		              
 			        tabla.addCell(cabeceraFinal);
-			        
+			      
 			        
 			        documento.add(tabla);
 				
