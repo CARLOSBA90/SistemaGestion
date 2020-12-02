@@ -72,7 +72,7 @@ response.setContentType("application/pdf");
 			              
 			             PdfPTable  cabeceraA = new PdfPTable(cabeceraFloatA);
 			              
-			              Image image = Image.getInstance(new URL("https://i.ibb.co/qygj7gf/LOGO.png"));
+			              Image image = Image.getInstance(new URL("https://i.ibb.co/C0n3THC/LOGO.png"));
 			              
 			              
 			              PdfPCell imagen = new PdfPCell(image, true);
@@ -107,19 +107,31 @@ response.setContentType("application/pdf");
 			              
 			              PdfPTable  cabeceraB = new PdfPTable(cabeceraFloatB);
 			              
-			              PdfPCell clienteCelda = new PdfPCell(new Phrase ("Sr(es)....................."));
+			              PdfPCell clienteCelda = new PdfPCell(new Paragraph());
+			              
+			              clienteCelda.addElement(new Paragraph("Cliente: "));
+			              
+			              clienteCelda.addElement(new Paragraph("Domicilio: "));
+			              
+			              clienteCelda.addElement(new Paragraph("Telefono: "));
 			              
 			              clienteCelda.setFixedHeight(60);
 			              
+			              clienteCelda.setBorder(PdfPCell.NO_BORDER);
+			              
 			              cabeceraB.addCell(clienteCelda);
 			              
-			              PdfPCell formaPagoCelda = new PdfPCell(new Phrase("Contado: __  Credito: __"));
+			              PdfPCell formaPagoCelda = new PdfPCell(new Phrase("Contado:    Credito: "));
+			              
+			               formaPagoCelda.setBorder(PdfPCell.NO_BORDER);
 			              
 			              cabeceraB.addCell(formaPagoCelda);
-		                           
+			              
 			              cabeceraSuperior.addCell(cabeceraB);
-
+			              
 			             tabla.addCell(cabeceraSuperior);
+			             
+			             
 			             
 			      ///////////////////////////////////////////////////////////////       
 			             // Segunda tabla anidada
