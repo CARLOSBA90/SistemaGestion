@@ -74,9 +74,14 @@ response.setContentType("application/pdf");
 			              
 			              Image image = Image.getInstance(new URL("https://s3-us-west-2.amazonaws.com/lasaga-blog/media/images/grupo_imagen.original.jpg"));
 			              
+			              image.setWidthPercentage(100);
+			              
 			              PdfPCell imagen = new PdfPCell(image, false);
 			              
+			              
 			              imagen.setFixedHeight(80);
+			              
+			             
 			              
 			              cabeceraA.addCell(imagen);
 			              
@@ -147,7 +152,7 @@ response.setContentType("application/pdf");
 			        	tabla3.addCell(" ");
 			        }
 			        
-			        tabla3.getDefaultCell().setFixedHeight(20);
+			        tabla3.getDefaultCell().setFixedHeight(35);
 			        
 			        tabla.addCell(tabla3);
 			     
