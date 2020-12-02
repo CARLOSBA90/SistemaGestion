@@ -72,9 +72,7 @@ response.setContentType("application/pdf");
 			              
 			             PdfPTable  cabeceraA = new PdfPTable(cabeceraFloatA);
 			              
-			              URL resource = new URL("../src/main/resources/logo.png");
-			              
-			              Image image = Image.getInstance(resource);
+			              Image image = Image.getInstance(new URL("https://s3-us-west-2.amazonaws.com/lasaga-blog/media/images/grupo_imagen.original.jpg"));
 			              
 			              PdfPCell imagen = new PdfPCell(image, false);
 			              
