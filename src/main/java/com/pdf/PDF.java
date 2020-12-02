@@ -70,17 +70,17 @@ response.setContentType("application/pdf");
 			              
 			              //// LOGO DE LA EMPRESA 
 			              
-			                PdfPTable  cabeceraA = new PdfPTable(cabeceraFloatA);
+			             PdfPTable  cabeceraA = new PdfPTable(cabeceraFloatA);
 			              
-			                /*       URL resource = PDF.class.getResource("./src/main/webapp/img/logo.png");
+			              URL resource = new URL("../src/main/resources/logo.png");
 			              
-			              com.itextpdf.text.Image image = Image.getInstance(resource);
+			              Image image = Image.getInstance(resource);
 			              
 			              PdfPCell imagen = new PdfPCell(image, false);
 			              
 			              imagen.setFixedHeight(80);
 			              
-			              cabeceraA.addCell(imagen);*/
+			              cabeceraA.addCell(imagen);
 			              
 			              ///////////////////////////////////////////////
 			              
