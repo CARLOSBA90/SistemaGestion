@@ -400,7 +400,7 @@ public class ModeloPedido {
 
 		ResultSet RSprod_ped=null;
 		
-		Pedido pedido;
+		Pedido pedido = new Pedido();
 
 
 		try {
@@ -459,8 +459,7 @@ public class ModeloPedido {
 						cantidades.add(temp2);
 					
 				}
-				RSprod_ped.beforeFirst();
-
+				
 			    pedido = new Pedido(cod_pedido,cod_cliente,forma,enviado,fecha,total,cantidades,cantidad_calzados, nombreApellido_cliente, direccion, telefono);
 
 
