@@ -92,6 +92,8 @@ public class PDF {
 			              
 			              PdfPCell imagen = new PdfPCell(image, true);
 			              
+			              System.out.println(facturaPedido.getFecha()+facturaPedido.getNombreApellido()+facturaPedido.getForma_pago());
+			              
 			              
 			              imagen.setFixedHeight(80);
 			              
