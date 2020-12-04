@@ -175,7 +175,7 @@ public class PDF {
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 			        for (int i = 0; i < 16; i++) {
 			        	
-			        	if(facturaPedido.getCantidad().get(i).getNombre()!=null) {
+			        	if(facturaPedido.getCantidad().size()<=i) {
 			        		
 			        	   	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getCantidad());
 				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getNombre());
