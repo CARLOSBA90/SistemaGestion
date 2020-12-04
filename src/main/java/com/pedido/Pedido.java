@@ -57,6 +57,20 @@ public Pedido(int cod_pedido, int cod_producto, String forma_pago, boolean envia
 
 
 
+public Pedido(int cod_pedido, int cod_producto, String forma_pago, boolean enviado, Date fecha, double total,
+		List<CantidadCalzado> cantidad, int cantidadCalzados, String nombreApellido, String direccion, int telefono) {
+	this.cod_pedido = cod_pedido;
+	this.cod_producto = cod_producto;
+	this.forma_pago = forma_pago;
+	this.enviado = enviado;
+	this.fecha = fecha;
+	this.total = total;
+	this.cantidad = cantidad;
+	this.cantidadCalzados = cantidadCalzados;
+	this.nombreApellido = nombreApellido;
+	this.direccion = direccion;
+	this.telefono = telefono;
+}
 
 public int getCod_pedido() {
 		return cod_pedido;
@@ -124,6 +138,21 @@ public String getNombreApellido() {
 	}
 
 
+public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public int getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(int telefono) {
+		this.telefono = telefono;
+	}
 
 @Override
 	public String toString() {
@@ -149,4 +178,6 @@ public String getNombreApellido() {
    private List<CantidadCalzado> cantidad;
    private int cantidadCalzados;
    private String nombreApellido;
+   private String direccion;
+   private int telefono;
 }

@@ -124,9 +124,9 @@ public class PDF {
 			              
 			              PdfPCell clienteCelda = new PdfPCell(new Paragraph("Cliente: "+ facturaPedido.getNombreApellido()));
 			              
-			              clienteCelda.addElement(new Paragraph("Domicilio: "));
+			              clienteCelda.addElement(new Paragraph("Domicilio: "+ facturaPedido.getDireccion()));
 			              
-			              clienteCelda.addElement(new Paragraph("Telefono: "));
+			              clienteCelda.addElement(new Paragraph("Telefono: "+ facturaPedido.getTelefono()));
 			              
 			              clienteCelda.setFixedHeight(60);
 			              

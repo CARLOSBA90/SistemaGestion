@@ -409,9 +409,9 @@ public class ModeloPedido {
 			
 			/// Se extrae de la base de datos los detalles del pedido
 
-			String sql="SELECT pedido.cod_pedido, pedido.cod_cliente, cliente.nombre, cliente.apellido, cliente.telefono, cliente.direccion "
-					+ "pedido.cantidad_calzados, pedido.precio_total, pedido.forma_pago, pedido.enviado, pedido.fecha_pedido " +
-					"FROM cliente INNER JOIN pedido ON cliente.cod_cliente=pedido.cod_cliente WHERE pedido.cod_pedido="+i;
+			String sql="SELECT pedido.cod_pedido, pedido.cod_cliente, cliente.nombre, cliente.apellido, "
+					+ "pedido.cantidad_calzados, pedido.precio_total, pedido.forma_pago, pedido.enviado, pedido.fecha_pedido,"
+					+ "cliente.telefono, cliente.direccion FROM cliente INNER JOIN pedido ON cliente.cod_cliente=pedido.cod_cliente WHERE pedido.cod_pedido="+i;
 
 			miStatement= miConexion.createStatement();
 
@@ -439,6 +439,8 @@ public class ModeloPedido {
 				String forma=miResulset.getString(7);
 				Boolean enviado=miResulset.getBoolean(8);
 				Date   fecha=miResulset.getDate(9);
+				int telefono=miResulset.getInt(10);
+				String direccion=miResulset.getString(11);
 
 
 
@@ -459,7 +461,7 @@ public class ModeloPedido {
 				}
 				RSprod_ped.beforeFirst();
 
-			    pedido = new Pedido(cod_pedido,cod_cliente,forma,enviado,fecha,total,cantidades,cantidad_calzados, nombreApellido_cliente);
+			    pedido = new Pedido(cod_pedido,cod_cliente,forma,enviado,fecha,total,cantidades,cantidad_calzados, nombreApellido_cliente, direccion, telefono);
 
 
 
