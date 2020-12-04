@@ -174,22 +174,17 @@ public class PDF {
 			       
 			    
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-			        for (int i = 0; i < 20; i++) {/*
+			        for (int i = 0; i < 2; i++) {
 			        	
-			        	if(false) {
-			        	
-			        	   	tabla3.addCell(""+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad()));
-				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getNombre());
-				        	tabla3.addCell(""+Double.toString(facturaPedido.getCantidad().get(i).getPrecio()));
-				        	tabla3.addCell(""+Double.toString(facturaPedido.getCantidad().get(i).getTotal()));	
+			         System.out.println(Integer.toString(facturaPedido.getCantidad().get(i).getCantidad())+ facturaPedido.getCantidad().get(i).getNombre()+Double.toString(facturaPedido.getCantidad().get(i).getPrecio())+Double.toString(facturaPedido.getCantidad().get(i).getTotal()));
+			      
+			        	   	tabla3.addCell(" "+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad()));
+				        	tabla3.addCell(" "+facturaPedido.getCantidad().get(i).getNombre());
+				        	tabla3.addCell(" "+Double.toString(facturaPedido.getCantidad().get(i).getPrecio()));
+				        	tabla3.addCell(" "+Double.toString(facturaPedido.getCantidad().get(i).getTotal()));	
 			        		
 			        		
-			        	}else {
-			        	tabla3.addCell(" ");
-			        	tabla3.addCell(" ");
-			        	tabla3.addCell(" ");
-			        	tabla3.addCell(" ");
-			        	}*/
+			        	
 			        }
 			        
 			        
