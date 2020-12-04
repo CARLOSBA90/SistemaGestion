@@ -409,7 +409,7 @@ public class ModeloPedido {
 			
 			/// Se extrae de la base de datos los detalles del pedido
 
-			String sql="SELECT pedido.cod_pedido, pedido.cod_cliente, cliente.nombre, cliente.apellido, "
+			String sql="SELECT pedido.cod_pedido, pedido.cod_cliente, cliente.nombre, cliente.apellido, cliente.telefono, cliente.direccion "
 					+ "pedido.cantidad_calzados, pedido.precio_total, pedido.forma_pago, pedido.enviado, pedido.fecha_pedido " +
 					"FROM cliente INNER JOIN pedido ON cliente.cod_cliente=pedido.cod_cliente WHERE pedido.cod_pedido="+i;
 
@@ -419,9 +419,10 @@ public class ModeloPedido {
 
 			/// Se realiza un List para sacar el detalle de cada producto con su nombre, cantidad, precio y total!
 
-			String sqlPD ="SELECT pedido_producto.cod_producto, pedido_producto.cantidad_producto, pedido_producto.precio, "
-					+ "pedido_producto.valor_total, producto_calzado.nombre FROM pedido_producto INNER JOIN producto_calzado ON "
-					+ "producto_calzado.cod_producto=producto_calzado.cod_calzado WHERE pedido_producto.cod_pedido="+i;
+			String sqlPD ="SELECT pedido_producto.cod_producto, pedido_producto.cantidad_producto, pedido_producto.precio," + 
+					" pedido_producto.valor_total, producto_calzado.nombre FROM producto_calzado INNER JOIN pedido_producto" + 
+					" ON pedido_producto.cod_producto=producto_calzado.cod_calzado" + 
+					" WHERE pedido_producto.cod_pedido="+i;
 
 			STprod_ped= miConexion.createStatement();
 
