@@ -455,6 +455,8 @@ public class ModeloPedido {
 						CantidadCalzado temp2 = new CantidadCalzado(cod_productoPD,cantidadPr,precioPr,totalPr, nombre);
 
 						cantidades.add(temp2);
+						
+						System.out.println(""+cod_productoPD+cantidadPr+precioPr+totalPr+nombre);
 					
 				}
 				
