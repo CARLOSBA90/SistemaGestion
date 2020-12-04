@@ -20,9 +20,27 @@ public class CantidadCalzado {
 		this.precio = precio;
 		this.total = total;
 	}
+	
+	public CantidadCalzado(int cod_pedido_pro, int cod_pedido, int cod_producto, int cantidad, double precio,
+			double total, String nombre) {
+		this.cod_pedido_pro = cod_pedido_pro;
+		this.cod_pedido = cod_pedido;
+		this.cod_producto = cod_producto;
+		this.cantidad = cantidad;
+		this.precio = precio;
+		this.total = total;
+		this.nombre = nombre;
+	}
+	
+	
 
-
-
+	public CantidadCalzado(int cod_producto, int cantidad, double precio, double total, String nombre) {
+		this.cod_producto = cod_producto;
+		this.cantidad = cantidad;
+		this.precio = precio;
+		this.total = total;
+		this.nombre = nombre;
+	}
 
 	public int getCod_pedido_pro() {
 		return cod_pedido_pro;
@@ -62,8 +80,14 @@ public class CantidadCalzado {
 	}
 	
 	
-	
-	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	@Override
 	public String toString() {
 		return "\n Codigo Producto "+cod_producto+": "+cantidad+" unidades x $"+precio+" = $"+total+" ";
@@ -80,4 +104,5 @@ public class CantidadCalzado {
 	private int cantidad;
 	private double precio;
 	private double total;
+	private String nombre;
 }

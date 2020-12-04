@@ -5,6 +5,14 @@ import java.util.List;
 
 public class Pedido {
 	
+   public Pedido() {
+	   
+   }
+   
+   public Pedido(Pedido obtenerCodigoPedido) {
+		// TODO Auto-generated constructor stub
+	}
+	
    public Pedido(int cod_pedido, int cod_producto, String forma_pago, boolean enviado, Date fecha, double total,
 			List<CantidadCalzado> cantidad,int cantidadCalzados) {
 		this.cod_pedido = cod_pedido;
@@ -46,6 +54,7 @@ public Pedido(int cod_pedido, int cod_producto, String forma_pago, boolean envia
 	this.cantidadCalzados = cantidadCalzados;
 	this.nombreApellido = nombreApellido;
 }
+
 
 
 

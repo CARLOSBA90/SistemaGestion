@@ -389,4 +389,98 @@ public class ModeloPedido {
 
 
 
+	public Pedido ObtenerPedido(int i) throws SQLException {
+		// TODO Auto-generated method stub
+		
+		Statement miStatement=null;
+
+		ResultSet miResulset;
+		
+		Statement STprod_ped=null;
+
+		ResultSet RSprod_ped=null;
+		
+		Pedido pedido = null;
+
+
+		try {
+
+			miConexion = conectar.createConnection();
+			
+			/// Se extrae de la base de datos los detalles del pedido
+
+			String sql="SELECT pedido.cod_pedido, pedido.cod_cliente, cliente.nombre, cliente.apellido, "
+					+ "pedido.cantidad_calzados, pedido.precio_total, pedido.forma_pago, pedido.enviado, pedido.fecha_pedido " +
+					"FROM cliente INNER JOIN pedido ON cliente.cod_cliente=pedido.cod_cliente WHERE pedido.cod_pedido="+i;
+
+			miStatement= miConexion.createStatement();
+
+			miResulset= miStatement.executeQuery(sql);
+
+			/// Se realiza un List para sacar el detalle de cada producto con su nombre, cantidad, precio y total!
+
+			String sqlPD ="SELECT pedido_producto.cod_producto, pedido_producto.cantidad_producto, pedido_producto.precio, "
+					+ "pedido_producto.valor_total, producto_calzado.nombre FROM pedido_producto INNER JOIN producto_calzado ON "
+					+ "producto_calzado.cod_producto=producto_calzado.cod_calzado WHERE pedido_producto.cod_pedido="+i;
+
+			STprod_ped= miConexion.createStatement();
+
+			RSprod_ped= STprod_ped.executeQuery(sqlPD);
+
+			while(miResulset.next()) {
+
+
+				int cod_pedido=miResulset.getInt(1);
+				int cod_cliente=miResulset.getInt(2);
+				String nombreApellido_cliente = miResulset.getString(3) +" "+ miResulset.getString(4);
+				int cantidad_calzados=miResulset.getInt(5);
+				double total=miResulset.getDouble(6);
+				String forma=miResulset.getString(7);
+				Boolean enviado=miResulset.getBoolean(8);
+				Date   fecha=miResulset.getDate(9);
+
+
+
+				List<CantidadCalzado> cantidades = new ArrayList<>();
+
+				while(RSprod_ped.next()) {
+
+						int cod_productoPD=RSprod_ped.getInt(1);
+						int cantidadPr=RSprod_ped.getInt(2);
+						double precioPr=RSprod_ped.getDouble(3);
+						double totalPr=RSprod_ped.getDouble(4);
+						String nombre=RSprod_ped.getString(5);
+
+						CantidadCalzado temp2 = new CantidadCalzado(cod_productoPD,cantidadPr,precioPr,totalPr, nombre);
+
+						cantidades.add(temp2);
+					
+				}
+				RSprod_ped.beforeFirst();
+
+			    pedido = new Pedido(cod_pedido,cod_cliente,forma,enviado,fecha,total,cantidades,cantidad_calzados, nombreApellido_cliente);
+
+
+
+			}
+
+		}catch(Exception e) {
+			e.printStackTrace();
+
+		}
+
+		finally{
+			miStatement.close();
+			RSprod_ped.close();
+			miConexion.close();
+		}
+		
+		
+		
+		
+		return pedido;
+	}
+
+
+
 }

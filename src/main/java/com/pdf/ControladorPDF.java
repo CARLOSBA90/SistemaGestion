@@ -38,7 +38,12 @@ public class ControladorPDF extends HttpServlet {
 		switch(comando) {
 		
 		case "facturar": 
-			facturar(request,response);
+			try {
+				facturar(request,response);
+			} catch (NumberFormatException | IOException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			break;
 			
 		default:
@@ -50,7 +55,7 @@ public class ControladorPDF extends HttpServlet {
 		
 	}
 
-	private void facturar(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void facturar(HttpServletRequest request, HttpServletResponse response) throws IOException, NumberFormatException, SQLException {
 		// TODO Auto-generated method stub
 		
 		/// Generar factura con todos los campos de la clase Pedido y CantidadPedido

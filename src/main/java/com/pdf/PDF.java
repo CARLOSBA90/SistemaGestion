@@ -3,6 +3,7 @@ package com.pdf;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
+import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,18 +19,32 @@ import com.itextpdf.text.pdf.GrayColor;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.pedido.ModeloPedido;
+import com.pedido.Pedido;
 import com.itextpdf.text.Image;
 
 
 
 public class PDF {
 	
-    public static final String LOGO = "./src/main/webapp/img/logo.png";
+	private ModeloPedido modelo;
 	
-	
-	public void crear(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public PDF () {
 		
-response.setContentType("application/pdf");
+		modelo = new ModeloPedido();
+	}
+	
+	public void crear(HttpServletRequest request, HttpServletResponse response) throws IOException, NumberFormatException, SQLException {
+		
+        
+		///// instanciamos la clase pedido para recibir de la BBDD el pedido con el codigo especifico!
+		
+		/// Solicitamos mediante metodo al ModeloPedido los datos del pedido mediante el codigo proporcionado
+		
+		Pedido facturaPedido = new Pedido(modelo.ObtenerPedido(Integer.parseInt(request.getParameter("Codigo"))));
+		
+		
+		response.setContentType("application/pdf");
 		
 		OutputStream out = response.getOutputStream();
 		
@@ -90,7 +105,7 @@ response.setContentType("application/pdf");
 			              
 			              descripcionFactura.addElement(new Paragraph("Pedido Nro:"+ request.getParameter("Codigo")));
 			              
-			              descripcionFactura.addElement(new Paragraph("Fecha __/__/__"));
+			              descripcionFactura.addElement(new Paragraph("Fecha "+ facturaPedido.getFecha()));
 			              
 			              descripcionFactura.setBorder(PdfPCell.NO_BORDER);
 			              
@@ -107,9 +122,7 @@ response.setContentType("application/pdf");
 			              
 			              PdfPTable  cabeceraB = new PdfPTable(cabeceraFloatB);
 			              
-			              PdfPCell clienteCelda = new PdfPCell(new Paragraph());
-			              
-			              clienteCelda.addElement(new Paragraph("Cliente: "));
+			              PdfPCell clienteCelda = new PdfPCell(new Paragraph("Cliente: "+ facturaPedido.getNombreApellido()));
 			              
 			              clienteCelda.addElement(new Paragraph("Domicilio: "));
 			              
@@ -121,7 +134,7 @@ response.setContentType("application/pdf");
 			              
 			              cabeceraB.addCell(clienteCelda);
 			              
-			              PdfPCell formaPagoCelda = new PdfPCell(new Phrase("Contado:    Credito: "));
+			              PdfPCell formaPagoCelda = new PdfPCell(new Phrase("Forma pago: "+ facturaPedido.getForma_pago()));
 			              
 			               formaPagoCelda.setBorder(PdfPCell.NO_BORDER);
 			              
@@ -160,11 +173,22 @@ response.setContentType("application/pdf");
 			       
 			    
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-			        for (int counter = 1; counter < 16; counter++) {
-			        	tabla3.addCell(String.valueOf(counter));
+			        for (int i = 0; i < 16; i++) {
+			        	
+			        	if(facturaPedido.getCantidad().get(i).getNombre()!=null) {
+			        		
+			        	   	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getCantidad());
+				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getNombre());
+				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getPrecio());
+				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getTotal());	
+			        		
+			        		
+			        	}else {
 			        	tabla3.addCell(" ");
 			        	tabla3.addCell(" ");
 			        	tabla3.addCell(" ");
+			        	tabla3.addCell(" ");
+			        	}
 			        }
 			        
 			        
@@ -181,7 +205,7 @@ response.setContentType("application/pdf");
 		              
 		              cabeceraFinal.addCell("TOTAL $");
 		              
-		              cabeceraFinal.addCell("");
+		              cabeceraFinal.addCell(""+facturaPedido.getTotal());
 		              
 			        tabla.addCell(cabeceraFinal);
 			      
