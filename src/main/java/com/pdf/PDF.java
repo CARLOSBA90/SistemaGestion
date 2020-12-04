@@ -174,7 +174,7 @@ public class PDF {
 			       
 			    
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-			        for (int i = 0; i < 22; i++) {
+			        for (int i = 0; i < 16; i++) {
 			        	
 			      /*
 			      
