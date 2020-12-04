@@ -174,7 +174,7 @@ public class PDF {
 			       
 			    
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-			        for (int i = 0; i < 20; i++) {
+			        for (int i = 0; i < 20; i++) {/*
 			        	
 			        	if(false) {
 			        	
@@ -189,7 +189,7 @@ public class PDF {
 			        	tabla3.addCell(" ");
 			        	tabla3.addCell(" ");
 			        	tabla3.addCell(" ");
-			        	}
+			        	}*/
 			        }
 			        
 			        
