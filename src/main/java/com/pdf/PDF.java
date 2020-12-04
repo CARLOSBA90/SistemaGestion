@@ -107,7 +107,7 @@ public class PDF {
 			              
 			              descripcionFactura.addElement(new Paragraph("Pedido Nro:"+ request.getParameter("Codigo")));
 			              
-			              descripcionFactura.addElement(new Paragraph("Fecha "+ facturaPedido.getFecha()));
+			              descripcionFactura.addElement(new Paragraph("Fecha "));////+ facturaPedido.getFecha()
 			              
 			              descripcionFactura.setBorder(PdfPCell.NO_BORDER);
 			              
@@ -128,7 +128,7 @@ public class PDF {
 			              
 			              clienteCelda.addElement(new Paragraph("Domicilio: "+ facturaPedido.getDireccion()));
 			              
-			              clienteCelda.addElement(new Paragraph("Telefono: "+ facturaPedido.getTelefono()));
+			              clienteCelda.addElement(new Paragraph("Telefono: "));///+ facturaPedido.getTelefono()
 			              
 			              clienteCelda.setFixedHeight(60);
 			              
@@ -178,12 +178,12 @@ public class PDF {
 			        for (int i = 0; i < 16; i++) {
 			        	
 			        	if(facturaPedido.getCantidad().size()<=i) {
-			        	
+			        	/*
 			        	   	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getCantidad());
 				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getNombre());
 				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getPrecio());
 				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getTotal());	
-			        		
+			        		*/
 			        		
 			        	}else {
 			        	tabla3.addCell(" ");
@@ -207,7 +207,7 @@ public class PDF {
 		              
 		              cabeceraFinal.addCell("TOTAL $");
 		              
-		              cabeceraFinal.addCell(""+facturaPedido.getTotal());
+		              cabeceraFinal.addCell("");//facturaPedido.getTotal()
 		              
 			        tabla.addCell(cabeceraFinal);
 			      
