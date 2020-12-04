@@ -442,8 +442,6 @@ public class ModeloPedido {
 				int telefono=miResulset.getInt(10);
 				String direccion=miResulset.getString(11);
 
-                      System.out.println(direccion);
-
 				List<CantidadCalzado> cantidades = new ArrayList<>();
 
 				while(RSprod_ped.next()) {

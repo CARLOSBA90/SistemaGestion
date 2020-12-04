@@ -178,11 +178,11 @@ public class PDF {
 			        for (int i = 0; i < 16; i++) {
 			        	
 			        	if(facturaPedido.getCantidad().size()<=i) {
-			        		/*
+			        	
 			        	   	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getCantidad());
 				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getNombre());
 				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getPrecio());
-				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getTotal());	*/
+				        	tabla3.addCell(""+facturaPedido.getCantidad().get(i).getTotal());	
 			        		
 			        		
 			        	}else {

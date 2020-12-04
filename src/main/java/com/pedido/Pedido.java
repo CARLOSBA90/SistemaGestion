@@ -11,6 +11,19 @@ public class Pedido {
    
    public Pedido(Pedido obtenerCodigoPedido) {
 		// TODO Auto-generated constructor stub
+	    this.cod_pedido = obtenerCodigoPedido.getCod_pedido();
+		this.cod_producto = obtenerCodigoPedido.getCod_producto();
+		this.forma_pago = obtenerCodigoPedido.getForma_pago();
+		this.enviado = obtenerCodigoPedido.isEnviado();
+		this.fecha = obtenerCodigoPedido.getFecha();
+		this.total = obtenerCodigoPedido.getTotal();
+		this.cantidad = obtenerCodigoPedido.getCantidad();
+		this.cantidadCalzados = obtenerCodigoPedido.getCantidadCalzados();
+		this.nombreApellido = obtenerCodigoPedido.getNombreApellido();
+		this.direccion = obtenerCodigoPedido.getDireccion();
+		this.telefono = obtenerCodigoPedido.getTelefono();
+	   
+	   
 	}
 	
    public Pedido(int cod_pedido, int cod_producto, String forma_pago, boolean enviado, Date fecha, double total,
