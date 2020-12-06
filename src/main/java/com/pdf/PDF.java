@@ -184,7 +184,8 @@ public class PDF {
 			        
 			       
 			        for (int i = 0; i < 16; i++) {
-			        	 PdfPCell celdaFactura = new PdfPCell(new Phrase(""));
+			        	 PdfPCell celdaFactura = new PdfPCell(new Phrase("X"));
+			        	 System.out.println("bucle");
 			        	
 			        	/*
 			        	   	tabla3.addCell(" "+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad()));
