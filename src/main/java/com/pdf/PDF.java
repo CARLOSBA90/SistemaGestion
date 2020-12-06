@@ -195,12 +195,12 @@ public class PDF {
 			        	 tabla3.addCell(celdaFacturaN);
 			        	 
 			        	 
-			        	 PdfPCell celdaFacturaP = new PdfPCell(new Phrase(""+facturaPedido.getCantidad().get(i).getPrecio())); 
+			        	 PdfPCell celdaFacturaP = new PdfPCell(new Phrase(""+Double.toString(facturaPedido.getCantidad().get(i).getPrecio()))); 
 			        	 
 			        	 tabla3.addCell(celdaFacturaP);
 			        	 
 			        	 
-                        PdfPCell celdaFacturaT = new PdfPCell(new Phrase(""+facturaPedido.getCantidad().get(i).getTotal())); 
+                        PdfPCell celdaFacturaT = new PdfPCell(new Phrase(""+Double.toString(facturaPedido.getCantidad().get(i).getTotal()))); 
 			        	 
 			        	 tabla3.addCell(celdaFacturaT);}
 			        	
