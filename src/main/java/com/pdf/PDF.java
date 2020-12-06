@@ -173,28 +173,53 @@ public class PDF {
 			        
 			             tabla3.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
 			             
-					        List<CantidadCalzado> misCantidades =  facturaPedido.getCantidad();
+				/*	        List<CantidadCalzado> misCantidades =  facturaPedido.getCantidad();
 					        
 					       
 					        
-					       System.out.println( misCantidades.get(0).getNombre());
+					       System.out.println( misCantidades.get(0).getNombre());*/
 			       
 			    
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 			        
 			       
-			        for (int i = 0; i < 16; i++) {
-			        	 PdfPCell celdaFactura = new PdfPCell(new Phrase("X"));
-			        	 System.out.println("bucle");
+			        for (int i = 0; i < 20; i++) {
 			        	
-			        	/*
+			        	if(facturaPedido.getCantidad().size()<i) {
+			        	 PdfPCell celdaFacturaC = new PdfPCell(new Phrase(""+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad())));
+			        
+			        	 tabla3.addCell(celdaFacturaC);
+			        	 
+			        	 PdfPCell celdaFacturaN = new PdfPCell(new Phrase(""+facturaPedido.getCantidad().get(i).getNombre())); 
+			        	
+			        	 tabla3.addCell(celdaFacturaN);
+			        	 
+			        	 
+			        	 PdfPCell celdaFacturaP = new PdfPCell(new Phrase(""+facturaPedido.getCantidad().get(i).getPrecio())); 
+			        	 
+			        	 tabla3.addCell(celdaFacturaP);
+			        	 
+			        	 
+                        PdfPCell celdaFacturaT = new PdfPCell(new Phrase(""+facturaPedido.getCantidad().get(i).getTotal())); 
+			        	 
+			        	 tabla3.addCell(celdaFacturaT);}
+			        	
+			        	else {
+			        		
+			        		PdfPCell nada = new PdfPCell(new Phrase("_")); 
+				        	 
+				        	 tabla3.addCell(nada);}
+			        		
+			        		
+			        	}
+			        	 
+			        	 /*
 			        	   	tabla3.addCell(" "+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad()));
 				        	tabla3.addCell(" "+facturaPedido.getCantidad().get(i).getNombre());
 				        	tabla3.addCell(" "+Double.toString(facturaPedido.getCantidad().get(i).getPrecio()));
 				        	tabla3.addCell(" "+Double.toString(facturaPedido.getCantidad().get(i).getTotal()));	
 			        		*/
-			        	  tabla3.addCell(celdaFactura);
-			        	
+			        	  
 			        }
 			        
 			        
