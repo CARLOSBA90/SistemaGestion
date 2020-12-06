@@ -456,7 +456,6 @@ public class ModeloPedido {
 
 						cantidades.add(temp2);
 						
-						System.out.println(""+cod_productoPD+cantidadPr+precioPr+totalPr+nombre);
 					
 				}
 				

@@ -194,11 +194,9 @@ public class PDF {
 				        	tabla3.addCell(" "+Double.toString(facturaPedido.getCantidad().get(i).getPrecio()));
 				        	tabla3.addCell(" "+Double.toString(facturaPedido.getCantidad().get(i).getTotal()));	
 			        		*/
-			        	
+			        	  tabla3.addCell(celdaFactura);
 			        	
 			        }
-			        
-			        tabla3.addCell(celdaFactura);
 			        
 			        
 			        
