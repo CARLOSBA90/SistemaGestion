@@ -210,8 +210,6 @@ public class PDF {
 				        	 
 				        	 tabla3.addCell(nada);}
 			        		
-			        		
-			        	}
 			        	 
 			        	 /*
 			        	   	tabla3.addCell(" "+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad()));
