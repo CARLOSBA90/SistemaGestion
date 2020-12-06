@@ -172,9 +172,7 @@ public class PDF {
 			        
 			        
 			             tabla3.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
-					        tabla3.setHeaderRows(1);
-					        
-					        
+			             
 					        List<CantidadCalzado> misCantidades =  facturaPedido.getCantidad();
 					        
 					       
@@ -184,9 +182,9 @@ public class PDF {
 			    
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 			        
-			        PdfPCell celdaFactura = new PdfPCell(new Paragraph());
+			       
 			        for (int i = 0; i < 16; i++) {
-			        	  celdaFactura.addElement(new Paragraph("X "));
+			        	 PdfPCell celdaFactura = new PdfPCell(new Phrase(""));
 			        	
 			        	/*
 			        	   	tabla3.addCell(" "+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad()));
