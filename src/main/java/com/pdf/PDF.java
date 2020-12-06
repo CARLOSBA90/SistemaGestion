@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +20,7 @@ import com.itextpdf.text.pdf.GrayColor;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.pedido.CantidadCalzado;
 import com.pedido.ModeloPedido;
 import com.pedido.Pedido;
 import com.itextpdf.text.Image;
@@ -171,21 +173,32 @@ public class PDF {
 			        
 			             tabla3.getDefaultCell().setBackgroundColor(GrayColor.WHITE);
 					        tabla3.setHeaderRows(1);
+					        
+					        
+					        List<CantidadCalzado> misCantidades =  facturaPedido.getCantidad();
+					        
+					       
+					        
+					       System.out.println( misCantidades.get(0).getNombre());
 			       
 			    
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+			        
+			        PdfPCell celdaFactura = new PdfPCell(new Paragraph());
 			        for (int i = 0; i < 16; i++) {
+			        	  celdaFactura.addElement(new Paragraph("X "));
 			        	
-			      /*
-			      
+			        	/*
 			        	   	tabla3.addCell(" "+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad()));
 				        	tabla3.addCell(" "+facturaPedido.getCantidad().get(i).getNombre());
 				        	tabla3.addCell(" "+Double.toString(facturaPedido.getCantidad().get(i).getPrecio()));
 				        	tabla3.addCell(" "+Double.toString(facturaPedido.getCantidad().get(i).getTotal()));	
-			        		
-			        	*/	
+			        		*/
+			        	
 			        	
 			        }
+			        
+			        tabla3.addCell(celdaFactura);
 			        
 			        
 			        
