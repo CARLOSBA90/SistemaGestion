@@ -184,23 +184,23 @@ public class PDF {
 			        
 			       
 			        for (int i = 0; i < 20; i++) {
-			        	/*
-			        	if(facturaPedido.getCantidad().size()<i) {
-			        	 PdfPCell celdaFacturaC = new PdfPCell(new Phrase(""+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad())));
+			        	
+			        	if(facturaPedido.getCantidad().size()<1) {
+			        	 PdfPCell celdaFacturaC = new PdfPCell(new Phrase(" "+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad())));
 			        
 			        	 tabla3.addCell(celdaFacturaC);
 			        	 
-			        	 PdfPCell celdaFacturaN = new PdfPCell(new Phrase(""+facturaPedido.getCantidad().get(i).getNombre())); 
+			        	 PdfPCell celdaFacturaN = new PdfPCell(new Phrase(" "+facturaPedido.getCantidad().get(i).getNombre())); 
 			        	
 			        	 tabla3.addCell(celdaFacturaN);
 			        	 
 			        	 
-			        	 PdfPCell celdaFacturaP = new PdfPCell(new Phrase(""+Double.toString(facturaPedido.getCantidad().get(i).getPrecio()))); 
+			        	 PdfPCell celdaFacturaP = new PdfPCell(new Phrase(" "+Double.toString(facturaPedido.getCantidad().get(i).getPrecio()))); 
 			        	 
 			        	 tabla3.addCell(celdaFacturaP);
 			        	 
 			        	 
-                        PdfPCell celdaFacturaT = new PdfPCell(new Phrase(""+Double.toString(facturaPedido.getCantidad().get(i).getTotal()))); 
+                        PdfPCell celdaFacturaT = new PdfPCell(new Phrase(" "+Double.toString(facturaPedido.getCantidad().get(i).getTotal()))); 
 			        	 
 			        	 tabla3.addCell(celdaFacturaT);}
 			        	
@@ -210,11 +210,8 @@ public class PDF {
 				        	 
 				        	 tabla3.addCell(nada);}
 				        	
-			        		*/
-			        	
-			        	PdfPCell nada = new PdfPCell(new Phrase("_")); 
-			        	 
-			        	 tabla3.addCell(nada);
+			        		
+			      
 			        	 
 			        	 /*
 			        	   	tabla3.addCell(" "+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad()));
