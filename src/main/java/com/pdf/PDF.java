@@ -183,31 +183,39 @@ public class PDF {
 			        tabla.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 			        
 			       
-			        for (int i = 0; i < 20; i++) {
+			        for (int i = 0; i < 35; i++) {
 			     
 			        	
 			        	if(facturaPedido.getCantidad().size()>i) {
 			        	 PdfPCell celdaFacturaC = new PdfPCell(new Phrase(" "+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad())));
 			        
+			        	 celdaFacturaC.setBorder(PdfPCell.NO_BORDER);
+			        	 
 			        	 tabla3.addCell(celdaFacturaC);
 			        	 
 			        	 PdfPCell celdaFacturaN = new PdfPCell(new Phrase(" "+facturaPedido.getCantidad().get(i).getNombre())); 
 			        	
+			        	 celdaFacturaN.setBorder(PdfPCell.NO_BORDER);
+			        	 
 			        	 tabla3.addCell(celdaFacturaN);
 			        	 
 			        	 
 			        	 PdfPCell celdaFacturaP = new PdfPCell(new Phrase(" "+Double.toString(facturaPedido.getCantidad().get(i).getPrecio()))); 
+			        	 
+			        	 celdaFacturaP.setBorder(PdfPCell.NO_BORDER);
 			        	 
 			        	 tabla3.addCell(celdaFacturaP);
 			        	 
 			        	 
                         PdfPCell celdaFacturaT = new PdfPCell(new Phrase(" "+Double.toString(facturaPedido.getCantidad().get(i).getTotal()))); 
 			        	 
-			        	 tabla3.addCell(celdaFacturaT);}
+			        	celdaFacturaT.setBorder(PdfPCell.NO_BORDER);
+                        
+                        tabla3.addCell(celdaFacturaT);}
 			        	
 			        	else {
 			        		
-			        		PdfPCell nada = new PdfPCell(new Phrase("_")); 
+			        		PdfPCell nada = new PdfPCell(new Phrase(" ")); 
 				        	 
 				        	 tabla3.addCell(nada);}
 				        	
