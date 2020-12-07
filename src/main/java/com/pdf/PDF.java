@@ -184,9 +184,9 @@ public class PDF {
 			        
 			       
 			        for (int i = 0; i < 20; i++) {
-			        	System.out.println(Integer.toString(facturaPedido.getCantidad().get(0).getCantidad()));
+			     
 			        	
-			        	if(facturaPedido.getCantidad().size()<1) {
+			        	if(facturaPedido.getCantidad().size()>i) {
 			        	 PdfPCell celdaFacturaC = new PdfPCell(new Phrase(" "+Integer.toString(facturaPedido.getCantidad().get(i).getCantidad())));
 			        
 			        	 tabla3.addCell(celdaFacturaC);
