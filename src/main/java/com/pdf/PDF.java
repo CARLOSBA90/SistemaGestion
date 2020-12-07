@@ -216,6 +216,8 @@ public class PDF {
 			        	else {
 			        		
 			        		PdfPCell nada = new PdfPCell(new Phrase(" ")); 
+			        		
+			        		nada.setBorder(PdfPCell.NO_BORDER);
 				        	 
 				        	 tabla3.addCell(nada);}
 				        	
