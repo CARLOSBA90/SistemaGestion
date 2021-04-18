@@ -21,7 +21,7 @@ public class DbManager {
    	 
 		try {
 			Properties prop = new Properties();
-			String propFileName = "/resources/conexion.properties";
+			String propFileName = "conexion.properties";
 			Class currentClass = new Object() { }.getClass().getEnclosingClass();
  
 			inputStream = currentClass.getClassLoader().getResourceAsStream(propFileName);
